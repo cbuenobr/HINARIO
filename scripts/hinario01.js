@@ -265,5 +265,7 @@
         PrintVersionAndDate();
         InitFontSlider();
 
+        alert("TESTE NO GITHUB PAGES");
+
         //Print();
     });
