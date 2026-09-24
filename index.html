@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./styles/hinario01.css">
+    <script src="./scripts/hinario01.js" type="text/javascript" defer></script>
+    <!-- <script src="./scripts/teste.js"></script> -->
+
+    <title>NOSSO HINARIO</title>
+
+</head>
+<body>
+    
+    <h1 style="text-align: center;">NOSSO HINÁRIO</h1>
+    <h1 style="color:crimson; text-align: center;"> (***** TESTE *****)</h1>
+    <p id="current-date" style="text-align: center;"></p>
+
+     <hr>
+    <!-- SLIDER TAMANHO DA FONTE DAS MÚSICAS -->
+    <div style="text-align:left; margin-left: 20px;">
+        <label for="fontSizeRange" style="font-weight: bold; font-size:x-large;">Aa</label>
+        <input type="range" id="fontSizeRange" class="slidecontainer" min="1" max="3" step="0.1" >
+    </div>
+<!-- 
+      <label for="sortDrop">Ordenar por:</label>
+        <select name="sortDrop" id="sortControl">
+            <option value="nome">Nome</option>
+            <option value="numero">Número</option>
+        </select>
+
+    <label for="directionDrop">Direção:</label>
+        <select name="directionDrop" id="directionControl">
+            <option value="1">ascendente</option>
+            <option value="2">descendente</option>
+        </select> -->
+
+    <p>Ordenar por:</p>
+    <input type="radio" id="sortBy_1" name="sortBy"  checked="true" value="1">
+    <label for="sortBy_1">Nome</label>
+    <input type="radio" id="sortBy_2" name="sortBy" value="2">
+    <label for="sortBy_2">Número</label>
+
+    <p>Direção:</p>
+    <input type="radio" id="sortDir_1" name="sortDirection"  checked="true" value="1">
+    <label for="sortDir_1">Crescente</label>
+    <input type="radio" id="sortDir_2" name="sortDirection" value="2">
+    <label for="sortDir_2">Decrescente</label>
+
+    <button id="btnSort">OK</button>
+
+
+    <p id="report01">xxxxx</p>
+    <hr>
+
+
+     <h1 id="indexHeader" style="text-align:center; font-size: var(--indexFontSize);">ÍNDICE</h1>
+
+
+        <table id="table-index" class="index-container" style="font-size:var(--indexFontSize)">
+
+        <tr>
+            <!-- <td style="text-align: right; padding-right: 20px;">55</td> -->
+             <td class=td-number>55</td>
+            <!-- <td>-</td> -->
+            <td style="font-size:var(--musicFontSize)"><a href="#section-55">EM FRENTE DA TERRA</a></td>
+        </tr>
+        <tr>
+            <td class=td-number>9</td>
+            <!-- <td>-</td> -->
+            <td style="font-size:var(--musicFontSize)"><a href="#section-9">EXALTAREI O CRISTO, REI</a></td>
+        </tr>
+        <tr>
+            <td class=td-number>188</td>
+            <!-- <td>-</td> -->
+            <td style="font-size:var(--musicFontSize)"><a href="#section-18">O ANCIÃO DE DIAS VEIO</a></td>
+        </tr>
+        <tr>
+            <td class=td-number>77</td>
+            <!-- <td>-</td> -->
+            <td style="font-size:var(--musicFontSize)"><a href="#section-77">SANTO, SANTO, SANTO! DEUS ONIPOTENTE</a></td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <!-- SEÇÕES DAS MÚSICAS -->
+    <div id="section-55" class="content-section">
+        <h4>55 - EM FRENTE DA TERRA</h4>
+        <p>Em frente da terra em que vamos entrar</p>
+        <p>Como herdeiros das promessas de Deus.</p>
+        <p>Atrás é deixado o deserto e o passado</p>
+        <p>Seguimos o rumo do Senhor.</p>
+        <br>
+        <br>
+        <p>Pois estamos bem certos,</p>
+        <p>Sabemos que somos</p>
+        <p>Os filhos e as filhas do Rei.</p>
+        <p>Unidos ficamos, na terra entramos,</p>
+        <p>Os filhos e as filhas do Rei!</p>
+        <br>
+        <br>
+
+        <p>Preparados pra guerra, marchamos avante</p>
+        <p>Os espias nos falam da terra.</p>
+        <p>Pois nós somos guiados por Cristo, o Cabeça</p>
+        <p>E na luta não há quem desfaleça.</p>
+        <br>
+        <br>
+        <p>Pois estamos bem certos,</p>
+        <p>Sabemos que somos</p>
+        <p>Os filhos e as filhas do Rei.</p>
+        <p>Unidos ficamos, na terra entramos,</p>
+        <p>Os filhos e as filhas do Rei!</p>
+        <br>
+        <br>
+
+        <p>As primícias que surgem fazem o juízo</p>
+        <p>Cair sobre o deus desta era.</p>
+        <p>A Palavra que ouvimos é força pra agirmos,</p>
+        <p>Por ela vencemos a guerra.</p>
+        <br>
+        <br>
+        <p>Pois estamos bem certos,</p>
+        <p>Sabemos que somos</p>
+        <p>Os filhos e as filhas do Rei.</p>
+        <p>Unidos ficamos, na terra entramos,</p>
+        <p>Os filhos e as filhas do Rei!</p>
+        <br>
+        <br>
+
+        <p>Com a espada na mão, a Palavra de Deus</p>
+        <p>As muralhas por certo cairão.</p>
+        <p>Ao redor nós estamos, dançamos, gritamos</p>
+        <p>Cumprindo as promessas do Senhor!</p>
+        <br>
+        <br>
+        <p>Pois estamos bem certos,</p>
+        <p>Sabemos que somos</p>
+        <p>Os filhos e as filhas do Rei.</p>
+        <p>Unidos ficamos, na terra entramos,</p>
+        <p>Os filhos e as filhas do Rei!</p>
+        <br>
+        <br>
+        <p><a href="#" class="footnote-link">Índice</a></p>
+    </div>
+
+
+    <div id="section-9" class="content-section">
+        <h4>9 - EXALTAREI O CRISTO, REI</h4>
+        <p>Exaltarei   o Cristo Rei</p>
+        <p>E diante d'Ele me curvarei.</p>
+        <p>Exaltarei   o Cristo Rei</p>
+        <p>E diante d'Ele me curvarei.</p>
+        <p>Meu Senhor, és poderoso</p>
+        <p>E nosso Su_mo Sacerdote.</p>
+        <br>
+        <br>
+        <p><a href="#" class="footnote-link">Índice</a></p>
+    </div>
+
+    <div id="section-18" class="content-section">
+        <h4>18 - O ANCIÃO DE DIAS VEIO</h4>
+        <p>O Ancião de Dias veio</p>
+        <p>Seu trono firmou.</p>
+        <p>E flui julgamento de Sião.</p>
+        <p>Chegou o Cordeiro!</p>
+        <p>Começa a festa</p>
+        <p>E de Sião flui a justi___ça.</p>
+        <br>
+        <br>
+        <p><a href="#" class="footnote-link">Índice</a></p>
+    </div>
+
+    <div id="section-77" class="content-section">
+        <h4>77 - SANTO! SANTO! SANTO! DEUS ONIPOTENTE</h4>
+        <p>Santo! Santo! San_to! Deus onipotente.</p>
+        <p>Cedo de manhã cantaremos Teu louvor</p>
+        <p>Santo! Santo! Santo! Deus, Jeová triú_no</p>
+        <p>És um só De_us, Excelso Cria_dor.</p>
+        <br>
+        <br>
+        <p>Santo! Santo! San_to! Todos os remidos,</p>
+        <p>Junto com os anjos proclamam Teu louvor.</p>
+        <p>Antes de formar-se o firmamente e a terra</p>
+        <p>E_ras e sempre és e hás de ser Senhor.</p>
+        <br>
+        <br>
+        <p>Santo! Santo! San_to! Nós os pecadores</p>
+        <p>Não podemos ver Tua glória sem tremor.</p>
+        <p>Tu somente és santo, não há nenhum outro</p>
+        <p>Puro e perfeit_to, excelso Benfeitor.
+        <br>
+        <br>
+        <p>Santo! Santo! San_to! Deus onipotente</p>
+        <p>Tuas obras louvam Teu nome com fervor.</p>
+        <p>Santo! Santo! San_to! Justo e compassivo</p>
+        <p>És um só De_us, supremo Criador.
+        <br>
+        <br>
+        <p><a href="#" class="footnote-link">Índice</a></p>
+    </div>
+</body>
+</html>
