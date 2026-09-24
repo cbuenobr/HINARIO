@@ -264,8 +264,4 @@
     window.addEventListener("DOMContentLoaded", function() {
         PrintVersionAndDate();
         InitFontSlider();
-
-        alert("TESTE NO GITHUB PAGES");
-
-        //Print();
     });
