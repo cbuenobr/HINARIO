@@ -43,12 +43,11 @@
 
         const mensagem = document.getElementById('mensagem');
 
-        alert("tag da mensagem encontrada");
 
         try {
             const resposta = await fetch('../JSON/hinos.json', { cache: 'no-store' });
 
-            alert(resposta);
+            alert(resposta.ok);
 
             //if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json');
             if (!resposta.ok) throw resposta.error;
@@ -126,8 +125,6 @@
         var d = new Date();
         const time = d.getHours() + ":" + d.getMinutes();
         document.getElementById("current-date").textContent = "Versão: " + version + " - " + d.toLocaleDateString('en-GB') + " - " + time;
-
-        alert("PrintVersionAndDate - time: " + time);
     }
 
     function SortByName(sortOrder)
