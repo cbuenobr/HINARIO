@@ -114,6 +114,8 @@
 
     function PrintVersionAndDate()
     {
+        alert("PrintVersionAndDate");
+        
         //Imprime versão, data e hora
         const version = "1.0";
 
