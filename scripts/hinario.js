@@ -53,7 +53,7 @@
 
             mensagem.textContent = (hinosCarregados);
         } catch (erro) {
-            mensagem.textContent = 'Não foi possível carregar o índice de hinos.';
+            mensagem.textContent = 'Não foi possível carregar o índice de hinos. <br>' + erro.name + "<br>" +  erro.message;
         }
     }
     
@@ -114,10 +114,12 @@
 
     function PrintVersionAndDate()
     {
-        //Imprime a data
-        const date = new Date().toLocaleDateString('en-GB');
+        //Imprime versão, data e hora
         const version = "1.0";
-        document.getElementById("current-date").textContent = "Versão: " + version + " - " + date;
+
+        var d = new Date();
+        const time = d.getHours() + ":" + d.getMinutes();
+        document.getElementById("current-date").textContent = "Versão: " + version + " - " + d.toLocaleDateString('en-GB') + " - " + time;
     }
 
     function SortByName(sortOrder)
