@@ -43,8 +43,12 @@
 
         const mensagem = document.getElementById('mensagem');
 
+        alert("tag da mensagem encontrada");
+
         try {
             const resposta = await fetch('../JSON/hinos.json', { cache: 'no-store' });
+
+            alert(resposta);
 
             //if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json');
             if (!resposta.ok) throw resposta.error;
@@ -55,7 +59,7 @@
 
             mensagem.textContent = (hinosCarregados);
         } catch (erro) {
-            mensagem.textContent = 'Não foi possível carregar o índice de hinos. <br>' + erro.name + "<br>" +  erro.message;
+            mensagem.textContent = 'Não foi possível carregar o índice de hinos. <br>' + erro.message;
         }
     }
     
