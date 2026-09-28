@@ -40,12 +40,14 @@
 
   
     async function carregarIndice() {
+
         const mensagem = document.getElementById('mensagem');
 
         try {
             const resposta = await fetch('../JSON/hinos.json', { cache: 'no-store' });
 
-            if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json');
+            //if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json');
+            if (!resposta.ok) throw resposta.error;
 
             const catalogo = await resposta.json();
             hinosCarregados = Array.isArray(catalogo) ? catalogo : (catalogo.hinos || []);
@@ -114,14 +116,14 @@
 
     function PrintVersionAndDate()
     {
-        alert("PrintVersionAndDate");
-        
         //Imprime versão, data e hora
         const version = "1.0";
 
         var d = new Date();
         const time = d.getHours() + ":" + d.getMinutes();
         document.getElementById("current-date").textContent = "Versão: " + version + " - " + d.toLocaleDateString('en-GB') + " - " + time;
+
+        alert("PrintVersionAndDate - time: " + time);
     }
 
     function SortByName(sortOrder)
