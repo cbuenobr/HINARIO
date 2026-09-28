@@ -39,6 +39,23 @@
     }
 
   
+    async function carregarIndice() {
+        const mensagem = document.getElementById('mensagem');
+
+        try {
+            const resposta = await fetch('../JSON/hinos.json', { cache: 'no-store' });
+
+            if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json');
+
+            const catalogo = await resposta.json();
+            hinosCarregados = Array.isArray(catalogo) ? catalogo : (catalogo.hinos || []);
+            //renderizarLista();
+
+            mensagem.textContent = (hinosCarregados);
+        } catch (erro) {
+            mensagem.textContent = 'Não foi possível carregar o índice de hinos.';
+        }
+    }
     
     //Tamanho fonte músicas
     function ChangeFontSize(n)
@@ -102,32 +119,6 @@
         const version = "1.0";
         document.getElementById("current-date").textContent = "Versão: " + version + " - " + date;
     }
-
-/*     function SortData(sortType)
-    {
-        if(sortType == "nome")
-        {
-            SortByName();
-        }
-        else
-        {
-            SortByNumber();
-        }
-    } */
-
-    //Ascendente ou descendente
-/*     function SortOrder(orderType)
-    {
-        if(orderType == "1")
-        {
-            sortOrder = 1;
-        }
-        else
-        {
-            sortOrder = 2;
-        }
-    } */
-
 
     function SortByName(sortOrder)
     {
@@ -264,4 +255,6 @@
     window.addEventListener("DOMContentLoaded", function() {
         PrintVersionAndDate();
         InitFontSlider();
+
+        carregarIndice();
     });
