@@ -1,16 +1,24 @@
-
-[
 {
-    "id":1,
-    "titulo": "AAAAA",
-    "numero": 1,
+"hinos":[
+{
+    "id":7,
+    "nome": "SANTO! SANTO! SANTO! DEUS ONIPOTENTE",
+    "numero": 77,
     "arquivo": "arquivo01.txt"
 },
 
 {
     "id":2,
-    "titulo": "BBBBB",
-    "numero": 2,
+    "nome": "EXALTAREI O CRISTO, REI",
+    "numero": 9,
+    "arquivo": "./letras/exaltarei_o_cristo_rei.txt"
+},
+
+{
+    "id":5,
+    "nome": "EM FRENTE DA TERRA xxxx",
+    "numero": 5555,
     "arquivo": "arquivo02.txt"
 }
 ]
+}

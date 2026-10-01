@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
@@ -8,16 +10,119 @@
 
     <title>NOSSO HINARIO</title>
 
-    <h1>TESTE PAGINA CHAMADA</h1>
-
-    <p><a href="index.html" class="footnote-link">Índice</a></p>
-
 </head>
 
-<script>
-    const params = new URLSearchParams(document.location.search);
-    const Id1 = params.get("Id");
-
-    alert("Id1: " + Id1);
-</script>
 <body>
+    <main>
+        <div class="content-section">
+            <h4>9 - ZZZZZ   EXALTAREI O CRISTO, REI</h4>
+            <p style="white-space: pre-wrap;"> 
+            XXXX Exaltarei   o Cristo Rei
+            E diante d'Ele me curvarei.
+            Exaltarei   o Cristo Rei
+            E diante d'Ele me curvarei.
+            Meu Senhor, és poderoso
+            E nosso Su_mo Sacerdote.
+            </p>
+            <br>
+            <br>
+            <p><a href="index.html" class="footnote-link">Índice</a></p>
+        </div>
+    </main> 
+
+    <script>
+        const params = new URLSearchParams(document.location.search);
+        const Id1 = params.get("Id");
+
+        alert("aaaaa " + Id1);
+
+        /*     //xxxxxxxxxxxxxxxxx
+        async function CarregaDados222() {
+
+        const mensagem = document.getElementById('mensagem');
+
+        alert("carrega dados222");
+
+        try {
+        
+            const resposta = await fetch('./json/hinos.json', { cache: 'no-store' });
+
+            if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json (erro ' + resposta.status + ')');
+            //if (!resposta.ok) throw resposta.status;
+
+            const catalogo = await resposta.json();
+
+            //Se o json for um array usa "catalogo". Se houver um membro que não é array, procura "catalogo.hinos". Se este não existir devolve []
+            hinosCarregados = Array.isArray(catalogo) ? catalogo : (catalogo.hinos || []);
+
+
+            if(hinosCarregados.length>0)
+            {
+                //Identifica o txt associado a este ID
+                const result = hinosCarregados.find(({ id }) => id === Id1);
+            alert(result);
+                alert(result.arquivo);
+            }
+            else{
+                throw new Error('O arquivo do índice está vazio.');
+            }
+
+        } catch (erro) {
+            mensagem.textContent = 'Não foi possível carregar o índice de hinos.' +  erro.message;
+        }
+    }
+    //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+    */
+
+
+    /*     async function CarregaTextoHino(id_hino) {
+
+        const mensagem = document.getElementById('mensagem');
+
+        try {
+            const resposta = await fetch('./letras/hinos.json', { cache: 'no-store' });
+
+            //alert(resposta.status);
+
+            if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json (erro ' + resposta.status + ')');
+            //if (!resposta.ok) throw resposta.error;
+
+            const catalogo = await resposta.json();
+
+            //Se o json for um array usa "catalogo". Se houver um membro que não é array, procura "catalogo.hinos". Se este não existir devolve []
+            hinosCarregados = Array.isArray(catalogo) ? catalogo : (catalogo.hinos || []);
+
+
+            if(hinosCarregados.length>0)
+            {
+                MontaIndice();
+            }
+            else{
+                throw new Error('O arquivo do índice está vazio.');
+            }
+
+        } catch (erro) {
+            mensagem.textContent = 'Não foi possível carregar o índice de hinos.' +  erro.message;
+        }
+    } */
+
+    window.onload = function() {
+        
+        //Atualiza variáveis globais para ordenação
+        //SortParameters_Load();
+
+        alert(88);
+
+        console.log('Id: ' + Id1); // + ' - sortBy: ' + sortBy + ' - sortDirection: ' + sortDirection);
+
+        alert('Id: ' + Id1); // + ' - sortBy: ' + sortBy + ' - sortDirection: ' + sortDirection);
+
+        //Testa remoção
+        //localStorage.removeItem("sortBy");
+        //localStorage.removeItem("sortDirection");
+        };
+    </script>
+    </main>
+    </body>
+</html>
