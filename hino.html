@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./styles/hinario.css">
-    <script src="./scripts/hinario.js" type="text/javascript" defer></script>
-
     <title>NOSSO HINARIO</title>
 
 </head>
@@ -15,112 +13,98 @@
 <body>
     <main>
         <div class="content-section">
-            <h4>9 - ZZZZZ   EXALTAREI O CRISTO, REI</h4>
-            <p style="white-space: pre-wrap;"> 
-            XXXX Exaltarei   o Cristo Rei
-            E diante d'Ele me curvarei.
-            Exaltarei   o Cristo Rei
-            E diante d'Ele me curvarei.
-            Meu Senhor, és poderoso
-            E nosso Su_mo Sacerdote.
+            <h4 id="hymnHeader">9 - ZZZZZ   EXALTAREI O CRISTO, REI</h4>
+
+            <p id="letra"; style="white-space: pre-wrap;"> 
+             CARREGAR LETRA DO HINO
             </p>
             <br>
+            <p id="copyright">Copyright © 2024 - NOSSO HINÁRIO</p>
             <br>
             <p><a href="index.html" class="footnote-link">Índice</a></p>
+            <p id="mensagem"></p>
         </div>
     </main> 
 
     <script>
+        let hinosCarregados = [];
         const params = new URLSearchParams(document.location.search);
         const Id1 = params.get("Id");
 
-        alert("aaaaa " + Id1);
 
-        /*     //xxxxxxxxxxxxxxxxx
-        async function CarregaDados222() {
-
-        const mensagem = document.getElementById('mensagem');
-
-        alert("carrega dados222");
-
-        try {
-        
-            const resposta = await fetch('./json/hinos.json', { cache: 'no-store' });
-
-            if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json (erro ' + resposta.status + ')');
-            //if (!resposta.ok) throw resposta.status;
-
-            const catalogo = await resposta.json();
-
-            //Se o json for um array usa "catalogo". Se houver um membro que não é array, procura "catalogo.hinos". Se este não existir devolve []
-            hinosCarregados = Array.isArray(catalogo) ? catalogo : (catalogo.hinos || []);
-
-
-            if(hinosCarregados.length>0)
-            {
-                //Identifica o txt associado a este ID
-                const result = hinosCarregados.find(({ id }) => id === Id1);
-            alert(result);
-                alert(result.arquivo);
-            }
-            else{
-                throw new Error('O arquivo do índice está vazio.');
-            }
-
-        } catch (erro) {
-            mensagem.textContent = 'Não foi possível carregar o índice de hinos.' +  erro.message;
-        }
-    }
-    //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-    */
-
-
-    /*     async function CarregaTextoHino(id_hino) {
+        async function CarregaDadosDoHino() {
 
         const mensagem = document.getElementById('mensagem');
 
         try {
-            const resposta = await fetch('./letras/hinos.json', { cache: 'no-store' });
+                console.log("CarregarDados");
 
-            //alert(resposta.status);
+                const resposta = await fetch('./json/hinos.json', { cache: 'no-store' });
 
-            if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json (erro ' + resposta.status + ')');
-            //if (!resposta.ok) throw resposta.error;
+                if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json (erro ' + resposta.status + ')');
 
-            const catalogo = await resposta.json();
+                const catalogo = await resposta.json();
 
-            //Se o json for um array usa "catalogo". Se houver um membro que não é array, procura "catalogo.hinos". Se este não existir devolve []
-            hinosCarregados = Array.isArray(catalogo) ? catalogo : (catalogo.hinos || []);
+                //Se o json for um array usa "catalogo". Se houver um membro que não é array, procura "catalogo.hinos". Se este não existir devolve []
+                hinosCarregados = Array.isArray(catalogo) ? catalogo : (catalogo.hinos || []);
 
+                console.log('Hinos carregados: ' + hinosCarregados.length);
 
-            if(hinosCarregados.length>0)
+                if(hinosCarregados.length>0)
+                {
+                    //Relatorio();
+
+                    MontaHino();
+                }
+                else{
+                    throw new Error('O arquivo do índice está vazio.');
+                }
+
+            } catch (erro) {
+                mensagem.textContent = 'Não foi possível carregar o índice de hinos.' +  erro.message;
+            }
+        }
+
+        function MontaHino()
+        {
+            let hino = hinosCarregados.find(h => h.id == Id1);
+            if(hino != null)
             {
-                MontaIndice();
+                document.getElementById('hymnHeader').textContent = hino.numero + ' - ' + hino.nome;
+                document.getElementById('letra').textContent = hino.arquivo;
             }
             else{
-                throw new Error('O arquivo do índice está vazio.');
+                console.log('Hino não encontrado: ' + Id1);
+            }
+        }
+
+        function Relatorio()
+        {
+            let txt = '';
+            for(let i=0;i<hinosCarregados.length;i++)
+            {
+                txt += "==========\n";
+                txt += hinosCarregados[i].nome + '\n' + hinosCarregados[i].numero + '\n' + hinosCarregados[i].arquivo;
+
             }
 
-        } catch (erro) {
-            mensagem.textContent = 'Não foi possível carregar o índice de hinos.' +  erro.message;
+            mensagem.textContent = txt;
         }
-    } */
 
-    window.onload = function() {
+
+
+        window.onload = function() {
         
         //Atualiza variáveis globais para ordenação
         //SortParameters_Load();
 
-        alert(88);
-
         console.log('Id: ' + Id1); // + ' - sortBy: ' + sortBy + ' - sortDirection: ' + sortDirection);
-
-        alert('Id: ' + Id1); // + ' - sortBy: ' + sortBy + ' - sortDirection: ' + sortDirection);
 
         //Testa remoção
         //localStorage.removeItem("sortBy");
         //localStorage.removeItem("sortDirection");
+
+        CarregaDadosDoHino();
         };
     </script>
     </main>

@@ -4,7 +4,7 @@
     "id":7,
     "nome": "SANTO! SANTO! SANTO! DEUS ONIPOTENTE",
     "numero": 77,
-    "arquivo": "arquivo01.txt"
+    "arquivo": "./letras/arquivo_santo_santo.txt"
 },
 
 {
@@ -16,9 +16,9 @@
 
 {
     "id":5,
-    "nome": "EM FRENTE DA TERRA xxxx",
+    "nome": "EM FRENTE DA TERRA",
     "numero": 5555,
-    "arquivo": "arquivo02.txt"
+    "arquivo": "./letras/arquivo_emfrentedaterra.txt"
 }
 ]
 }

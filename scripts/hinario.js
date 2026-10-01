@@ -10,27 +10,10 @@
     const radioSortDirection = document.getElementsByName("sortDirection");
 
     const btnSort = document.getElementById('btnSort');
-
-    //xxxxxxxxxxxxxxxxxxxxxxxxxx
-    const el = document.querySelector('#btnSort');
-    if (el) {
-        btnSort.addEventListener('click',MontaIndice);
-        }
-        else{
-            console.log('btnSortnão encontrado!');
-            alert('btnSort não encontrado!');
-        }
-    //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    
+    btnSort.addEventListener('click',MontaIndice);
     
     const tableIndex = document.getElementById("table-index");    
 
-    //xxxxxxxxxxxxxxxxxxxxxxxxxx
-    const el2 = document.querySelector('#table-index');
-    if (el2) {
-        console.log('table-index encontrado!');
-        }
-        else{console.log('table-index não encontrado!');}
-    //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
 
     let currentFontSize;
     let currentLineHeight;
@@ -39,19 +22,15 @@
     let sortDirection = 1;
 
     //EVENTOS
-    const el3 = document.querySelector('#fontSlider');
-    if(el3) {
-        fontSizeSlider.oninput = function()
-        {
-            ChangeFontSize(this.value);
+    fontSizeSlider.oninput = function()
+    {
+        ChangeFontSize(this.value);
 
-            if(document.getElementById('report01') != null)
-            {
-                document.getElementById('report01').textContent = this.value;
-            }        
-        }
+        if(document.getElementById('report01') != null)
+        {
+            document.getElementById('report01').textContent = this.value;
+        }        
     }
-    else{console.log('fontSlider não encontrado!');}
 
   
     async function CarregaDados() {
@@ -123,7 +102,7 @@
 
 
     //Cria linha do Índice
-    function CreateIndexLine(nome, numero)
+    function CreateIndexLine(id, nome, numero)
     {
         //Cria linha
         const tr = document.createElement('tr');
@@ -132,6 +111,7 @@
         const td1 = document.createElement('td');
         td1.classList.add('td-number');
         const td1txt = document.createTextNode(numero);
+
         td1.appendChild(td1txt);
         tr.appendChild(td1);
 
@@ -140,9 +120,9 @@
         td2.style ="font-size:var(--musicFontSize)";
 
         const link1 = document.createElement('a');
-        //link1.setAttribute('href',('hino.html?Id=' + numero + '&sortBy=' + sortBy + '&sortDirection=' + sortDirection));
-        link1.setAttribute('href',('hino.html?Id=' + numero));
+        link1.setAttribute('href',('hino.html?Id=' + id));
         const linktxt= document.createTextNode(nome);
+
         link1.appendChild(linktxt);
         td2.appendChild(link1);
         tr.appendChild(td2);
@@ -171,7 +151,7 @@
         //Popula o índice, linha por linha
         for(let i=0;i<hinosCarregados.length;i++)
         {
-            CreateIndexLine(hinosCarregados[i].nome, hinosCarregados[i].numero);
+            CreateIndexLine(hinosCarregados[i].id, hinosCarregados[i].nome, hinosCarregados[i].numero);
         }
 
         console.log('Índice montado com sucesso!');
