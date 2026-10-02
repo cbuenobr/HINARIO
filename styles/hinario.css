@@ -8,6 +8,24 @@
     /* --musicFontSize:24px; */
 }
 
+
+body {
+    font-family: Arial, sans-serif; 
+     background-color: rgb(228, 228, 228);
+    color: rgb(0, 0, 0); 
+}
+
+/* .light-mode {
+  background-color: rgb(243, 148, 148);
+  color: rgb(0, 0, 0);
+} */
+
+
+.dark-mode {
+  background-color: rgb(25,25,25);
+  color: rgb(255, 255, 255);
+}
+
 p {
     line-height: var(--paragraphLineHeight);
     margin-bottom: 0px;
@@ -36,6 +54,7 @@ a:hover {
 
 .index-container{
     display: flex;
+    /* display: block; */
     margin-left: 20px;
 }
 
@@ -50,7 +69,7 @@ a:hover {
     font-size: var(--musicFontSize);
     margin-bottom: 20px;
     padding: 5px 20px 25px;
-    background-color: #e2dedeee;
+    /* background-color: #e2dedeee; */
     border-left: 5px solid #0073e6;
 }
 
@@ -68,4 +87,5 @@ a:hover {
     text-align: right; 
     padding-right: 20px;
 }
+
 

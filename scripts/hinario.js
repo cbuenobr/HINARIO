@@ -1,39 +1,30 @@
 
     const rootStyles = window.getComputedStyle(document.documentElement);
     const fontSizeSlider = document.getElementById("fontSizeRange");
-    //const sortControl = document.getElementById("sortControl");
 
-
-
-    //xxx TESTE RADIO BUTTONS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     const radioSortBy = document.getElementsByName("sortBy");
     const radioSortDirection = document.getElementsByName("sortDirection");
+    const themeModeRadios = document.getElementsByName("theme");
 
     const btnSort = document.getElementById('btnSort');
-    btnSort.addEventListener('click',MontaIndice);
+    btnSort.addEventListener('click',Indice_Popula);
     
     const tableIndex = document.getElementById("table-index");    
 
 
     let currentFontSize;
-    let currentLineHeight;
-    let hinosCarregados;   
+    let hinosCarregados;
     let sortBy = 1;
     let sortDirection = 1;
 
     //EVENTOS
     fontSizeSlider.oninput = function()
     {
-        ChangeFontSize(this.value);
-
-        if(document.getElementById('report01') != null)
-        {
-            document.getElementById('report01').textContent = this.value;
-        }        
+        ChangeFontSize(this.value);  
     }
 
   
-    async function CarregaDados() {
+    async function Catalogo_Carrega() {
 
         const mensagem = document.getElementById('mensagem');
 
@@ -53,7 +44,7 @@
 
             if(hinosCarregados.length>0)
             {
-                MontaIndice();
+                Indice_Popula();
             }
             else{
                 throw new Error('O arquivo do índice está vazio.');
@@ -70,11 +61,15 @@
     {
         currentFontSize = n;
 
+        console.log("ChangeFontSize() recebeu: " + n);
         
         document.documentElement.style.setProperty('--musicFontSize', (n+"rem"));
 
         //Fonte do índice (título) (quero que seja um pouco maior do que a dos outros)
         document.documentElement.style.setProperty('--indexFontSize', (n*1.5+"rem"));
+
+        //Salva o tamanho da fonte no localStorage
+        Parameters_FontSize_Save();
     }
 
 
@@ -100,9 +95,16 @@
         }      
     }
 
+    function InitFontSlider()
+    {
+        const startValue = parseFloat(rootStyles.getPropertyValue('--musicFontSize').trim());
+        const indexStartValue = parseFloat(rootStyles.getPropertyValue('--indexFontSize').trim());
+
+        fontSizeSlider.value = startValue;  
+    }
 
     //Cria linha do Índice
-    function CreateIndexLine(id, nome, numero)
+    function Indice_CriaLinha(id, nome, numero)
     {
         //Cria linha
         const tr = document.createElement('tr');
@@ -130,8 +132,8 @@
         tableIndex.appendChild(tr);
     }
 
-    //Monta ou remonta o Índice
-    function MontaIndice()
+    //Monta ou remonta o índice
+    function Indice_Popula()
     {
        console.log('Montando índice...');
 
@@ -144,14 +146,14 @@
         SortData(sortBy, sortDirection);
 
         //Cria ou atualiza o localStorage com os parâmetros de ordenação
-        SortParameters_Save();
+        Parameters_Sort_Save();
 
         console.log('Ordenando por: ' + sortBy + ' - Direção: ' + sortDirection);
 
         //Popula o índice, linha por linha
         for(let i=0;i<hinosCarregados.length;i++)
         {
-            CreateIndexLine(hinosCarregados[i].id, hinosCarregados[i].nome, hinosCarregados[i].numero);
+            Indice_CriaLinha(hinosCarregados[i].id, hinosCarregados[i].nome, hinosCarregados[i].numero);
         }
 
         console.log('Índice montado com sucesso!');
@@ -176,7 +178,6 @@
         {
             txt += "==========\n";
             txt += hinosCarregados[i].nome + '\n' + hinosCarregados[i].numero + '\n' + hinosCarregados[i].arquivo;
-
         }
 
         mensagem.textContent = txt;
@@ -184,10 +185,10 @@
 
     //== DADOS ARMAZENADOS NO NAVEGADOR (Web Storage) ==========================================================
 
-    function SortParameters_Load()
+    function Parameters_Sort_Load()
     {
         if(typeof(Storage) == "undefined") {
-            console.log("Não é possível carregar parâmetros de ordenação. O navegador não suporta Web Storage.");
+            console.error("Não é possível carregar parâmetros de ordenação. O navegador não suporta Web Storage.");
             
             return;       
         }
@@ -215,13 +216,61 @@
         }
     }
 
-    function SortParameters_Save()
+    function Parameters_Sort_Save()
     {
         if (typeof(Storage) !== "undefined") {
         localStorage.setItem("sortBy", sortBy);
         localStorage.setItem("sortDirection", sortDirection);
         } else {
-            console.log("Não é possível salvar parâmetros de ordenação. O navegador não suporta Web Storage.");
+            console.error("Não é possível salvar parâmetros de ordenação. O navegador não suporta Web Storage.");
+        }
+    }
+
+    function Parameters_FontSize_Load()
+    {
+        if(typeof(Storage) != "undefined") 
+        {
+            let storedFontSize = localStorage.getItem("musicFontSize");
+
+            if(storedFontSize != null) {
+                ChangeFontSize(parseFloat(storedFontSize));
+
+                console.log("Tamanho da fonte carregado: " + storedFontSize);
+            }
+        }
+    }
+
+    function Parameters_FontSize_Save()
+    {
+        if (typeof(Storage) !== "undefined") {
+            localStorage.setItem("musicFontSize", currentFontSize);}
+    }
+
+
+    function Parameters_Theme_Load()
+    {
+        if(typeof(Storage) != "undefined") 
+        {
+            let storedThemeMode = localStorage.getItem("themeMode");
+
+            if(storedThemeMode != null) {
+
+                let themeRadio = document.querySelector(`input[name="theme"][value="${storedThemeMode}"]`);
+                if (themeRadio) {
+                    themeRadio.checked = true;
+                    ThemeMode_Toggle({ target: themeRadio });
+                }
+            }
+        }
+    }
+
+    function Parameters_Theme_Save(themeMode)
+    {
+        if (typeof(Storage) !== "undefined") {  
+
+            localStorage.setItem("themeMode", themeMode);
+
+            console.log("Modo de tema salvo: " + themeMode);
         }
     }
 
@@ -278,61 +327,42 @@
         }
 
         //PRINT
-        RelatorioIndice();
+        //RelatorioIndice();
     }
 
-    function InitFontSlider()
-    {
-        const startValue = parseFloat(rootStyles.getPropertyValue('--musicFontSize').trim());
-        const indexStartValue = parseFloat(rootStyles.getPropertyValue('--indexFontSize').trim());
+    function ThemeMode_Toggle(e) {
+        let element = document.body;
 
-         //alert(indexStartValue);
-
-        fontSizeSlider.value = startValue;  
-    }
-
-
-    //Obtém os parâmetros de ordenação salvos no navegador e atualiza a interface
-    function LoadSortParameters()
-    {
-        if(typeof(Storage) == "undefined") {
-            console.log("Não é possível carregar parâmetros de ordenação. O navegador não suporta Web Storage.");
-            
-            return;       
+        if(e.target.value == "1")
+        {   
+            element.classList.remove("dark-mode");         
+            element.classList.toggle("light-mode");
         }
-
-        //Obtém o tipo de ordenação.Se não existir, mantém o padrão (1)
-        let result = localStorage.getItem("sortBy");
-
-        if(result != null)
+        else if(e.target.value == "2")
         {
-            sortBy = parseInt(result);
-
-            //Atualiza interface
-            radioSortBy[sortBy-1].checked = true;
+            //document.body.classList.remove("dark-mode");
+            //Parameters_Theme_Save("light");
+            element.classList.remove("light-mode");
+            element.classList.toggle("dark-mode");
         }
 
-        //Obtém a direção da ordenação. Se não existir, mantém o padrão (1)
-        result = localStorage.getItem("sortDirection");
-
-        if(result != null)
-        {
-            sortDirection = parseInt(result);
-
-            //Atualiza interface
-            radioSortDirection[sortDirection-1].checked = true;
-        }
+        //Atualiza o localStorage com o modo de tema selecionado
+        Parameters_Theme_Save(e.target.value);
     }
 
     //INICIALIZACAO
     window.onload = function() {
 
-        //Carrega parâmetros de ordenação, caso já tenham sido salvos no navegador
-        SortParameters_Load();
+        //Carrega parâmetros, caso já tenham sido salvos no navegador
+        Parameters_FontSize_Load();
+
+        Parameters_Sort_Load();
+
+        Parameters_Theme_Load();
 
         PrintVersionAndDate();
 
         InitFontSlider();
 
-        CarregaDados();
+        Catalogo_Carrega();
     };
