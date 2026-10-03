@@ -4,7 +4,7 @@
     "id":7,
     "nome": "SANTO! SANTO! SANTO! DEUS ONIPOTENTE",
     "numero": 77,
-    "arquivo": "./letras/arquivo_santo_santo.txt"
+    "arquivo": "./letras/santo_santo_santo.txt"
 },
 
 {
@@ -15,10 +15,17 @@
 },
 
 {
-    "id":5,
+    "id":3,
     "nome": "EM FRENTE DA TERRA",
-    "numero": 5555,
-    "arquivo": "./letras/arquivo_emfrentedaterra.txt"
+    "numero": 22,
+    "arquivo": "./letras/em_frente_da_terra.txt"
+},
+
+{
+    "id":9,
+    "nome": "O ANCIÃO DE DIAS VEIO",
+    "numero": 188,
+    "arquivo": "./letras/o_anciao_de_dias_veio.txt"
 }
 ]
 }

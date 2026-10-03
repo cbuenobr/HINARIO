@@ -23,18 +23,6 @@
             <label for="fontSizeRange" style="font-weight: bold; font-size:x-large;">Aa</label>
             <input type="range" id="fontSizeRange" class="slidecontainer" min="1" max="3" step="0.1" >
         </div>
-    <!-- 
-        <label for="sortDrop">Ordenar por:</label>
-            <select name="sortDrop" id="sortControl">
-                <option value="nome">Nome</option>
-                <option value="numero">Número</option>
-            </select>
-
-        <label for="directionDrop">Direção:</label>
-            <select name="directionDrop" id="directionControl">
-                <option value="1">ascendente</option>
-                <option value="2">descendente</option>
-            </select> -->
 
         <p>Ordenar por:</p>
         <input type="radio" id="sortBy_1" name="sortBy"  checked="true" value="1">
@@ -50,17 +38,23 @@
 
         <button id="btnSort">OK</button>
 
-
-        <span id="report01">xxxxx</span>
+        <p>Fundo:</p>
+        <input type="radio" id="white-theme" name="theme"  checked="true" value="1" onclick="ThemeMode_Toggle(event)">
+        <label for="white-theme">Claro</label>
+        <input type="radio" id="dark-theme" name="theme" value="2" onclick="ThemeMode_Toggle(event)">
+        <label for="dark-theme">Escuro</label>
+        
+        <hr>
+        <p id="report00">xxxxx</p>
         <hr>
 
 
         <h1 id="indexHeader" style="text-align:center; font-size: var(--indexFontSize);">ÍNDICE</h1>
 
 
-            <table id="table-index" class="index-container" style="font-size:var(--indexFontSize); display:block;">
+        <table id="table-index" class="index-container" style="font-size:var(--indexFontSize); display:block;">
 
-    <!--         <tr>
+        <!--         <tr>
                 <td class=td-number>55</td>
                 <td style="font-size:var(--musicFontSize);"><a href="#section-55">EM FRENTE DA TERRA</a></td>
             </tr>
