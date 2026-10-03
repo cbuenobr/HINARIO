@@ -2,13 +2,19 @@
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+
+    //O FETCH API NÃO FUNCIONA COM O PROTOCOLO FILE, ENTÃO É NECESSÁRIO USAR UM SERVIDOR LOCAL
+    //PARA TESTAR O HINÁRIO. PARA ISSO, USE O COMANDO "python -m http.server" NA PASTA RAIZ DO PROJETO 
+    // E ACESSE O HINÁRIO EM "http://localhost:8000/index.html"
     "version": "0.2.0",
     "configurations": [
         {
             "type": "chrome",
             "request": "launch",
             "name": "Open hinario ",
-            "file": "c:\\PROJETOS CB\\HINARIO\\index.html"
+            // "file": "c:\\PROJETOS CB\\HINARIO\\index.html"
+            "url": "http://localhost:8000/index.html",
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }

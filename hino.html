@@ -39,6 +39,10 @@
         try {
                 console.log("CarregarDados");
 
+                if (window.location.protocol === 'file:') {
+                    throw new Error('Este aplicativo deve ser aberto por um servidor local. Execute "python -m http.server" e abra http://localhost:8000');
+                }
+
                 const resposta = await fetch('./json/hinos.json', { cache: 'no-store' });
 
                 if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json (erro ' + resposta.status + ')');
@@ -65,7 +69,8 @@
 
         function MontaHino()
         {
-            let hino = hinosCarregados.find(h => h.id == Id1);
+            let hino = hinosCarregados.find(h => String(h.id) === String(Id1));
+
             if(hino != null)
             {
                 document.getElementById('hymnHeader').textContent = hino.numero + ' - ' + hino.nome;
@@ -139,6 +144,10 @@
         {
             try
             {
+                if (window.location.protocol === 'file:') {
+                    throw new Error('Este aplicativo deve ser aberto por um servidor local. Execute "python -m http.server" e abra http://localhost:8000');
+                }
+
                 const resposta = await fetch(arquivoHino, { cache: 'no-store' });
 
                 if (!resposta.ok) throw new Error('Não foi possível carregar o arquivo do hino (erro ' + resposta.status + ')');
@@ -157,30 +166,24 @@
             for(let i=0;i<hinosCarregados.length;i++)
             {
                 txt += "==========\n";
-                txt += hinosCarregados[i].nome + '\n' + hinosCarregados[i].numero + '\n' + hinosCarregados[i].arquivo;
+                txt += hinosCarregados[i].id + '\n' + hinosCarregados[i].nome + '\n' + hinosCarregados[i].numero + '\n' + hinosCarregados[i].arquivo;
 
             }
 
-            mensagem.textContent = txt;
+            console.log(txt);
         }
 
 
 
         window.onload = function() {
         
-        //Atualiza variáveis globais para ordenação
-        Parameters_FontSize_Load();
-        Parameters_Theme_Load();
+            //Atualiza variáveis globais
+            Parameters_FontSize_Load();
+            Parameters_Theme_Load();   
+                
+            CarregaDadosDoHino();
 
-        
-
-        //console.log('Id: ' + Id1); // + ' - sortBy: ' + sortBy + ' - sortDirection: ' + sortDirection);
-
-        //Testa remoção
-        //localStorage.removeItem("sortBy");
-        //localStorage.removeItem("sortDirection");
-
-        CarregaDadosDoHino();
+            //console.log('Id: ' + Id1); // + ' - sortBy: ' + sortBy + ' - sortDirection: ' + sortDirection);
         };
     </script>
     </main>
