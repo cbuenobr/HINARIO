@@ -170,8 +170,10 @@
         const version = "1.0";
 
         var d = new Date();
+        document.getElementById("current-date").textContent = "Versão: " + version + " - " + d.toLocaleDateString('en-GB');
+        /*      
         const time = d.getHours() + ":" + d.getMinutes();
-        document.getElementById("current-date").textContent = "Versão: " + version + " - " + d.toLocaleDateString('en-GB') + " - " + time;
+        document.getElementById("current-date").textContent = "Versão: " + version + " - " + d.toLocaleDateString('en-GB') + " - " + time; */
     }
 
     function RelatorioIndice()
