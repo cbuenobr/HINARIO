@@ -1,13 +1,28 @@
 
     const rootStyles = window.getComputedStyle(document.documentElement);
+
+    //Slider de tamanho de fonte
     const fontSizeSlider = document.getElementById("fontSizeRange");
+    fontSizeSlider.oninput = function()
+    {
+        ChangeFontSize(this.value);  
+    }
 
+    //Controles de ordenação ----------------------------------------------
     const radioSortBy = document.getElementsByName("sortBy");
-    const radioSortDirection = document.getElementsByName("sortDirection");
-    const themeModeRadios = document.getElementsByName("theme");
 
-    const btnSort = document.getElementById('btnSort');
-    btnSort.addEventListener('click',Indice_Popula);
+    const radioSortByName = document.getElementById("sortByName");
+    const radioSortByNumber = document.getElementById("sortByNumber");
+    radioSortByName.addEventListener('change', () => GetSortBy(1));
+    radioSortByNumber.addEventListener('change', () => GetSortBy(2));
+
+    const arrowDown = document.getElementById("arrowDown");
+    const arrowUp = document.getElementById("arrowUp");
+    arrowDown.addEventListener('click', () => GetSortDirection(1));
+    arrowUp.addEventListener('click', function() {GetSortDirection(2)});
+    //-----------------------------------------------------------
+
+    const themeModeRadios = document.getElementsByName("theme");
     
     const tableIndex = document.getElementById("table-index");    
 
@@ -17,12 +32,8 @@
     let sortBy = 1;
     let sortDirection = 1;
 
-    //EVENTOS
-    fontSizeSlider.oninput = function()
-    {
-        ChangeFontSize(this.value);  
-    }
 
+   //FUNÇÕES ---------------------------------------------------
   
     async function Catalogo_Carrega() {
 
@@ -77,35 +88,26 @@
     }
 
 
-    function GetSortBy()
+    function GetSortBy(n)
     {
-        for(let i=0; i<radioSortBy.length;i++)
+        if(sortBy != n)
         {
-            if(radioSortBy[i].checked)
-            {
-                return radioSortBy[i].value;
-            }
-        }      
+            sortBy = n;
+            Indice_Popula();
+        }
     }
 
-    function GetSortDirection()
+    function GetSortDirection(n)
     {
-        for(let i=0; i<radioSortDirection.length;i++)
+        if(sortDirection != n)
         {
-            if(radioSortDirection[i].checked)
-            {
-                return radioSortDirection[i].value;
-            }
-        }      
+            sortDirection = n;
+
+            Indice_Popula();
+        }
     }
 
-    function InitFontSlider()
-    {
-        const startValue = parseFloat(rootStyles.getPropertyValue('--musicFontSize').trim());
-        const indexStartValue = parseFloat(rootStyles.getPropertyValue('--indexFontSize').trim());
 
-        fontSizeSlider.value = startValue;  
-    }
 
     //Cria linha do Índice
     function Indice_CriaLinha(id, nome, numero)
@@ -139,20 +141,19 @@
     //Monta ou remonta o índice
     function Indice_Popula()
     {
-       console.log('Montando índice...');
-
+       //console.log('Montando índice...');
+       //console.log('Recebi: ' + sortBy + ' - Direção: ' + sortDirection);
+       
         //Esvazia o índice
         tableIndex.textContent = '';
 
         //Ordena os dados conforme tipo e direção de ordenação
-        sortBy = GetSortBy();
-        sortDirection = GetSortDirection();
         SortData(sortBy, sortDirection);
 
         //Cria ou atualiza o localStorage com os parâmetros de ordenação
         Parameters_Sort_Save();
 
-        console.log('Ordenando por: ' + sortBy + ' - Direção: ' + sortDirection);
+        //console.log('Ordenando por: ' + sortBy + ' - Direção: ' + sortDirection);
 
         //Popula o índice, linha por linha
         for(let i=0;i<hinosCarregados.length;i++)
@@ -162,7 +163,14 @@
 
         console.log('Índice montado com sucesso!');
     }
-   
+       
+    function InitFontSlider()
+    {
+        const startValue = parseFloat(rootStyles.getPropertyValue('--musicFontSize').trim());
+        const indexStartValue = parseFloat(rootStyles.getPropertyValue('--indexFontSize').trim());
+
+        fontSizeSlider.value = startValue;  
+    }
 
     function PrintVersionAndDate()
     {
@@ -216,9 +224,6 @@
         if(result != null)
         {
             sortDirection = parseInt(result);
-
-            //Atualiza interface
-            radioSortDirection[sortDirection-1].checked = true;
         }
     }
 

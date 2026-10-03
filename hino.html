@@ -15,7 +15,8 @@
         <div class="content-section">
             <p style="font-size:var(--musicFontSize); color:darkmagenta "><a href="index.html">Índice</a></p>
 
-            <h4 id="hymnHeader">1 - TÍTULO</h4>
+            <h3 id="hymnHeader">TÍTULO</h3>
+            <!-- <h4 id="hymnNumber">Hino 1</h4> -->
             <p id="letra" style="font-size:var(--musicFontSize); white-space: pre-wrap;line-height: 1.9;"></p>
             <br>
             <p id="copyright">Copyright © 2026 - NOSSO HINÁRIO</p>
@@ -75,7 +76,10 @@
             {
                 document.getElementById('hymnHeader').textContent = hino.numero + ' - ' + hino.nome;
 
+                //document.getElementById('hymnNumber').textContent = "Num. " + hino.numero;
+
                 //Busca a letra do hino no arquivo especificado em hino.arquivo
+                //O NOME DE ARQUIVO TEM QUE SER IDÊNTIICO AO DO DISCO (CAIXA ALTA/BAIXA)
                 ReadHymn(hino.arquivo);
             }
             else{
@@ -180,7 +184,7 @@
             //Atualiza variáveis globais
             Parameters_FontSize_Load();
             Parameters_Theme_Load();   
-                
+
             CarregaDadosDoHino();
 
             //console.log('Id: ' + Id1); // + ' - sortBy: ' + sortBy + ' - sortDirection: ' + sortDirection);

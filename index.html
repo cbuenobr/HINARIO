@@ -25,18 +25,22 @@
         </div>
 
         <p>Ordenar por:</p>
-        <input type="radio" id="sortBy_1" name="sortBy"  checked="true" value="1">
-        <label for="sortBy_1">Nome</label>
-        <input type="radio" id="sortBy_2" name="sortBy" value="2">
-        <label for="sortBy_2">Número</label>
+        <input type="radio" id="sortByName" name="sortBy"  checked="true" value="1">
+        <label for="sortByName">Nome</label>
+        <input type="radio" id="sortByNumber" name="sortBy" value="2">
+        <label for="sortByNumber">Número</label>
 
-        <p>Direção:</p>
+<!--         <p>Direção:</p>
         <input type="radio" id="sortDir_1" name="sortDirection"  checked="true" value="1">
         <label for="sortDir_1">Crescente</label>
         <input type="radio" id="sortDir_2" name="sortDirection" value="2">
-        <label for="sortDir_2">Decrescente</label>
+        <label for="sortDir_2">Decrescente</label> -->
 
-        <button id="btnSort">OK</button>
+        <a href="javascript:javascript:void(0)"><img id="arrowDown" src="./img/down.png"></a>
+        <a href="javascript:javascript:void(0)"><img id="arrowUp" src="./img/up.png"></a>
+       
+
+        <!-- <button id="btnSort">OK</button> -->
 
         <p>Fundo:</p>
         <input type="radio" id="white-theme" name="theme"  checked="true" value="1" onclick="ThemeMode_Toggle(event)">
