@@ -13,6 +13,43 @@
 </head>
 <body>
     <main>
+
+        <!-- Ícone do menu -->
+        <span style="font-size:30px;cursor:pointer;float:right"  onclick="openNav()">&#9776;</span>
+        <!-- <span style="font-size:30px;cursor:pointer; float:right;"  onclick="openNav()">&#8942;</span> -->
+
+
+        <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" onclick="OpenFontSizeMenu()">Aa</a>
+        <a href="javascript:void(0)" onclick="OpenSortMenu()">Ordenar</a>
+        <!--   <a href="#">Clients</a>
+        <a href="#">Contact</a> -->
+        </div>
+
+        <div id="fontSizeMenu" class="fontSizeMenu">
+            <a href="javascript:void(0)" class="closebtn" onclick="CloseFontSizeMenu()">&times;</a>
+                <div style="text-align:left; margin-left: 20px;">
+                    <label for="fontSizeRange" style="font-weight: bold; font-size:x-large;">Aa</label>
+                    <input type="range" id="fontSizeRange" class="slidecontainer" min="1" max="3" step="0.1" >
+                </div>
+        </div>
+
+        <div id="sortMenu" class="sortMenu">
+            <a href="javascript:void(0)" class="closebtn" onclick="CloseSortMenu()">&times;</a>
+                <p style="padding-left:0;;">Ordenar por:</p>
+                <input type="radio" id="sortByName" name="sortBy"  checked="true" value="1">
+                <label for="sortByName">Nome</label>
+                <input type="radio" id="sortByNumber" name="sortBy" value="2">
+                <label for="sortByNumber">Número</label>
+
+                <a href="javascript:javascript:void(0)"><img id="arrowDown" src="./img/down.png"></a>
+                <a href="javascript:javascript:void(0)"><img id="arrowUp" src="./img/up.png"></a>
+        </div>
+        </div>
+
+
+
         <h1 style="text-align: center;">NOSSO HINÁRIO</h1>
         <h1 style="color:rgb(255, 0, 0); text-align: center;"> (***** TESTE *****)</h1>
         <p id="current-date" style="text-align: center;"></p>

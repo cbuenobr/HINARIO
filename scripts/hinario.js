@@ -361,6 +361,44 @@
         Parameters_Theme_Save(e.target.value);
     }
 
+    //SIDE MENU --------------------------------------------------
+    function openNav() {
+    //document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style = "transform: translateX(0)"; 
+    }
+
+    function closeNav() {
+    //document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("mySidenav").style = ""; 
+    }
+
+    function OpenSortMenu()
+    {
+        //document.getElementById("sortMenu").style.width = "250px";
+        document.getElementById("sortMenu").style = "transform: translateX(0)"; 
+        closeNav();
+    }
+
+    function CloseSortMenu()
+    {
+        //document.getElementById("sortMenu").style.width = "0";
+        document.getElementById("sortMenu").style = "";
+    }
+
+    function OpenFontSizeMenu()
+    {
+        //document.getElementById("fontSizeMenu").style.width = "250px";
+        document.getElementById("fontSizeMenu").style = "transform: translateX(0)"; 
+        closeNav();
+    }
+
+    function CloseFontSizeMenu()
+    {
+        //document.getElementById("fontSizeMenu").style.width = "0";
+        document.getElementById("fontSizeMenu").style = "";
+    }
+    //---------------------------------------------------------------
+
     //INICIALIZACAO
     window.onload = function() {
 

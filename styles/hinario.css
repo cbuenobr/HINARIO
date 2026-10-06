@@ -90,3 +90,115 @@ a:hover {
 }
 
 
+.sidenav {
+  /* height: 100%; */
+  /* width: 0; */
+  position: fixed;
+  z-index: 1;
+  top: 50;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  transform: translateX(100%);
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;  
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  overflow-x: hidden;
+}
+
+.fontSizeMenu{
+  /* width: 0; */
+  position: fixed;
+  z-index: 1;
+  /* float:right; */
+  /* top: 50; */
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 70px;
+  padding-bottom:20px;
+  transform: translateX(100%);
+}
+
+
+.fontSizeMenu label{
+  color: #818181;
+}
+
+
+.fontSizeMenu .closebtn {
+  color: #818181;
+  padding: 8px 8px 8px 32px;
+  position: absolute;
+  text-decoration: none;
+  top:0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sortMenu{
+  /* height: 100%; */
+  /* width: 0; */
+  position: fixed;
+  z-index: 1;
+  /* float:right; */
+  /* top: 50; */
+  right:0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 20px;
+  padding-bottom:20px;
+  transform: translateX(100%);
+}
+
+.sortMenu label{
+  color: #818181;
+}
+
+.sortMenu p {
+
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sortMenu .closebtn {
+  color: #818181;
+  padding: 8px 8px 8px 32px;
+  position: absolute;
+  text-decoration: none;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
