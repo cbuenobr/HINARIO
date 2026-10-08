@@ -5,37 +5,48 @@
     --musicFontSize:1.5rem;
     --indexFontSize:2.25rem;
     --fontSizeSliderStep: 0.1;
-    /* --musicFontSize:24px; */
+
+    --borderColor: rgb(190, 190, 190);
+    --bodyBackground: rgb(245, 245, 245);
+    --headerBackground: rgb(63, 84, 177);
+    --menuBackground:white;
+    --textColor: #000000;
 }
 
 
 body {
      font-family: Arial, sans-serif;
      /* font-family: Georgia, "Times New Roman", serif; */
-     background-color: rgb(240, 240, 240);
-    color: rgb(0, 0, 0); 
+/*      
+    background-color: rgb(240, 240, 240);
+    color: rgb(0, 0, 0);  */
+
+    background-color: var(--bodyBackground);
+    color:var(--textColor);
 }
 
-/* .light-mode {
-  background-color: rgb(243, 148, 148);
-  color: rgb(0, 0, 0);
-} */
-
-
-.dark-mode {
-  background-color: rgb(25,25,25);
-  color: rgb(255, 255, 255);
+body.darkTheme{
+  --bodyBackground:rgb(20, 20, 20);
+  --borderColor:rgb(88, 88, 88);
+  --menuBackground:black;
+  --headerBackground: rgba(0, 47, 255, 0.384);
+  --textColor:rgb(255, 192, 74);
 }
 
-p {
+body.lightTheme{
+  background-color:var(--bodyBackground);
+  border-color:var(--borderColor);
+  color:var(--textColor);  
+}
+
+
+/*  p {
     line-height: var(--paragraphLineHeight);
     margin-bottom: 0px;
 }
 
-/* Hyperlinks - geral */
+
 a {
-    color: #0246c5;  
-    text-decoration: none;   /* Removes the default underline */
     font-weight: bold;  
     margin-left:0px; 
     font-size:larger 
@@ -45,18 +56,29 @@ a:hover {
     color: #008080;
     text-decoration: underline;
 }
-
+ */
 
 /* Hyperlink do índice de rodapé */
 .footnote-link{
     font-size:25px;
+    text-decoration: none;
 }
 
+#header{
+  text-align: center; 
+  background-color: var(--headerBackground);
+  padding: 10px; 
+  align-content: center;
+}
 
 .index-container{
-    display: flex;
-    /* display: block; */
-    margin-left: 20px;
+    display: block;
+    font-size:var(--indexFontSize);
+    margin-left: 20px;    
+}
+
+.index-container a {
+  text-decoration: none;
 }
 
 .index-container div {
@@ -66,17 +88,15 @@ a:hover {
     font-size: var(--musicFontSize);
 }
 
-.content-section {
+
+
+/* .content-section {
     font-size: var(--musicFontSize);
     margin-bottom: 20px;
     padding: 5px 20px 25px;
-    /* background-color: #e2dedeee; */
     border-left: 5px solid #0073e6;
-}
+} */
 
-.slidecontainer {        
-    width: 45%; /* Width of the outside container */
-}
 
 .song-number{
     width:25px; 
@@ -90,17 +110,19 @@ a:hover {
 }
 
 
-.sidenav {
-  /* height: 100%; */
-  /* width: 0; */
+/* == SIDE MENU ========== */
+.sidenav, .fontSizeMenu, .sortMenu, .themeMenu{
+  border-style: solid;
+  border-radius: 6px;
+  border-color:var(--borderColor);
   position: fixed;
   z-index: 1;
-  top: 50;
+  top: 10px;
   right: 0;
-  background-color: #111;
+  background-color: var(--menuBackground);
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  padding: 0px;
   transform: translateX(100%);
 }
 
@@ -108,96 +130,51 @@ a:hover {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: var(--textColor);
   display: block;
   transition: 0.3s;
 }
 
 .sidenav a:hover {
   color: #f1f1f1;  
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-  overflow-x: hidden;
+  background-color: #50a2c8;
 }
 
 .fontSizeMenu{
-  /* width: 0; */
-  position: fixed;
-  z-index: 1;
-  /* float:right; */
-  /* top: 50; */
-  right: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 70px;
-  padding-bottom:20px;
-  transform: translateX(100%);
+  padding:20px;
+  width:40%;
 }
 
 
-.fontSizeMenu label{
-  color: #818181;
-}
-
-
-.fontSizeMenu .closebtn {
-  color: #818181;
-  padding: 8px 8px 8px 32px;
-  position: absolute;
-  text-decoration: none;
-  top:0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+.slidecontainer {        
+    width: 100%; /* Width of the outside container */
 }
 
 .sortMenu{
-  /* height: 100%; */
-  /* width: 0; */
-  position: fixed;
-  z-index: 1;
-  /* float:right; */
-  /* top: 50; */
-  right:0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 20px;
-  padding-bottom:20px;
-  transform: translateX(100%);
+  padding:20px;
 }
 
-.sortMenu label{
-  color: #818181;
-}
-
+ 
 .sortMenu p {
+  font-size: 15px;
+}
 
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
+.sortMenu label {
   font-size: 25px;
-  color: #818181;
-  display: block;
 }
 
-.sortMenu .closebtn {
-  color: #818181;
-  padding: 8px 8px 8px 32px;
-  position: absolute;
-  text-decoration: none;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+.themeMenu{
+  padding:20px;
 }
 
+
+.themeMenu p {
+  font-size: 15px;
+}
+
+
+
+/* PRECISO DISTO???? */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}

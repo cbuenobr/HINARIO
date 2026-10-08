@@ -8,12 +8,18 @@
     <link rel="stylesheet" href="./styles/hinario.css">
     <title>NOSSO HINARIO</title>
 
+    <style>
+        body{
+            background-color: var(--bodyBackground);
+        }
+    </style>
 </head>
+
 
 <body>
     <main>
         <div class="content-section">
-            <p style="font-size:var(--musicFontSize); color:darkmagenta "><a href="index.html">Índice</a></p>
+            <p style="font-size:var(--musicFontSize)" class="footnote-link"><a href="index.html">Índice</a></p>
 
             <h3 id="hymnHeader">TÍTULO</h3>
             <!-- <h4 id="hymnNumber">Hino 1</h4> -->
@@ -21,7 +27,7 @@
             <br>
             <p id="copyright">Copyright © 2026 - NOSSO HINÁRIO</p>
             <br>
-            <p><a href="index.html" class="footnote-link">Índice</a></p>
+            <p  class="footnote-link"><a href="index.html">Índice</a></p>
 
             <p id="mensagem"></p>
         </div>
@@ -121,25 +127,25 @@
                 if(storedThemeMode != null) {
 
                     //ThemeMode_Toggle({ target: themeRadio });
-                    ThemeMode_Toggle222({target:{value:storedThemeMode}});
+                    ThemeMode_Toggle({target:{value:storedThemeMode}});
                 }
             }
         }
 
-        function ThemeMode_Toggle222(e) {
+        function ThemeMode_Toggle(e) {
             let element = document.body;
 
             if(e.target.value == "1")
             {   
-                element.classList.remove("dark-mode");         
-                element.classList.toggle("light-mode");
+                element.classList.remove("darkTheme");         
+                element.classList.add("lightTheme");
             }
             else if(e.target.value == "2")
             {
                 //document.body.classList.remove("dark-mode");
                 //Parameters_Theme_Save("light");
-                element.classList.remove("light-mode");
-                element.classList.toggle("dark-mode");
+                element.classList.remove("lightTheme");
+                element.classList.add("darkTheme");
             }
         }
 

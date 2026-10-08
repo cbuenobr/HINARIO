@@ -14,7 +14,8 @@
             "name": "Open hinario ",
             // "file": "c:\\PROJETOS CB\\HINARIO\\index.html"
             "url": "http://localhost:8000/index.html",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${workspaceFolder}",
+            "runtimeArgs": ["--incognito"] //evita o uso do cache do Chrome
         }
     ]
 }

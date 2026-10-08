@@ -9,92 +9,65 @@
     <script src="./scripts/hinario.js" type="text/javascript" defer></script>
 
     <title>NOSSO HINARIO</title>
-
 </head>
 <body>
-    <main>
+    <div id="header">
+        <span style="font-size:40px;">NOSSO HINÁRIO</span>
+        <span id="menuIcon" style="font-size:40px;cursor:pointer; float:right; padding-right: 10px;"  onclick="openNav()">&#8942;</span>
+    </div>
 
-        <!-- Ícone do menu -->
-        <span style="font-size:30px;cursor:pointer;float:right"  onclick="openNav()">&#9776;</span>
-        <!-- <span style="font-size:30px;cursor:pointer; float:right;"  onclick="openNav()">&#8942;</span> -->
+    <h1 style="color:rgb(255, 0, 0); text-align: center;"> (***** TESTE *****)</h1>
+    <p id="current-date" style="text-align: center;"></p>
 
-
+    <div id="sideMenu">
         <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="javascript:void(0)" onclick="OpenFontSizeMenu()">Aa</a>
-        <a href="javascript:void(0)" onclick="OpenSortMenu()">Ordenar</a>
-        <!--   <a href="#">Clients</a>
-        <a href="#">Contact</a> -->
+            <a href="javascript:void(0)" onclick="OpenFontSizeMenu()">Aa</a>
+            <hr>
+            <a href="javascript:void(0)" onclick="OpenSortMenu()">Ordenar</a>
+            <hr>
+            <a href="javascript:void(0)" onclick="OpenThemeMenu()">Cor do fundo</a>
+            <hr>
+            <a href="#">admin</a>
         </div>
 
         <div id="fontSizeMenu" class="fontSizeMenu">
-            <a href="javascript:void(0)" class="closebtn" onclick="CloseFontSizeMenu()">&times;</a>
-                <div style="text-align:left; margin-left: 20px;">
-                    <label for="fontSizeRange" style="font-weight: bold; font-size:x-large;">Aa</label>
-                    <input type="range" id="fontSizeRange" class="slidecontainer" min="1" max="3" step="0.1" >
-                </div>
+            <div style="text-align:left; margin-left: 20px;">
+                <label for="fontSizeRange" style=" font-size:x-large;">Aa</label>
+                <input type="range" id="fontSizeRange" class="slidecontainer" min="1" max="3" step="0.1" width="300px" >
+            </div>
         </div>
 
         <div id="sortMenu" class="sortMenu">
-            <a href="javascript:void(0)" class="closebtn" onclick="CloseSortMenu()">&times;</a>
-                <p style="padding-left:0;;">Ordenar por:</p>
-                <input type="radio" id="sortByName" name="sortBy"  checked="true" value="1">
-                <label for="sortByName">Nome</label>
-                <input type="radio" id="sortByNumber" name="sortBy" value="2">
-                <label for="sortByNumber">Número</label>
-
-                <a href="javascript:javascript:void(0)"><img id="arrowDown" src="./img/down.png"></a>
-                <a href="javascript:javascript:void(0)"><img id="arrowUp" src="./img/up.png"></a>
-        </div>
-        </div>
-
-
-
-        <h1 style="text-align: center;">NOSSO HINÁRIO</h1>
-        <h1 style="color:rgb(255, 0, 0); text-align: center;"> (***** TESTE *****)</h1>
-        <p id="current-date" style="text-align: center;"></p>
-
-        <hr>
- 
-              <!-- SLIDER TAMANHO DA FONTE DAS MÚSICAS -->
-               <!--  
-        <div style="text-align:left; margin-left: 20px;">
-            <label for="fontSizeRange" style="font-weight: bold; font-size:x-large;">Aa</label>
-            <input type="range" id="fontSizeRange" class="slidecontainer" min="1" max="3" step="0.1" >
-        </div>
-
-        <p>Ordenar por:</p>
-        <input type="radio" id="sortByName" name="sortBy"  checked="true" value="1">
-        <label for="sortByName">Nome</label>
-        <input type="radio" id="sortByNumber" name="sortBy" value="2">
-        <label for="sortByNumber">Número</label> -->
-
-<!--         <p>Direção:</p>
-        <input type="radio" id="sortDir_1" name="sortDirection"  checked="true" value="1">
-        <label for="sortDir_1">Crescente</label>
-        <input type="radio" id="sortDir_2" name="sortDirection" value="2">
-        <label for="sortDir_2">Decrescente</label> -->
-
-<!--         <a href="javascript:javascript:void(0)"><img id="arrowDown" src="./img/down.png"></a>
-        <a href="javascript:javascript:void(0)"><img id="arrowUp" src="./img/up.png"></a> -->
-       
-
-        <!-- <button id="btnSort">OK</button> -->
-
-        <p>Fundo:</p>
-        <input type="radio" id="white-theme" name="theme"  checked="true" value="1" onclick="ThemeMode_Toggle(event)">
-        <label for="white-theme">Claro</label>
-        <input type="radio" id="dark-theme" name="theme" value="2" onclick="ThemeMode_Toggle(event)">
-        <label for="dark-theme">Escuro</label>
+            <p>Ordenar por:</p>
+            <label for="sortByName">Nome</label>
+            <input type="radio" id="sortByName" name="sortBy"  checked="true" value="1"><br>
+            <label for="sortByNumber">Número</label>
+            <input type="radio" id="sortByNumber" name="sortBy" value="2"><br>
+            <hr>
+            <p>Direção:</p>
+            <label for="sortDir_1">Crescente</label>
+            <input type="radio" id="sortDir_1" name="sortDirection"  checked="true" value="1"><br>
+            <label for="sortDir_2">Decrescente</label>
+            <input type="radio" id="sortDir_2" name="sortDirection" value="2">
         
-        <h1 id="indexHeader" style="text-align:center; font-size: var(--indexFontSize);">ÍNDICE</h1>
+        </div>
 
-        <table id="table-index" class="index-container" style="font-size:var(--indexFontSize); display:block;">
-        </table>
+        <div id="themeMenu" class="themeMenu">
+            <p>Fundo:</p>
+            <input type="radio" id="white-theme" name="theme"  checked="true" value="1" onclick="ThemeMode_Toggle(event)">
+            <label for="white-theme">Claro</label><br>
+            <input type="radio" id="dark_theme" name="theme" value="2" onclick="ThemeMode_Toggle(event)">
+            <label for="dark_theme">Escuro</label>
+        </div>
+    </div>
 
-        <hr>
+    <hr>
+    <h1 id="indexHeader" style="text-align:center; font-size: var(--indexFontSize);">ÍNDICE</h1>
 
-        <p id="mensagem"></p>
-    </main>
+    <table id="table-index" class="index-container"></table>
+    </table>
+
+    <hr>
+    <p id="mensagem"></p>
 </body>
 </html>

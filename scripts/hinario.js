@@ -16,13 +16,12 @@
     radioSortByName.addEventListener('change', () => GetSortBy(1));
     radioSortByNumber.addEventListener('change', () => GetSortBy(2));
 
-    const arrowDown = document.getElementById("arrowDown");
-    const arrowUp = document.getElementById("arrowUp");
-    arrowDown.addEventListener('click', () => GetSortDirection(1));
-    arrowUp.addEventListener('click', function() {GetSortDirection(2)});
-    //-----------------------------------------------------------
+    const radioSortDir_1 = document.getElementById("sortDir_1");
+    const radioSortDir_2 = document.getElementById("sortDir_2");
+    radioSortDir_1.addEventListener('change', () => GetSortDirection(1));
+    radioSortDir_2.addEventListener('change', () => GetSortDirection(2));
 
-    const themeModeRadios = document.getElementsByName("theme");
+    //const themeModeRadios = document.getElementsByName("theme");
     
     const tableIndex = document.getElementById("table-index");    
 
@@ -85,6 +84,20 @@
 
         //Salva o tamanho da fonte no localStorage
         Parameters_FontSize_Save();
+    }
+
+    //Fecha os menus clicando fora deles
+    function DocumentClick(e)
+    {
+        let menuIcon = document.querySelector("#menuIcon");
+        let divMenu = document.querySelector("#sideMenu");
+
+        if(!divMenu.contains(e.target) && divMenu != e.target && menuIcon != e.target)
+        {
+            console.log("clicou fora");
+
+            CloseAllMenus();
+        }
     }
 
 
@@ -342,60 +355,76 @@
     }
 
     function ThemeMode_Toggle(e) {
-        let element = document.body;
 
         if(e.target.value == "1")
         {   
-            element.classList.remove("dark-mode");         
-            element.classList.toggle("light-mode");
+            document.body.classList.add("lightTheme");
+            document.body.classList.remove("darkTheme");
         }
         else if(e.target.value == "2")
         {
-            //document.body.classList.remove("dark-mode");
-            //Parameters_Theme_Save("light");
-            element.classList.remove("light-mode");
-            element.classList.toggle("dark-mode");
+            document.body.classList.add("darkTheme");
+		    document.body.classList.remove("lightTheme");
         }
 
         //Atualiza o localStorage com o modo de tema selecionado
         Parameters_Theme_Save(e.target.value);
     }
 
+
     //SIDE MENU --------------------------------------------------
+
+    function CloseAllMenus()
+    {
+        CloseSortMenu();
+        CloseFontSizeMenu();
+        CloseThemeMenu();
+        closeNav();
+    }
+
     function openNav() {
-    //document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("mySidenav").style = "transform: translateX(0)"; 
     }
 
     function closeNav() {
-    //document.getElementById("mySidenav").style.width = "0";
     document.getElementById("mySidenav").style = ""; 
     }
 
+
     function OpenSortMenu()
     {
-        //document.getElementById("sortMenu").style.width = "250px";
         document.getElementById("sortMenu").style = "transform: translateX(0)"; 
         closeNav();
     }
 
     function CloseSortMenu()
     {
-        //document.getElementById("sortMenu").style.width = "0";
         document.getElementById("sortMenu").style = "";
     }
 
     function OpenFontSizeMenu()
     {
-        //document.getElementById("fontSizeMenu").style.width = "250px";
         document.getElementById("fontSizeMenu").style = "transform: translateX(0)"; 
         closeNav();
     }
 
     function CloseFontSizeMenu()
     {
-        //document.getElementById("fontSizeMenu").style.width = "0";
         document.getElementById("fontSizeMenu").style = "";
+    }
+
+    function OpenThemeMenu() {
+        document.getElementById("themeMenu").style = "transform: translateX(0)"; 
+        closeNav();
+    }
+
+    function CloseThemeMenu() {
+    document.getElementById("themeMenu").style = ""; 
+    }
+
+    function CloseThemeMenu()
+    {
+        document.getElementById("themeMenu").style = "";
     }
     //---------------------------------------------------------------
 
@@ -414,4 +443,7 @@
         InitFontSlider();
 
         Catalogo_Carrega();
+
+        //Ativa clicks para fechar o side menu
+        document.addEventListener('click', function(e){DocumentClick(e)});
     };
