@@ -21,9 +21,8 @@
     radioSortDir_1.addEventListener('change', () => GetSortDirection(1));
     radioSortDir_2.addEventListener('change', () => GetSortDirection(2));
 
-    //const themeModeRadios = document.getElementsByName("theme");
-    
-    const tableIndex = document.getElementById("table-index");    
+  
+    const tableIndex = document.getElementById("table-contents");    
 
 
     let currentFontSize;
@@ -77,13 +76,21 @@
 
         console.log("ChangeFontSize() recebeu: " + n);
         
-        document.documentElement.style.setProperty('--musicFontSize', (n+"rem"));
-
-        //Fonte do índice (título) (quero que seja um pouco maior do que a dos outros)
-        document.documentElement.style.setProperty('--indexFontSize', (n*1.5+"rem"));
+        document.documentElement.style.setProperty('--baseFontSize', (n + 'em'));
 
         //Salva o tamanho da fonte no localStorage
         Parameters_FontSize_Save();
+
+        //xxxxxxxxxxxx
+/*         console.log("BODY FONT SIZE");
+        console.log(window.getComputedStyle(document.body).getPropertyValue('font-size'));
+
+        console.log("INDEX HEADER");
+        var computedFontSize = window.getComputedStyle(document.getElementById("indexHeader")).fontSize;
+        console.log(computedFontSize); */
+        //XXXXXXXXXX
+
+
     }
 
     //Fecha os menus clicando fora deles
@@ -138,7 +145,6 @@
 
         //Cria célula
         const td2 = document.createElement('td');
-        td2.style ="font-size:var(--musicFontSize)";
 
         const link1 = document.createElement('a');
         link1.setAttribute('href',('hino.html?Id=' + id));
@@ -179,8 +185,7 @@
        
     function InitFontSlider()
     {
-        const startValue = parseFloat(rootStyles.getPropertyValue('--musicFontSize').trim());
-        const indexStartValue = parseFloat(rootStyles.getPropertyValue('--indexFontSize').trim());
+       const startValue = parseFloat(rootStyles.getPropertyValue('--baseFontSize').trim());
 
         fontSizeSlider.value = startValue;  
     }
@@ -254,7 +259,7 @@
     {
         if(typeof(Storage) != "undefined") 
         {
-            let storedFontSize = localStorage.getItem("musicFontSize");
+            let storedFontSize = localStorage.getItem("baseFontSize");
 
             if(storedFontSize != null) {
                 ChangeFontSize(parseFloat(storedFontSize));
@@ -267,7 +272,9 @@
     function Parameters_FontSize_Save()
     {
         if (typeof(Storage) !== "undefined") {
-            localStorage.setItem("musicFontSize", currentFontSize);}
+            localStorage.setItem("baseFontSize", currentFontSize);}
+
+            console.log("Font size saved: " + currentFontSize);
     }
 
 

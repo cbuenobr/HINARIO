@@ -11,13 +11,13 @@
     <title>NOSSO HINARIO</title>
 </head>
 <body>
-    <div id="header">
-        <span style="font-size:40px;">NOSSO HINÁRIO</span>
-        <span id="menuIcon" style="font-size:40px;cursor:pointer; float:right; padding-right: 10px;"  onclick="openNav()">&#8942;</span>
+    <div id="headerGroup">
+        <span id="headerTitle">NOSSO HINÁRIO</span>
+        <span id="menuIcon" onclick="openNav()">&#8942;</span>
     </div>
 
-    <h1 style="color:rgb(255, 0, 0); text-align: center;"> (***** TESTE *****)</h1>
-    <p id="current-date" style="text-align: center;"></p>
+    <p style="color:rgb(255, 0, 0); text-align: center;"> (***** TESTE *****)</p>
+    <p id="current-date" style="text-align: center; font-size:70%"></p>
 
     <div id="sideMenu">
         <div id="mySidenav" class="sidenav">
@@ -26,48 +26,58 @@
             <a href="javascript:void(0)" onclick="OpenSortMenu()">Ordenar</a>
             <hr>
             <a href="javascript:void(0)" onclick="OpenThemeMenu()">Cor do fundo</a>
-            <hr>
-            <a href="#">admin</a>
         </div>
 
         <div id="fontSizeMenu" class="fontSizeMenu">
-            <div style="text-align:left; margin-left: 20px;">
-                <label for="fontSizeRange" style=" font-size:x-large;">Aa</label>
-                <input type="range" id="fontSizeRange" class="slidecontainer" min="1" max="3" step="0.1" width="300px" >
+            <div>
+                <label for="fontSizeRange">Aa</label>
+                <input type="range" id="fontSizeRange" class="slidecontainer" min="0.5" max="2" step="0.1">
             </div>
         </div>
 
         <div id="sortMenu" class="sortMenu">
             <p>Ordenar por:</p>
-            <label for="sortByName">Nome</label>
-            <input type="radio" id="sortByName" name="sortBy"  checked="true" value="1"><br>
+            <input type="radio" id="sortByName" name="sortBy"  checked="true" value="1">
+            <label for="sortByName">Nome</label><br>
+
+            <br/>
+
+            <input type="radio" id="sortByNumber" name="sortBy" value="2">
             <label for="sortByNumber">Número</label>
-            <input type="radio" id="sortByNumber" name="sortBy" value="2"><br>
+
+            <br/>
+            <br/>
+            
             <hr>
             <p>Direção:</p>
-            <label for="sortDir_1">Crescente</label>
-            <input type="radio" id="sortDir_1" name="sortDirection"  checked="true" value="1"><br>
-            <label for="sortDir_2">Decrescente</label>
+            <input type="radio" id="sortDir_1" name="sortDirection"  checked="true" value="1">
+            <label for="sortDir_1">Crescente</label><br>
+
+            <br/>
+
             <input type="radio" id="sortDir_2" name="sortDirection" value="2">
-        
+            <label for="sortDir_2">Decrescente</label>         
         </div>
 
         <div id="themeMenu" class="themeMenu">
             <p>Fundo:</p>
             <input type="radio" id="white-theme" name="theme"  checked="true" value="1" onclick="ThemeMode_Toggle(event)">
             <label for="white-theme">Claro</label><br>
+
+            <br/>
+
             <input type="radio" id="dark_theme" name="theme" value="2" onclick="ThemeMode_Toggle(event)">
             <label for="dark_theme">Escuro</label>
         </div>
     </div>
 
     <hr>
-    <h1 id="indexHeader" style="text-align:center; font-size: var(--indexFontSize);">ÍNDICE</h1>
+    <p id="indexHeader">ÍNDICE</p>
 
-    <table id="table-index" class="index-container"></table>
-    </table>
-
+    <table id="table-contents"></table>
+    
     <hr>
     <p id="mensagem"></p>
+    <p id="admin">Admin</p>
 </body>
 </html>

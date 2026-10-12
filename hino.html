@@ -18,19 +18,19 @@
 
 <body>
     <main>
-        <div class="content-section">
-            <p style="font-size:var(--musicFontSize)" class="footnote-link"><a href="index.html">Índice</a></p>
-
-            <h3 id="hymnHeader">TÍTULO</h3>
-            <!-- <h4 id="hymnNumber">Hino 1</h4> -->
-            <p id="letra" style="font-size:var(--musicFontSize); white-space: pre-wrap;line-height: 1.9;"></p>
-            <br>
+        <p style="font-size:var(--baseFontSize)"><a href="index.html">Índice</a></p>
+        
+        <div class="hymnGroup">
+            <p id="hymnHeader">TÍTULO</p>
+            <p id="letra"></p>
+            <br/>
             <p id="copyright">Copyright © 2026 - NOSSO HINÁRIO</p>
-            <br>
-            <p  class="footnote-link"><a href="index.html">Índice</a></p>
-
-            <p id="mensagem"></p>
         </div>
+        
+        <p id="mensagem"></p>
+        <a href=# class="index-link">Repete</a>
+        
+        <p><a href="index.html">Índice</a></p>
     </main> 
 
     <script>
@@ -97,18 +97,19 @@
         function Parameters_FontSize_Load()
         {
             if(typeof(Storage) != "undefined") {
-                let storedFontSize = localStorage.getItem("musicFontSize");
+                let storedFontSize = localStorage.getItem("baseFontSize");
                 if(storedFontSize != null) {
 
                     let n = parseFloat(storedFontSize);
-                    if(isNaN(n) || n < 1 || n > 3)
+                    if(isNaN(n) || n < 0.5 || n > 2)
                     {
-                        console.warn("Valor inválido de musicFontSize no localStorage: " + storedFontSize);
+                        console.warn("Valor inválido de baseFontSize no localStorage: " + storedFontSize);
+
                         return;
                     }
 
-                    //Atualiza variável CSS --musicFontSize com o valor armazenado
-                    document.documentElement.style.setProperty('--musicFontSize', (n + "rem"));
+                    //Atualiza variável CSS --baseFontSize com o valor armazenado
+                    document.documentElement.style.setProperty('--baseFontSize', (n + 'em'));
 
                     console.log("Tamanho da fonte para o hino: " + n);
                 }
