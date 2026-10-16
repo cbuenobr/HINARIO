@@ -1,16 +1,7 @@
 
 :root{
     /* variaveis globais: */
-    /*--paragraphLineHeight: 1.0; /*É recomendado não usar nenhuma unidade para ter mais flexibilidade*/
-    /* --musicFontSize:1.5rem; */
-    /* --musicFontSize:calc(0.9em + 0.5vw); */
-    /* --indexFontSize:2.25rem; */
-    /* --indexFontSize:calc(1.2em + 1vw); */
-
-
-    /* --baseFontSize: calc(1em + 2vw); */
     --baseFontSize: 1em;
-
     --borderColor: rgb(190, 190, 190);
     --bodyBackground: rgb(245, 245, 245);
     --fontSizeSliderStep: 0.1;
@@ -26,9 +17,10 @@ body {
    /*fonte base para o documento inteiro. Ajusto com % quando necessário */
      font-size: calc(var(--baseFontSize) + 1vw);
 
-     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Times New Roman', Times, serif;
+/*   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Times New Roman', Times, serif;
      font-family: Georgia, 'Times New Roman', Times, serif; 
-     font-family: 'Times New Roman', Times, serif;
+     font-family: 'Times New Roman', Times, serif; */
+    font-family: Arial, Helvetica, sans-serif;
 
     background-color: var(--bodyBackground);
     color:var(--textColor);
@@ -61,59 +53,24 @@ a:hover {
     text-decoration: underline;
 }
 
-#admin{
-  color:lightgray;
-  font: size 50%;
+/* == CLASSES =========================*/
+
+.admin-link{
+  margin-right:10px;
+  font-size: 80%;  
   text-align: right;
 }
 
-#copyright{
-  font-size: 70%;
+.admin-link a {
+  color:lightgray; 
 }
 
 
-#headerGroup{
-  /* font-family: Garamond, serif; */
-  text-align: center; 
-  background-color: var(--headerBackground);
-  padding: 7px; 
-  font-weight: bold; 
+.disable{
+  pointer-events: none;
 }
 
-#headerTitle{
-
-  font-size: 120%;
-}
-
-#indexHeader{
-  font-weight: bold;
-  text-align:center;
-  font-size: 100%;
-}
-
-#hymnHeader{
-  font-size: 110%;
-  font-weight: bold;
-}
-
-#letra{
-  font-size: 100%;
-  white-space: pre-wrap;
-  line-height: 1.9;
-}
-
-#menuIcon{
-  cursor:pointer; 
-  padding-right: 30px;
-  position: fixed;
-  right:0;
-}
-
-#table-contents{
-    display: block;
-    margin-left: 0px;    
-    border-spacing: 0px 0.8em;  /*espaçamento entre linhas*/
-}
+.hidden { display: none !important; }
 
 /*Grupo de um hino */
 .hymnGroup {
@@ -121,6 +78,21 @@ a:hover {
     padding: 5px 20px 25px;
     background-color: var(--bodyBackground);
     border-left: 5px solid #0073e6;
+}
+
+.index-button {
+  display: inline-block;
+  margin: 0 0 28px;
+  padding: 12px 18px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  color: var(--menuBackground);
+  text-decoration: none;
+  /* font-size: 1.08rem; */
+  font-size: 70%;
+  font-weight: 700;
+  line-height: 1;
+  background: var(--textColor)
 }
 
 .td-number{
@@ -131,7 +103,7 @@ a:hover {
 
 
 /* == SIDE MENU ========== */
-.sidenav, .fontSizeMenu, .sortMenu, .themeMenu{
+.sidenav, .fontSizeMenu, .sortMenu, .themeMenu, .aboutMenu{
   border-style: solid;
   border-radius: 4px;
   border-color:var(--borderColor);
@@ -172,8 +144,8 @@ a:hover {
     width: 100%; /* Width of the outside container */
 }
 
-.sortMenu, .themeMenu{
-  padding:30px;
+.aboutMenu, .sortMenu, .themeMenu{
+  padding:20px;
 }
  
 .sortMenu p {
@@ -192,6 +164,55 @@ a:hover {
   font-size: 70%;
 }
 
+
+/*== ID ========================*/
+#copyright{
+  font-size: 70%;
+  white-space: pre-wrap
+}
+
+
+#headerGroup{
+  /* font-family: Garamond, serif; */
+  text-align: center; 
+  background-color: var(--headerBackground);
+  padding: 7px; 
+  font-weight: bold; 
+}
+
+#headerTitle{
+  font-size: 120%;
+  text-align: center;
+  width:95%
+}
+
+#indexHeader{
+  font-weight: bold;
+  text-align:center;
+  font-size: 100%;
+}
+
+#hymnHeader{
+  font-size: 110%;
+  font-weight: bold;
+}
+
+#letra{
+  font-size: 100%;
+  white-space: pre-wrap;
+  line-height: 1.9;
+}
+
+#menuIcon{
+  text-align:center;
+  font-size: 120%;
+}
+
+#table-contents{
+    display: block;
+    margin-left: 0px;    
+    border-spacing: 0px 0.8em;  /*espaçamento entre linhas*/
+}
 
 
 /* PRECISO DISTO???? */

@@ -18,19 +18,22 @@
 
 <body>
     <main>
-        <p style="font-size:var(--baseFontSize)"><a href="index.html">Índice</a></p>
+        <br>
+        <a class="index-button" href="index.html">ÍNDICE</a>
         
         <div class="hymnGroup">
             <p id="hymnHeader">TÍTULO</p>
             <p id="letra"></p>
             <br/>
-            <p id="copyright">Copyright © 2026 - NOSSO HINÁRIO</p>
+            <p id="copyright"></p>
         </div>
         
         <p id="mensagem"></p>
-        <a href=# class="index-link">Repete</a>
-        
-        <p><a href="index.html">Índice</a></p>
+        <div>
+            <a class="index-button" href="index.html">ÍNDICE</a>
+            <a href=# class="index-button">SOBE</a>            
+        </div>
+
     </main> 
 
     <script>
@@ -41,7 +44,7 @@
         const mensagem = document.getElementById('mensagem');
 
 
-        async function CarregaDadosDoHino() {       
+        async function CarregaJsonDosHinos() {       
 
         try {
                 console.log("CarregarDados");
@@ -63,7 +66,7 @@
 
                 if(hinosCarregados.length>0)
                 {
-                    MontaHino();
+                    Hino_Monta();
                 }
                 else{
                     throw new Error('O arquivo do índice está vazio.');
@@ -74,22 +77,31 @@
             }
         }
 
-        function MontaHino()
+
+        function Hino_Monta()
         {
             let hino = hinosCarregados.find(h => String(h.id) === String(Id1));
 
             if(hino != null)
             {
-                document.getElementById('hymnHeader').textContent = hino.numero + ' - ' + hino.nome;
+                document.getElementById('hymnHeader').textContent = hino.numero + ' - ' + hino.titulo;
 
                 //document.getElementById('hymnNumber').textContent = "Num. " + hino.numero;
 
                 //Busca a letra do hino no arquivo especificado em hino.arquivo
                 //O NOME DE ARQUIVO TEM QUE SER IDÊNTIICO AO DO DISCO (CAIXA ALTA/BAIXA)
-                ReadHymn(hino.arquivo);
+                Song_GetFile(hino.arquivo);
+
+                if(hino.autor != undefined && hino.copyright != undefined)
+                {                    
+                    document.getElementById('copyright').textContent = hino.autor + ' - ' + hino.copyright;
+                }
+                else
+                {                    
+                    document.getElementById('copyright').classList.add('hidden');
+                }
             }
             else{
-                console.error('Hino não encontrado: ' + Id1);
                 mensagem.textContent = 'Hino não encontrado: ' + Id1;
             }
         }
@@ -151,7 +163,7 @@
         }
 
 
-        async function ReadHymn(arquivoHino)
+        async function Song_GetFile(arquivoHino)
         {
             try
             {
@@ -177,7 +189,7 @@
             for(let i=0;i<hinosCarregados.length;i++)
             {
                 txt += "==========\n";
-                txt += hinosCarregados[i].id + '\n' + hinosCarregados[i].nome + '\n' + hinosCarregados[i].numero + '\n' + hinosCarregados[i].arquivo;
+                txt += hinosCarregados[i].id + '\n' + hinosCarregados[i].titulo + '\n' + hinosCarregados[i].numero + '\n' + hinosCarregados[i].arquivo;
 
             }
 
@@ -192,7 +204,7 @@
             Parameters_FontSize_Load();
             Parameters_Theme_Load();   
 
-            CarregaDadosDoHino();
+            CarregaJsonDosHinos();
 
             //console.log('Id: ' + Id1); // + ' - sortBy: ' + sortBy + ' - sortDirection: ' + sortDirection);
         };

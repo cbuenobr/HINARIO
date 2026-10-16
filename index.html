@@ -11,13 +11,21 @@
     <title>NOSSO HINARIO</title>
 </head>
 <body>
-    <div id="headerGroup">
-        <span id="headerTitle">NOSSO HINÁRIO</span>
-        <span id="menuIcon" onclick="openNav()">&#8942;</span>
-    </div>
+    <table id="headerGroup" style="width:100%">
+<!--         <colgroup>
+            <col style="background-color:red">
+            <col style="background-color:yellow">
+        </colgroup> -->
+        <tr>
+            <td id="headerTitle">
+                NOSSO HINÁRIO
+            </td>
 
-    <p style="color:rgb(255, 0, 0); text-align: center;"> (***** TESTE *****)</p>
-    <p id="current-date" style="text-align: center; font-size:70%"></p>
+            <td id="menuIcon" onclick="openNav()">
+                &#8942;
+            </td>
+        </tr>
+    </table>
 
     <div id="sideMenu">
         <div id="mySidenav" class="sidenav">
@@ -26,6 +34,8 @@
             <a href="javascript:void(0)" onclick="OpenSortMenu()">Ordenar</a>
             <hr>
             <a href="javascript:void(0)" onclick="OpenThemeMenu()">Cor do fundo</a>
+            <hr>
+            <a href="javascript:void(0)" onclick="OpenAboutMenu()">Sobre</a>
         </div>
 
         <div id="fontSizeMenu" class="fontSizeMenu">
@@ -37,8 +47,8 @@
 
         <div id="sortMenu" class="sortMenu">
             <p>Ordenar por:</p>
-            <input type="radio" id="sortByName" name="sortBy"  checked="true" value="1">
-            <label for="sortByName">Nome</label><br>
+            <input type="radio" id="sortByTitle" name="sortBy"  checked="true" value="1">
+            <label for="sortByTitle">Título</label><br>
 
             <br/>
 
@@ -69,15 +79,22 @@
             <input type="radio" id="dark_theme" name="theme" value="2" onclick="ThemeMode_Toggle(event)">
             <label for="dark_theme">Escuro</label>
         </div>
+
+        <div id="aboutMenu" class="aboutMenu">
+            <div>
+                <p id="current-date"></p>
+            </div>
+        </div>
     </div>
 
-    <hr>
     <p id="indexHeader">ÍNDICE</p>
-
+    
     <table id="table-contents"></table>
     
     <hr>
     <p id="mensagem"></p>
-    <p id="admin">Admin</p>
+    <div class="admin-link">
+        <a href="admin.html">Admin</a>
+    </div>
 </body>
 </html>

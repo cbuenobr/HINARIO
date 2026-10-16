@@ -11,9 +11,9 @@
     //Controles de ordenação ----------------------------------------------
     const radioSortBy = document.getElementsByName("sortBy");
 
-    const radioSortByName = document.getElementById("sortByName");
+    const radioSortByTitle = document.getElementById("sortByTitle");
     const radioSortByNumber = document.getElementById("sortByNumber");
-    radioSortByName.addEventListener('change', () => GetSortBy(1));
+    radioSortByTitle.addEventListener('change', () => GetSortBy(1));
     radioSortByNumber.addEventListener('change', () => GetSortBy(2));
 
     const radioSortDir_1 = document.getElementById("sortDir_1");
@@ -101,7 +101,7 @@
 
         if(!divMenu.contains(e.target) && divMenu != e.target && menuIcon != e.target)
         {
-            console.log("clicou fora");
+            //console.log("clicou fora");
 
             CloseAllMenus();
         }
@@ -130,7 +130,7 @@
 
 
     //Cria linha do Índice
-    function Indice_CriaLinha(id, nome, numero)
+    function Indice_CriaLinha(id, titulo, numero)
     {
         //Cria linha
         const tr = document.createElement('tr');
@@ -148,7 +148,7 @@
 
         const link1 = document.createElement('a');
         link1.setAttribute('href',('hino.html?Id=' + id));
-        const linktxt= document.createTextNode(nome);
+        const linktxt= document.createTextNode(titulo);
 
         link1.appendChild(linktxt);
         td2.appendChild(link1);
@@ -177,7 +177,7 @@
         //Popula o índice, linha por linha
         for(let i=0;i<hinosCarregados.length;i++)
         {
-            Indice_CriaLinha(hinosCarregados[i].id, hinosCarregados[i].nome, hinosCarregados[i].numero);
+            Indice_CriaLinha(hinosCarregados[i].id, hinosCarregados[i].titulo, hinosCarregados[i].numero);
         }
 
         console.log('Índice montado com sucesso!');
@@ -195,11 +195,10 @@
         //Imprime versão, data e hora
         const version = "1.0";
 
-        var d = new Date();
-        document.getElementById("current-date").textContent = "Versão: " + version + " - " + d.toLocaleDateString('en-GB');
-        /*      
-        const time = d.getHours() + ":" + d.getMinutes();
-        document.getElementById("current-date").textContent = "Versão: " + version + " - " + d.toLocaleDateString('en-GB') + " - " + time; */
+        document.getElementById("current-date").textContent = "Versão: " + version;
+
+        //var d = new Date();
+        //document.getElementById("current-date").textContent = "Versão: " + version + " - " + d.toLocaleDateString('en-GB');
     }
 
     function RelatorioIndice()
@@ -209,7 +208,7 @@
         for(let i=0;i<hinosCarregados.length;i++)
         {
             txt += "==========\n";
-            txt += hinosCarregados[i].nome + '\n' + hinosCarregados[i].numero + '\n' + hinosCarregados[i].arquivo;
+            txt += hinosCarregados[i].titulo + '\n' + hinosCarregados[i].numero + '\n' + hinosCarregados[i].arquivo;
         }
 
         mensagem.textContent = txt;
@@ -308,14 +307,14 @@
     //====================================================================================================
 
 
-    //Ordena array pelo nome do hino obedecendo a ordem passada (Caixa alta tem precedência sobre caixa baixa, por isso devemos igualá-las)
-    function SortByName(sortOrder)
+    //Ordena array pelo titulo do hino obedecendo a ordem passada (Caixa alta tem precedência sobre caixa baixa, por isso devemos igualá-las)
+    function SortByTitle(sortOrder)
     {
         if(sortOrder == 1)
         {
             hinosCarregados = hinosCarregados.sort(function(a,b){
-            let x = a.nome.toLowerCase();
-            let y = b.nome.toLowerCase();
+            let x = a.titulo.toLowerCase();
+            let y = b.titulo.toLowerCase();
             if(x<y){return -1}
             if(x>y){return 1}
             
@@ -323,8 +322,8 @@
         }
         else{
             hinosCarregados = hinosCarregados.sort(function(a,b){
-            let x = a.nome.toLowerCase();
-            let y = b.nome.toLowerCase();
+            let x = a.titulo.toLowerCase();
+            let y = b.titulo.toLowerCase();
             if(x<y){return 1}
             if(x>y){return -1}
             
@@ -351,7 +350,7 @@
     {
         if(sortBy == 1)
         {
-            SortByName(sortDirection);
+            SortByTitle(sortDirection);
         }
         else{
             SortByNumber(sortDirection);
@@ -387,14 +386,21 @@
         CloseFontSizeMenu();
         CloseThemeMenu();
         closeNav();
+        CloseAboutMenu();
     }
 
     function openNav() {
-    document.getElementById("mySidenav").style = "transform: translateX(0)"; 
+        document.getElementById("mySidenav").style = "transform: translateX(0)"; 
+
+        //Desativa clicks na main (indesejável quando o menu está aberto)
+        document.getElementById("table-contents").classList.add("disable");
     }
 
     function closeNav() {
-    document.getElementById("mySidenav").style = ""; 
+        document.getElementById("mySidenav").style = ""; 
+        
+        //Reativa clicks na main
+        document.getElementById("table-contents").classList.remove("disable");
     }
 
 
@@ -402,6 +408,9 @@
     {
         document.getElementById("sortMenu").style = "transform: translateX(0)"; 
         closeNav();
+
+        //Desativa clicks na main (indesejável quando o menu está aberto)
+        document.getElementById("table-contents").classList.add("disable");
     }
 
     function CloseSortMenu()
@@ -413,6 +422,9 @@
     {
         document.getElementById("fontSizeMenu").style = "transform: translateX(0)"; 
         closeNav();
+
+        //Desativa clicks na main (indesejável quando o menu está aberto)
+        document.getElementById("table-contents").classList.add("disable");
     }
 
     function CloseFontSizeMenu()
@@ -423,15 +435,26 @@
     function OpenThemeMenu() {
         document.getElementById("themeMenu").style = "transform: translateX(0)"; 
         closeNav();
+
+        //Desativa clicks na main (indesejável quando o menu está aberto)
+        document.getElementById("table-contents").classList.add("disable");
     }
 
     function CloseThemeMenu() {
-    document.getElementById("themeMenu").style = ""; 
+        document.getElementById("themeMenu").style = ""; 
     }
 
-    function CloseThemeMenu()
+    function OpenAboutMenu() {
+        document.getElementById("aboutMenu").style = "transform: translateX(0)"; 
+        closeNav();
+
+        //Desativa clicks na main (indesejável quando o menu está aberto)
+        document.getElementById("table-contents").classList.add("disable");
+    }
+
+    function CloseAboutMenu()
     {
-        document.getElementById("themeMenu").style = "";
+        document.getElementById("aboutMenu").style = "";
     }
     //---------------------------------------------------------------
 
