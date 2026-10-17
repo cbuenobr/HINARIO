@@ -91,6 +91,12 @@
     }
 
 
+    //PARA TESTAR DELAY DE FETCH
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+
     //Verifica se há duplicatas (não incluí o copyright, porque pode não existir ou ser o mesmo)
     function DuplicateCheck(field)
     {
@@ -251,9 +257,10 @@
 
         const link1 = document.createElement('a');
         link1.setAttribute('href','javascript:Song_GetData(' + id + ');');
-        const linktxt= document.createTextNode(titulo);
 
+        const linktxt= document.createTextNode(titulo);
         link1.appendChild(linktxt);
+
         td2.appendChild(link1);
         tr.appendChild(td2);
 
@@ -290,9 +297,18 @@
 
             //Busca a letra do hino no arquivo especificado em hino.arquivo
             //O NOME DE ARQUIVO TEM QUE SER IDÊNTIICO AO DO DISCO (CAIXA ALTA/BAIXA)
+
+            //Testa delay
+            //delay(3000).then(() => {console.log("xxxxxxx This runs after 2 seconds"); Song_GetLyrics(hinoCarregado.arquivo);});
+            
+            
             Song_GetLyrics(hinoCarregado.arquivo);
 
-            document.getElementById('copyright').value = hinoCarregado.autor + ' - ' + hinoCarregado.copyright;
+            if(hinoCarregado.autor != undefined && hinoCarregado.copyright != undefined)
+            {                    
+                document.getElementById('copyright').value = hinoCarregado.autor + ' - ' + hinoCarregado.copyright;
+            }
+
         }
         else{
             console.error('Hino não encontrado: ' + Id1);

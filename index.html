@@ -14,14 +14,21 @@
     <table id="headerGroup" style="width:100%">
 <!--         <colgroup>
             <col style="background-color:red">
-            <col style="background-color:yellow">
+            <col style="background-color:rgb(17, 0, 255)">
+            <col style="background-color:rgb(190, 178, 0)">
         </colgroup> -->
+
         <tr>
-            <td id="headerTitle">
+            <!-- Não estou usando ainda este menu principal-->
+            <td id="hamburgerIcon" style="visibility: hidden;">
+                &#9776;
+            </td>
+
+            <td id="headerTitle" >
                 NOSSO HINÁRIO
             </td>
 
-            <td id="menuIcon" onclick="openNav()">
+            <td id="menuIcon"  onclick="openNav()">
                 &#8942;
             </td>
         </tr>
@@ -55,7 +62,6 @@
             <input type="radio" id="sortByNumber" name="sortBy" value="2">
             <label for="sortByNumber">Número</label>
 
-            <br/>
             <br/>
             
             <hr>

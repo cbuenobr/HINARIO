@@ -6,7 +6,7 @@
     --bodyBackground: rgb(245, 245, 245);
     --fontSizeSliderStep: 0.1;
     --headerBackground: #1395ec;
-    --hoverColor: #019fbb;
+    --hoverColor: #1395ec;
     --hyperlink: #0246c5;
     --menuBackground:white;
     --textColor: #000000;
@@ -21,6 +21,7 @@ body {
      font-family: Georgia, 'Times New Roman', Times, serif; 
      font-family: 'Times New Roman', Times, serif; */
     font-family: Arial, Helvetica, sans-serif;
+    /* font-family: 'Times New Roman', Times, serif; */
 
     background-color: var(--bodyBackground);
     color:var(--textColor);
@@ -32,8 +33,13 @@ body.darkTheme{
   --menuBackground:black;
   --headerBackground: rgba(0, 47, 255, 0.384);
   /* --headerBackground: rgb(28, 134, 255); */
-  --hyperlink: rgb(61, 150, 252) ;
+  --hyperlink: rgb(21, 130, 255) ;
   --textColor:rgb(199, 199, 199);
+  
+}
+
+body.darkTheme a:hover{
+  background-color:rgb(161, 210, 255);
 }
 
 body.lightTheme{
@@ -47,11 +53,10 @@ a {
     color: var(--hyperlink);
 }
 
-
 a:hover {
-    color: var(--hoverColor);
-    text-decoration: underline;
+    background-color: var(--hoverColor);
 }
+
 
 /* == CLASSES =========================*/
 
@@ -88,7 +93,6 @@ a:hover {
   border-radius: 8px;
   color: var(--menuBackground);
   text-decoration: none;
-  /* font-size: 1.08rem; */
   font-size: 70%;
   font-weight: 700;
   line-height: 1;
@@ -106,10 +110,9 @@ a:hover {
 .sidenav, .fontSizeMenu, .sortMenu, .themeMenu, .aboutMenu{
   border-style: solid;
   border-radius: 4px;
-  border-color:var(--borderColor);
+  border-color:var(--borderColor);  
   position: fixed;
   z-index: 1;
-  top: 10px;
   right: 0;
   background-color: var(--menuBackground);
   overflow-x: hidden;
@@ -119,26 +122,28 @@ a:hover {
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding:5px 5px 0px 10px;
   text-decoration: none;
   color: var(--textColor);
   display: block;
   transition: 0.3s;
+  font-size: 90%;
 }
 
-.sidenav a:hover {
-  color: #f1f1f1;  
-  background-color: var(--hoverColor);
-}
 
 .fontSizeMenu{
-  padding:35px;
+  padding:15px 30px;
   width:50%;
 }
 
 .fontSizeMenu label{
   font-size: 100%;
 }
+
+/* .linkLetra :hover{
+  text-decoration: double;
+  background-color: red;
+} */
 
 .slidecontainer {        
     width: 100%; /* Width of the outside container */
@@ -173,17 +178,15 @@ a:hover {
 
 
 #headerGroup{
-  /* font-family: Garamond, serif; */
   text-align: center; 
   background-color: var(--headerBackground);
   padding: 7px; 
   font-weight: bold; 
+  table-layout: auto;
 }
 
 #headerTitle{
   font-size: 120%;
-  text-align: center;
-  width:95%
 }
 
 #indexHeader{
@@ -197,6 +200,7 @@ a:hover {
   font-weight: bold;
 }
 
+/* Usada em hino.html */
 #letra{
   font-size: 100%;
   white-space: pre-wrap;
@@ -205,7 +209,7 @@ a:hover {
 
 #menuIcon{
   text-align:center;
-  font-size: 120%;
+  font-size: 130%;
 }
 
 #table-contents{
@@ -214,9 +218,8 @@ a:hover {
     border-spacing: 0px 0.8em;  /*espaçamento entre linhas*/
 }
 
+/* #table-contents :hover {
+text-decoration: underline;
 
-/* PRECISO DISTO???? */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  /* .sidenav a {font-size: 18px;} */
-}
+} */
+

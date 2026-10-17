@@ -27,6 +27,7 @@
 
     let currentFontSize;
     let hinosCarregados;
+    let menuIsOpen = false;
     let sortBy = 1;
     let sortDirection = 1;
 
@@ -99,7 +100,7 @@
         let menuIcon = document.querySelector("#menuIcon");
         let divMenu = document.querySelector("#sideMenu");
 
-        if(!divMenu.contains(e.target) && divMenu != e.target && menuIcon != e.target)
+       if(!divMenu.contains(e.target) && divMenu != e.target && menuIcon != e.target)
         {
             //console.log("clicou fora");
 
@@ -145,9 +146,9 @@
 
         //Cria célula
         const td2 = document.createElement('td');
-
         const link1 = document.createElement('a');
         link1.setAttribute('href',('hino.html?Id=' + id));
+        //link1.classList.add('linkLetra');
         const linktxt= document.createTextNode(titulo);
 
         link1.appendChild(linktxt);
@@ -387,10 +388,22 @@
         CloseThemeMenu();
         closeNav();
         CloseAboutMenu();
+
+        menuIsOpen = false;
     }
 
     function openNav() {
+
+        if(menuIsOpen)
+        {
+            CloseAllMenus();
+            return;
+        }
+
         document.getElementById("mySidenav").style = "transform: translateX(0)"; 
+
+        //Atualiza variável
+        menuIsOpen = true;
 
         //Desativa clicks na main (indesejável quando o menu está aberto)
         document.getElementById("table-contents").classList.add("disable");

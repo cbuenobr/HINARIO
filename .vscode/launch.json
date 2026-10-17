@@ -11,11 +11,13 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open hinario ",
-             //"file": "c:\\PROJETOS CB\\HINARIO\\index.html",
             //"url": "http://localhost:8000/Admin_CB.html",
             "url": "http://localhost:8000/index.html",
             //"url": "http://localhost:8000/post_test.html",
+
+            "name": "Launch Chrome against localhost",
+            //"url": "http://localhost:8080",
+
             "webRoot": "${workspaceFolder}",
             "runtimeArgs": ["--incognito"] //evita o uso do cache do Chrome
         }
