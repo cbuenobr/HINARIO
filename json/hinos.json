@@ -17,6 +17,14 @@
 			"copyright": ""
 		},
 		{
+			"id": 6,
+			"numero": "14",
+			"titulo": "A ELE DAI A GRANDE HONRA",
+			"arquivo": "./letras_todas/a_ele_dai_a_grande_honra.txt",
+			"autor": "",
+			"copyright": ""
+		},
+		{
 			"id": 14,
 			"numero": "22",
 			"titulo": "A TI Ó MESTRE",
@@ -24,12 +32,52 @@
 			"autor": "Autor: Brian Cobert, Emerson Eads",
 			"copyright": "Copyright: ©1978 The Living Word"
 		},
+		{
+			"id": 30,
+			"numero": "38",
+			"titulo": "AGORA VEMOS",
+			"arquivo": "./letras_todas/agora_vemos.txt",
+			"autor": "Autor: Mike Suderman",
+			"copyright": "Copyright: ©1978 The Living Word"
+		},
+		{
+			"id": 34,
+			"numero": "42",
+			"titulo": "ALEGRE-SE, ALEGRE-SE, ALEGRE-SE",
+			"arquivo": "./letras_todas/alegre-se,_alegre-se,_alegre-se.txt",
+			"autor": "Autor: Bobby Brigden",
+			"copyright": "Copyright: © 1974 The Living Word"
+		},
 	
 		{
 			"id": 44,
 			"numero": "52",
 			"titulo": "AMÉM TRÍPLICE",
 			"arquivo": "./letras_todas/amem_triplice.txt",
+			"autor": "Autor: Autor desconhecido",
+			"copyright": "Copyright: Domínio Público"
+		},
+		{
+			"id": 45,
+			"numero": "53",
+			"titulo": "ANDAREI  COM O MEU SENHOR",
+			"arquivo": "./letras_todas/andarei_com_o_meu_senhor.txt",
+			"autor": "Autor: Irvin Hussman, Phyllis Meinel",
+			"copyright": "Copyright: © 1974 The Living Word"
+		},
+		{
+			"id": 48,
+			"numero": "56",
+			"titulo": "AO SENHOR SEJA A GLÓRIA",
+			"arquivo": "./letras_todas/ao_senhor_seja_a_gloria.txt",
+			"autor": "Autor: Kathy Krum, Vere Thomas",
+			"copyright": "Copyright: © 1974 The Living Word"
+		},
+		{
+			"id": 52,
+			"numero": "60",
+			"titulo": "AQUELE QUE HABITA (SALMO 91)",
+			"arquivo": "./letras_todas/aquele_que_habita_(salmo_91).txt",
 			"autor": "Autor: Autor desconhecido",
 			"copyright": "Copyright: Domínio Público"
 		},
@@ -42,7 +90,14 @@
 			"autor": "Autor: Craig Gruenberg",
 			"copyright": "Copyright: © 1990 The Living Word"
 		},
-		
+		{
+			"id": 68,
+			"numero": "76",
+			"titulo": "CANTAI, POIS",
+			"arquivo": "./letras_todas/cantai,_pois.txt",
+			"autor": "Autor: Eloise Williams",
+			"copyright": "Copyright: ©1975 The Living Word"
+		},
 		{
 			"id": 69,
 			"numero": "77",
@@ -50,6 +105,30 @@
 			"arquivo": "./letras_todas/cantarei_aleluia.txt",
 			"autor": "Autor: Autor desconhecido",
 			"copyright": "Copyright: Domínio Público"
+		},
+		{
+			"id": 70,
+			"numero": "78",
+			"titulo": "CANTAREI AO SENHOR DA COLHEITA",
+			"arquivo": "./letras_todas/cantarei_ao_senhor_da_colheita.txt",
+			"autor": "Autor: M Miller, Tom Miller",
+			"copyright": "Copyright: ©1978 The Living Word"
+		},
+		{
+			"id": 72,
+			"numero": "80",
+			"titulo": "CASTELO FORTE",
+			"arquivo": "./letras_todas/castelo_forte.txt",
+			"autor": "Autor: Martin Luther",
+			"copyright": "Copyright: Domínio Público"
+		},
+		{
+			"id": 78,
+			"numero": "86",
+			"titulo": "CHEGOU, O REINO DE DEUS CHEGOU",
+			"arquivo": "./letras_todas/chegou,_o_reino_de_deus_chegou.txt",
+			"autor": "Autor: Phyllis Meinel",
+			"copyright": "Copyright: ©1975 The Living Word"
 		},
 	
 		{
@@ -60,6 +139,102 @@
 			"autor": "Autor: Charles Wesley, Lyra Davidica",
 			"copyright": "Copyright: Domínio Público"
 		},
+		{
+			"id": 87,
+			"numero": "95",
+			"titulo": "CRISTO VIVE EM MIM",
+			"arquivo": "./letras_todas/cristo_vive_em_mim.txt",
+			"autor": "Autor: D W Whittle, James McGranaham",
+			"copyright": "Copyright: Domínio Público"
+		},
+		{
+			"id": 88,
+			"numero": "96",
+			"titulo": "CRISTO, CRISTO, VENHO CONFESSAR",
+			"arquivo": "./letras_todas/cristo,_cristo,_venho_confessar.txt",
+			"autor": "Autor: Early Plainsong",
+			"copyright": "Copyright: Domínio Público"
+		},
+		{
+			"id": 89,
+			"numero": "97",
+			"titulo": "CRISTO, MEU SENHOR",
+			"arquivo": "./letras_todas/cristo,_meu_senhor.txt",
+			"autor": "Autor: Judy Price, 1972",
+			"copyright": "Copyright: © 1974 The Living Word"
+		},
+		{
+			"id": 96,
+			"numero": "104",
+			"titulo": "DEIXANDO ESTE NÍVEL",
+			"arquivo": "./letras_todas/deixando_este_nivel.txt",
+			"autor": "Autor: Diana Kneifel",
+			"copyright": "Copyright: © 1976 The Living Word"
+		},
+		{
+			"id": 104,
+			"numero": "112",
+			"titulo": "DEUS DEU UMA PALAVRA",
+			"arquivo": "./letras_todas/deus_deu_uma_palavra.txt",
+			"autor": "Autor: Maxine Anderson",
+			"copyright": "Copyright: © 1976 The Living Word"
+		},
+		{
+			"id": 115,
+			"numero": "123",
+			"titulo": "É O DIA, O DIA DA VITÓRIA",
+			"arquivo": "./letras_todas/e_o_dia,_o_dia_da_vitoria.txt",
+			"autor": "Autor: Bob Meinel",
+			"copyright": "Copyright: ©1974 The Living Word"
+		},
+		{
+			"id": 117,
+			"numero": "125",
+			"titulo": "EIS AQUI, BENDIZEI AO SENHOR",
+			"arquivo": "./letras_todas/eis_aqui,_bendizei_ao_senhor.txt",
+			"autor": "Autor: Judy Price",
+			"copyright": "Copyright: ©1974 The Living Word"
+		},
+		{
+			"id": 119,
+			"numero": "127",
+			"titulo": "EIS QUE EU ESTOU A FAZER",
+			"arquivo": "./letras_todas/_eis_que_eu_estou_a_fazer.txt",
+			"autor": "Autor: Judy Price",
+			"copyright": "Copyright: ©1973 The Living Word"
+		},
+		{
+			"id": 120,
+			"numero": "128",
+			"titulo": "EIS-ME AQUI",
+			"arquivo": "./letras_todas/eis-me_aqui.txt",
+			"autor": "Autor: Vivian Kuala",
+			"copyright": "Copyright: ©1991 The Living Word"
+		},
+		{
+			"id": 123,
+			"numero": "131",
+			"titulo": "ELE É O GRANDE EU SOU",
+			"arquivo": "./letras_todas/ele_e_o_grande_eu_sou.txt",
+			"autor": "Autor: Tom Miller",
+			"copyright": "Copyright: ©1979 The Living Word"
+		},
+		{
+			"id": 124,
+			"numero": "132",
+			"titulo": "ELE É O QUE EU PRECISO",
+			"arquivo": "./letras_todas/ele_e_o_que_eu_preciso.txt",
+			"autor": "Autor: W Malcolm Rigel",
+			"copyright": "Copyright: Domínio Público"
+		},
+		{
+			"id": 126,
+			"numero": "134",
+			"titulo": "ELE É O VENCEDOR",
+			"arquivo": "./letras_todas/ele_e_o_vencedor.txt",
+			"autor": "Autor: Rhonda Baley",
+			"copyright": "Copyright: ©1974 The Living Word"
+		},
 		
 		{
 			"id": 129,
@@ -68,6 +243,46 @@
 			"arquivo": "./letras_todas/ele_nos_chamou.txt",
 			"autor": "Autor: Tom Miller",
 			"copyright": "Copyright: ©1978 The Living Word"
+		},
+		{
+			"id": 135,
+			"numero": "143",
+			"titulo": "EM TUA PRESENÇA, PAI",
+			"arquivo": "./letras_todas/em_tua_presenca,_pai.txt",
+			"autor": "Autor: John Robert Stevens, Diane Kniefel",
+			"copyright": "Copyright: ©1978 The Living Word"
+		},
+		{
+			"id": 145,
+			"numero": "153",
+			"titulo": "ESTA É A ERA DO SEU REINO",
+			"arquivo": "./letras_todas/esta_e_a_era_do_seu_reino.txt",
+			"autor": "Autor: Rhonda Bailey",
+			"copyright": "Copyright: ©1974 The Living Word"
+		},
+		{
+			"id": 148,
+			"numero": "156",
+			"titulo": "ESTAMOS ENTRANDO POR FÉ",
+			"arquivo": "./letras_todas/estamos_entrando_por_fe.txt",
+			"autor": "Autor: Pat Davis, Craig Grumberg",
+			"copyright": "Copyright: ©1974 The Living Word"
+		},
+		{
+			"id": 152,
+			"numero": "160",
+			"titulo": "ESTE É O DIA QUE DEUS CRIOU",
+			"arquivo": "./letras_todas/este_e_o_dia_que_deus_criou.txt",
+			"autor": "Autor: Ellen Hedman",
+			"copyright": "Copyright: ©1974 The Living Word"
+		},
+		{
+			"id": 170,
+			"numero": "178",
+			"titulo": "EU TE ROGO Ó PAI",
+			"arquivo": "./letras_todas/eu_te_rogo_o_pai.txt",
+			"autor": "Autor: Rhonda Bailey",
+			"copyright": "Copyright: ©1974 The Living Word"
 		},
 		
 		{
@@ -78,6 +293,46 @@
 			"autor": "Autor: Craig Gruenberg",
 			"copyright": "Copyright: ©1974 The Living Word"
 		},
+		{
+			"id": 183,
+			"numero": "191",
+			"titulo": "FILHOS SURGINDO",
+			"arquivo": "./letras_todas/filhos_surgindo.txt",
+			"autor": "Autor: Katie Wagner",
+			"copyright": "Copyright: ©1977 The Living Word"
+		},
+		{
+			"id": 184,
+			"numero": "192",
+			"titulo": "FINDOU A NOITE",
+			"arquivo": "./letras_todas/findou_a_noite.txt",
+			"autor": "Autor: Ellen Hedman",
+			"copyright": "Copyright: ©1974 The Living Word"
+		},
+		{
+			"id": 188,
+			"numero": "196",
+			"titulo": "FLUIRÁ COMO UM RIO",
+			"arquivo": "./letras_todas/fluira_como_um_rio.txt",
+			"autor": "Autor: James L Beall",
+			"copyright": "Copyright: ©1963 James L Beall"
+		},
+		{
+			"id": 192,
+			"numero": "200",
+			"titulo": "GLÓRIA SEJA AO PAI ETERNO",
+			"arquivo": "./letras_todas/gloria_seja_ao_pai_eterno.txt",
+			"autor": "Autor: Margaret J Harris",
+			"copyright": "Copyright: Domínio Público"
+		},
+		{
+			"id": 197,
+			"numero": "205",
+			"titulo": "GLÓRIAS PRA SEMPRE",
+			"arquivo": "./letras_todas/glorias_pra_sempre.txt",
+			"autor": "Autor: Vencedores Por Cristo",
+			"copyright": "Copyright: ©1975 Vencedores Por Cristo"
+		},
 		
 		{
 			"id": 198,
@@ -87,7 +342,30 @@
 			"autor": "Autor: John Newton",
 			"copyright": "Copyright: Domínio Público"
 		},
-		
+		{
+			"id": 200,
+			"numero": "208",
+			"titulo": "GRAÇAS PAI",
+			"arquivo": "./letras_todas/gracas_pai.txt",
+			"autor": "Autor: D J Humpheys",
+			"copyright": "Copyright: ©1976 The Living Word"
+		},
+		{
+			"id": 217,
+			"numero": "225",
+			"titulo": "IMUTÁVEL DEUS",
+			"arquivo": "./letras_todas/imutavel_deus.txt",
+			"autor": "Autor: Craig Grumberg",
+			"copyright": "Copyright: ©1982 The Living Word"
+		},
+		{
+			"id": 228,
+			"numero": "236",
+			"titulo": "LOUVADO SEJA DEUS",
+			"arquivo": "./letras_todas/louvado_seja_deus.txt",
+			"autor": "Autor: Maxine Anderson",
+			"copyright": "Copyright: ©1972 The Living Word"
+		},
 		
 		{
 			"id": 231,
@@ -96,6 +374,46 @@
 			"arquivo": "./letras_todas/louvarei_ao_senhor.txt",
 			"autor": "Autor: Jovens Profetas MS",
 			"copyright": "Copyright: © A Palavra Viva"
+		},
+		{
+			"id": 229,
+			"numero": "237",
+			"titulo": "LOUVAI AO SENHOR",
+			"arquivo": "./letras_todas/louvai_ao_senhor.txt",
+			"autor": "Autor: Kathy Crum Jekins",
+			"copyright": "Copyright: ©1974 The Living Word"
+		},
+		{
+			"id": 250,
+			"numero": "259",
+			"titulo": "NÃO DIZEMOS MAIS AMANHÃ",
+			"arquivo": "./letras_todas/nao_dizemos_mais_amanha.txt",
+			"autor": "Autor: Diana Kniefel",
+			"copyright": "Copyright: © 1976 The Living Word"
+		},
+		{
+			"id": 256,
+			"numero": "265",
+			"titulo": "NASCEU UMA NOVA ERA PARA VÓS",
+			"arquivo": "./letras_todas/nasceu_uma_nova_era_para_vos.txt",
+			"autor": "Autor: Maxine Anderson",
+			"copyright": "Copyright: © 1974 The Living Word"
+		},
+		{
+			"id": 265,
+			"numero": "274",
+			"titulo": "NUM NOVO NÍVEL",
+			"arquivo": "./letras_todas/num_novo_nivel.txt",
+			"autor": "Autor: Diane Kniefel",
+			"copyright": "Copyright: © 1980 The Living Word"
+		},
+		{
+			"id": 266,
+			"numero": "275",
+			"titulo": "O AMOR DO SENHOR ESTÁ SOBRE NÓS",
+			"arquivo": "./letras_todas/o_amor_do_senhor_esta_sobre_nos.txt",
+			"autor": "Autor: Tom Miller",
+			"copyright": "Copyright: © 1981 The Living Word"
 		},
 		
 		{
@@ -123,6 +441,14 @@
 			"autor": "Autor: Vivian Kuala",
 			"copyright": "Copyright: © 1983 The Living Word"
 		},
+		{
+			"id": 274,
+			"numero": "283",
+			"titulo": "O LEÃO DE JUDÁ",
+			"arquivo": "./letras_todas/o_leao_de_juda.txt",
+			"autor": "Autor: Emmell Adams",
+			"copyright": "Copyright: Domínio Público"
+		},
 		
 		{
 			"id": 275,
@@ -148,6 +474,14 @@
 			"arquivo": "./letras_todas/oh_pai,_nos_te_honramos.txt",
 			"autor": "Autor: Frank Longest, Vivian Kuala",
 			"copyright": "Copyright: © 1988 The Living Word"
+		},
+		{
+			"id": 290,
+			"numero": "299",
+			"titulo": "OH! QUÃO PURA É A PALAVRA",
+			"arquivo": "./letras_todas/oh!_quao_pura_e_a_palavra.txt",
+			"autor": "Autor: Gary Clark, Craig Grumberg",
+			"copyright": "Copyright: © 1975 The Living Word"
 		},
 		
 		{
@@ -175,6 +509,14 @@
 			"autor": "Autor: Juddy Herman",
 			"copyright": "Copyright: © 1974 The Living Word"
 		},
+		{
+			"id": 304,
+			"numero": "313",
+			"titulo": "PAI DE AMOR",
+			"arquivo": "./letras_todas/pai_de_amor.txt",
+			"autor": "Autor: Autor desconhecido",
+			"copyright": "Copyright: Domínio Público"
+		},
 		
 		{
 			"id": 305,
@@ -183,6 +525,22 @@
 			"arquivo": "./letras_todas/pai,_eu_me_volto_a_ti.txt",
 			"autor": "Autor: Chuck Beckman",
 			"copyright": "Copyright: © 2000 Chuck Beckman"
+		},
+		{
+			"id": 311,
+			"numero": "320",
+			"titulo": "PAI, VIEMOS TE ADORAR",
+			"arquivo": "./letras_todas/pai,_viemos_te_adorar.txt",
+			"autor": "Autor: R D Holbrook, Carol Pipkin",
+			"copyright": "Copyright: © 1988 The Living Word"
+		},
+		{
+			"id": 337,
+			"numero": "346",
+			"titulo": "QUE SEGURANÇA",
+			"arquivo": "./letras_todas/que_seguranca.txt",
+			"autor": "Autor: Fanny Crosby, Phoebe P Knapp",
+			"copyright": "Copyright: Domínio Público"
 		},
 		
 		{
@@ -260,6 +618,22 @@
 			"arquivo": "./letras_todas/somos_muitos_povos.txt",
 			"autor": "Autor: Diana Kniefel",
 			"copyright": "Copyright: © 1979 The Living Word"
+		},
+		{
+			"id": 381,
+			"numero": "390",
+			"titulo": "TU ÉS FIEL SENHOR",
+			"arquivo": "./letras_todas/tu_es_fiel_senhor.txt",
+			"autor": "Autor: Thomas O Crisholm, William R Runyan",
+			"copyright": "Copyright: Domínio Público"
+		},
+		{
+			"id": 391,
+			"numero": "400",
+			"titulo": "UM SUSSURRO SE ELEVA",
+			"arquivo": "./letras_todas/um_sussurro_se_eleva.txt",
+			"autor": "Autor: Vivian Kuala",
+			"copyright": "Copyright: © 1982 The Living Word"
 		}		
 	]
 }
