@@ -251,8 +251,8 @@
 		{
 			"id": 32,
 			"numero": "40",
-			"titulo": "AINDA QUE A FIGUEIRA NÃO FLORESÇA (HABACUQUE 3)",
-			"arquivo": "./letras_todas/ainda_que_a_figueira_nao_floresca_(habacuque_3).txt",
+			"titulo": "AINDA QUE A FIGUEIRA NÃO FLORESÇA",
+			"arquivo": "./letras_todas/ainda_que_a_figueira_nao_floresca.txt",
 			"autor": "Autor: Autor desconhecido",
 			"copyright": "Copyright: Domínio Público"
 		},
@@ -299,8 +299,8 @@
 		{
 			"id": 38,
 			"numero": "46",
-			"titulo": "ALELUIA, ALELUIA! LOUVADO SEJA O CRISTO JESUS",
-			"arquivo": "./letras_todas/aleluia,_aleluia!_louvado_seja_o_cristo_jesus.txt",
+			"titulo": "LOUVADO SEJA O CRISTO JESUS",
+			"arquivo": "louvado_seja_o_cristo_jesus.txt",
 			"autor": "Autor: Autor desconhecido",
 			"copyright": "Copyright: Domínio Público"
 		},
@@ -867,8 +867,8 @@
 		{
 			"id": 109,
 			"numero": "117",
-			"titulo": "DIGNO É O CORDEIRO (APOCALIPSE 5)",
-			"arquivo": "./letras_todas/digno_e_o_cordeiro_(apocalipse_5).txt",
+			"titulo": "DIGNO É O CORDEIRO",
+			"arquivo": "./letras_todas/digno_e_o_cordeiro.txt",
 			"autor": "Autor: Autor desconhecido",
 			"copyright": "Copyright: Domínio Público"
 		},
@@ -1603,8 +1603,8 @@
 		{
 			"id": 201,
 			"numero": "209",
-			"titulo": "GRANDE É O SENHOR (SALMO 48)",
-			"arquivo": "./letras_todas/grande_e_o_senhor_(salmo_48).txt",
+			"titulo": "GRANDE É O SENHOR",
+			"arquivo": "./letras_todas/grande_e_o_senhor).txt",
 			"autor": "Autor: Autor desconhecido",
 			"copyright": "Copyright: Domínio Público"
 		},
@@ -1787,8 +1787,8 @@
 		{
 			"id": 224,
 			"numero": "232",
-			"titulo": "LEVANTAI Ó PORTAS (SALMO 24)",
-			"arquivo": "./letras_todas/levantai_o_portas_(salmo_24).txt",
+			"titulo": "LEVANTAI Ó PORTAS",
+			"arquivo": "./letras_todas/levantai_o_portas.txt",
 			"autor": "Autor: Autor desconhecido",
 			"copyright": "Copyright: Domínio Público"
 		},
@@ -2243,16 +2243,16 @@
 		{
 			"id": 281,
 			"numero": "290",
-			"titulo": "O SENHOR SERÁ TUA JUSTIÇA (ISAÍAS 60)",
-			"arquivo": "./letras_todas/o_senhor_sera_tua_justica_(isaias_60).txt",
+			"titulo": "O SENHOR SERÁ TUA JUSTIÇA",
+			"arquivo": "./letras_todas/o_senhor_sera_tua_justica.txt",
 			"autor": "Autor: Eurico Nunes",
 			"copyright": "Copyright: © A Palavra Viva"
 		},
 		{
 			"id": 282,
 			"numero": "291",
-			"titulo": "O SENHOR TE GUIARÁ (ISAÍAS 58)",
-			"arquivo": "./letras_todas/o_senhor_te_guiara_(isaias_58).txt",
+			"titulo": "O SENHOR TE GUIARÁ",
+			"arquivo": "./letras_todas/o_senhor_te_guiara.txt",
 			"autor": "Autor: Autor Desconhecido",
 			"copyright": "Copyright: Domínio Público"
 		},
@@ -2363,8 +2363,8 @@
 		{
 			"id": 296,
 			"numero": "305",
-			"titulo": "OS QUE CONFIAM NO SENHOR (SALMO 125)",
-			"arquivo": "./letras_todas/os_que_confiam_no_senhor_(salmo_125).txt",
+			"titulo": "OS QUE CONFIAM NO SENHOR",
+			"arquivo": "./letras_todas/os_que_confiam_no_senhor.txt",
 			"autor": "Autor: Vera Kingkade, Elaine Viana",
 			"copyright": "Copyright: © A Palavra Viva"
 		},
@@ -2411,8 +2411,8 @@
 		{
 			"id": 302,
 			"numero": "311",
-			"titulo": "OUVE, Ó DEUS! (SALMO 61)",
-			"arquivo": "./letras_todas/ouve,_o_deus!_(salmo_61).txt",
+			"titulo": "OUVE, Ó DEUS!",
+			"arquivo": "./letras_todas/ouve_o_deus.txt",
 			"autor": "Autor: Autor Desconhecido",
 			"copyright": "Copyright: Domínio Público"
 		},
@@ -2723,8 +2723,8 @@
 		{
 			"id": 341,
 			"numero": "350",
-			"titulo": "RENDEI GRAÇAS AO SENHOR (SALMO 136)",
-			"arquivo": "./letras_todas/rendei_gracas_ao_senhor_(salmo_136).txt",
+			"titulo": "RENDEI GRAÇAS AO SENHOR",
+			"arquivo": "./letras_todas/rendei_gracas_ao_senhor.txt",
 			"autor": "Autor: Autor desconhecido",
 			"copyright": "Copyright: Domínio Público"
 		},
@@ -3011,8 +3011,8 @@
 		{
 			"id": 377,
 			"numero": "386",
-			"titulo": "TOCAI ADUFES E HARPAS (SALMO 149)",
-			"arquivo": "./letras_todas/tocai_adufes_e_harpas_(salmo_149).txt",
+			"titulo": "TOCAI ADUFES E HARPAS",
+			"arquivo": "./letras_todas/tocai_adufes_e_harpas.txt",
 			"autor": "Autor: Sandra Alex",
 			"copyright": "Copyright: © A Palavra Viva"
 		},
@@ -3099,8 +3099,8 @@
 		{
 			"id": 388,
 			"numero": "397",
-			"titulo": "UM CAMINHO SOBREMODO EXCELENTE (I CORÍNTIOS 13)",
-			"arquivo": "./letras_todas/um_caminho_sobremodo_excelente_(i_corintios_13).txt",
+			"titulo": "UM CAMINHO SOBREMODO EXCELENTE",
+			"arquivo": "./letras_todas/um_caminho_sobremodo_excelente.txt",
 			"autor": "Autor: Autor desconhecido",
 			"copyright": "Copyright: Domínio Público"
 		},
