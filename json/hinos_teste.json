@@ -1,0 +1,53 @@
+{
+"hinos":[
+{
+    "id":1,
+    "titulo": "SANTO! SANTO! SANTO! DEUS ONIPOTENTE",
+    "numero": 77,
+    "arquivo": "./letras/santo_santo_santo.txt",
+    "autor": "Wayne Barton",
+    "copyright": "@1974 The Living Word. All Rights Reserved"
+},
+
+{
+    "id":2,
+    "titulo": "EXALTAREI O CRISTO, REI",
+    "numero": 80,
+    "arquivo": "./letras/exaltarei_o_cristo_rei.txt",
+    "autor": "Craig Gruenberg",
+    "copyright": "@1974 The Living Word. All Rights Reserved"
+},
+
+{
+    "id":3,
+    "titulo": "EM FRENTE DA TERRA",
+    "numero": 22,
+    "arquivo": "./letras/em_frente_da_terra.txt",
+    "autor": "Tom Miller",
+    "copyright": "@1978 The Living Word. All Rights Reserved"
+},
+
+{
+    "id":4,
+    "titulo": "O ANCIÃO DE DIAS VEIO",
+    "numero": 62,
+    "arquivo": "./letras/o_anciao_de_dias_veio.txt",
+    "autor": "Craig Gruenberg",
+    "copyright": "@1974 The Living Word. All Rights Reserved"
+},
+{
+    "id":5,
+    "titulo": "GRANDIOSO ÉS TU",
+    "numero": 17,
+    "arquivo": "./letras/grandioso_es_tu.txt",
+    "autor": "Carl Boberg",
+    "copyright": "© 1949, 1953, The Stuart Hine Trust."
+},
+{
+    "id":6,
+    "titulo": "LIXO",
+    "numero": 666,
+    "arquivo": "./letras/lixo.txt"
+}
+]
+}

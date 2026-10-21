@@ -45,7 +45,8 @@
                 throw new Error('Este aplicativo deve ser aberto por um servidor local. Execute "python -m http.server" e abra http://localhost:8000');
             }
 
-            const resposta = await fetch('./json/hinos.json', { cache: 'no-store' });
+           const resposta = await fetch('./json/hinos.json', { cache: 'no-store' });
+           // const resposta = await fetch('./json/hinos_todos.json', { cache: 'no-store' });
 
             if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json (erro ' + resposta.status + ')');
 
@@ -309,26 +310,20 @@
 
 
     //Ordena array pelo titulo do hino obedecendo a ordem passada (Caixa alta tem precedência sobre caixa baixa, por isso devemos igualá-las)
+    //Usei localecompare para obedecer a acentuaçao
     function SortByTitle(sortOrder)
     {
         if(sortOrder == 1)
-        {
-            hinosCarregados = hinosCarregados.sort(function(a,b){
-            let x = a.titulo.toLowerCase();
-            let y = b.titulo.toLowerCase();
-            if(x<y){return -1}
-            if(x>y){return 1}
-            
-            return 0});
+        {       
+            hinosCarregados.sort(function(a, b) {
+                return a.titulo.toLowerCase().localeCompare(b.titulo.toLowerCase());
+            });
+
         }
         else{
-            hinosCarregados = hinosCarregados.sort(function(a,b){
-            let x = a.titulo.toLowerCase();
-            let y = b.titulo.toLowerCase();
-            if(x<y){return 1}
-            if(x>y){return -1}
-            
-            return 0});
+            hinosCarregados.sort(function(a, b) {
+                return b.titulo.toLowerCase().localeCompare(a.titulo.toLowerCase());
+            });
         }
     }
 
@@ -469,7 +464,7 @@
     {
         document.getElementById("aboutMenu").style = "";
     }
-    //---------------------------------------------------------------
+
 
     //INICIALIZACAO
     window.onload = function() {
@@ -488,5 +483,5 @@
         Catalogo_Carrega();
 
         //Ativa clicks para fechar o side menu
-        document.addEventListener('click', function(e){DocumentClick(e)});
+        document.addEventListener('click', function(e){DocumentClick(e)});   
     };

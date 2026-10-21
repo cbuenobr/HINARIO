@@ -54,6 +54,7 @@
                 }
 
                 const resposta = await fetch('./json/hinos.json', { cache: 'no-store' });
+               //const resposta = await fetch('./json/allsongs.json', { cache: 'no-store' });
 
                 if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json (erro ' + resposta.status + ')');
 

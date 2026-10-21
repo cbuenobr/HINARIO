@@ -1,53 +1,265 @@
 {
-"hinos":[
-{
-    "id":1,
-    "titulo": "SANTO! SANTO! SANTO! DEUS ONIPOTENTE",
-    "numero": 77,
-    "arquivo": "./letras/santo_santo_santo.txt",
-    "autor": "Wayne Barton",
-    "copyright": "@1974 The Living Word. All Rights Reserved"
-},
-
-{
-    "id":2,
-    "titulo": "EXALTAREI O CRISTO, REI",
-    "numero": 80,
-    "arquivo": "./letras/exaltarei_o_cristo_rei.txt",
-    "autor": "Craig Gruenberg",
-    "copyright": "@1974 The Living Word. All Rights Reserved"
-},
-
-{
-    "id":3,
-    "titulo": "EM FRENTE DA TERRA",
-    "numero": 22,
-    "arquivo": "./letras/em_frente_da_terra.txt",
-    "autor": "Tom Miller",
-    "copyright": "@1978 The Living Word. All Rights Reserved"
-},
-
-{
-    "id":4,
-    "titulo": "O ANCIÃO DE DIAS VEIO",
-    "numero": 62,
-    "arquivo": "./letras/o_anciao_de_dias_veio.txt",
-    "autor": "Craig Gruenberg",
-    "copyright": "@1974 The Living Word. All Rights Reserved"
-},
-{
-    "id":5,
-    "titulo": "GRANDIOSO ÉS TU",
-    "numero": 17,
-    "arquivo": "./letras/grandioso_es_tu.txt",
-    "autor": "Carl Boberg",
-    "copyright": "© 1949, 1953, The Stuart Hine Trust."
-},
-{
-    "id":6,
-    "titulo": "LIXO",
-    "numero": 666,
-    "arquivo": "./letras/lixo.txt"
-}
-]
+	"hinos": [
+		{
+			"id": 4,
+			"numero": "12",
+			"titulo": "A DEUS SUPREMO BENFEITOR",
+			"arquivo": "./letras_todas/a_deus_supremo_benfeitor.txt",
+			"autor": "",
+			"copyright": ""
+		},
+		{
+			"id": 5,
+			"numero": "13",
+			"titulo": "A ELE A GLÓRIA",
+			"arquivo": "./letras_todas/a_ele_a_gloria.txt",
+			"autor": "",
+			"copyright": ""
+		},
+		{
+			"id": 14,
+			"numero": "22",
+			"titulo": "A TI Ó MESTRE",
+			"arquivo": "./letras_todas/a_ti_o_mestre.txt",
+			"autor": "Autor: Brian Cobert, Emerson Eads",
+			"copyright": "Copyright: ©1978 The Living Word"
+		},
+	
+		{
+			"id": 44,
+			"numero": "52",
+			"titulo": "AMÉM TRÍPLICE",
+			"arquivo": "./letras_todas/amem_triplice.txt",
+			"autor": "Autor: Autor desconhecido",
+			"copyright": "Copyright: Domínio Público"
+		},
+		
+		{
+			"id": 58,
+			"numero": "66",
+			"titulo": "BENDIREI AO SENHOR",
+			"arquivo": "./letras_todas/bendirei_ao_senhor.txt",
+			"autor": "Autor: Craig Gruenberg",
+			"copyright": "Copyright: © 1990 The Living Word"
+		},
+		
+		{
+			"id": 69,
+			"numero": "77",
+			"titulo": "CANTAREI ALELUIA",
+			"arquivo": "./letras_todas/cantarei_aleluia.txt",
+			"autor": "Autor: Autor desconhecido",
+			"copyright": "Copyright: Domínio Público"
+		},
+	
+		{
+			"id": 86,
+			"numero": "94",
+			"titulo": "CRISTO JÁ RESSUSCITOU",
+			"arquivo": "./letras_todas/cristo_ja_ressuscitou.txt",
+			"autor": "Autor: Charles Wesley, Lyra Davidica",
+			"copyright": "Copyright: Domínio Público"
+		},
+		
+		{
+			"id": 129,
+			"numero": "137",
+			"titulo": "ELE NOS CHAMOU",
+			"arquivo": "./letras_todas/ele_nos_chamou.txt",
+			"autor": "Autor: Tom Miller",
+			"copyright": "Copyright: ©1978 The Living Word"
+		},
+		
+		{
+			"id": 174,
+			"numero": "182",
+			"titulo": "EXALTAREI O CRISTO REI",
+			"arquivo": "./letras_todas/exaltarei_o_cristo_rei.txt",
+			"autor": "Autor: Craig Gruenberg",
+			"copyright": "Copyright: ©1974 The Living Word"
+		},
+		
+		{
+			"id": 198,
+			"numero": "206",
+			"titulo": "GRAÇA EXCELSA",
+			"arquivo": "./letras_todas/graca_excelsa.txt",
+			"autor": "Autor: John Newton",
+			"copyright": "Copyright: Domínio Público"
+		},
+		
+		
+		{
+			"id": 231,
+			"numero": "239",
+			"titulo": "LOUVAREI AO SENHOR",
+			"arquivo": "./letras_todas/louvarei_ao_senhor.txt",
+			"autor": "Autor: Jovens Profetas MS",
+			"copyright": "Copyright: © A Palavra Viva"
+		},
+		
+		{
+			"id": 268,
+			"numero": "277",
+			"titulo": "O ANCIÃO DE DIAS VEIO",
+			"arquivo": "./letras_todas/o_anciao_de_dias_veio.txt",
+			"autor": "Autor: Craig Grumberg",
+			"copyright": "Copyright: © 1973 The Living Word"
+		},
+		
+		{
+			"id": 270,
+			"numero": "279",
+			"titulo": "O DEUS DESTA HORA",
+			"arquivo": "./letras_todas/o_deus_desta_hora.txt",
+			"autor": "Autor: Judy Price",
+			"copyright": "Copyright: © 1971 The Living Word"
+		},
+		{
+			"id": 271,
+			"numero": "280",
+			"titulo": "O DEUS DO CORAÇÃO ABERTO",
+			"arquivo": "./letras_todas/o_deus_do_coracao_aberto.txt",
+			"autor": "Autor: Vivian Kuala",
+			"copyright": "Copyright: © 1983 The Living Word"
+		},
+		
+		{
+			"id": 275,
+			"numero": "284",
+			"titulo": "O MISTÉRIO DAS ERAS",
+			"arquivo": "./letras_todas/o_misterio_das_eras.txt",
+			"autor": "Autor: Tom Miller",
+			"copyright": "Copyright: © 1980 The Living Word"
+		},
+		
+		{
+			"id": 288,
+			"numero": "297",
+			"titulo": "OH! COMO O AMO",
+			"arquivo": "./letras_todas/oh!_como_o_amo.txt",
+			"autor": "Autor: William Clibborn, Eduardo di Capua",
+			"copyright": "Copyright: Domínio Público"
+		},
+		{
+			"id": 289,
+			"numero": "298",
+			"titulo": "OH PAI, NÓS TE HONRAMOS",
+			"arquivo": "./letras_todas/oh_pai,_nos_te_honramos.txt",
+			"autor": "Autor: Frank Longest, Vivian Kuala",
+			"copyright": "Copyright: © 1988 The Living Word"
+		},
+		
+		{
+			"id": 295,
+			"numero": "304",
+			"titulo": "OS ADORADORES PRA GUERRA A MARCHAR",
+			"arquivo": "./letras_todas/os_adoradores_pra_guerra_a_marchar.txt",
+			"autor": "Autor: Carol Grumberg",
+			"copyright": "Copyright: © 1977 The Living Word"
+		},
+		{
+			"id": 296,
+			"numero": "305",
+			"titulo": "OS QUE CONFIAM NO SENHOR (SALMO 125)",
+			"arquivo": "./letras_todas/os_que_confiam_no_senhor_(salmo_125).txt",
+			"autor": "Autor: Vera Kingkade, Elaine Viana",
+			"copyright": "Copyright: © A Palavra Viva"
+		},
+		
+		{
+			"id": 298,
+			"numero": "307",
+			"titulo": "OUÇA AO LONGE",
+			"arquivo": "./letras_todas/ouca_ao_longe.txt",
+			"autor": "Autor: Juddy Herman",
+			"copyright": "Copyright: © 1974 The Living Word"
+		},
+		
+		{
+			"id": 305,
+			"numero": "314",
+			"titulo": "PAI, EU ME VOLTO A TI",
+			"arquivo": "./letras_todas/pai,_eu_me_volto_a_ti.txt",
+			"autor": "Autor: Chuck Beckman",
+			"copyright": "Copyright: © 2000 Chuck Beckman"
+		},
+		
+		{
+			"id": 340,
+			"numero": "349",
+			"titulo": "RENDEI AO SENHOR (SALMO 29)",
+			"arquivo": "./letras_todas/rendei_ao_senhor_(salmo_29).txt",
+			"autor": "Autor: Maxine Anderson",
+			"copyright": "Copyright: © 1972 The Living Word"
+		},
+		
+		{
+			"id": 348,
+			"numero": "357",
+			"titulo": "SANTO! SANTO! SANTO! DEUS ONIPOTENTE",
+			"arquivo": "./letras_todas/santo!_santo!_santo!_deus_onipotente.txt",
+			"autor": "Autor: Reginald Hereber, John B Dykes",
+			"copyright": "Copyright: Domínio Público"
+		},
+		{
+			"id": 349,
+			"numero": "358",
+			"titulo": "SANTO, SANTO, SANTO",
+			"arquivo": "./letras_todas/santo,_santo,_santo.txt",
+			"autor": "Autor: John Robert Stevens, 1962",
+			"copyright": "Copyright: © 1974 The Living Word"
+		},
+		{
+			"id": 350,
+			"numero": "359",
+			"titulo": "SANTO, SANTO, SENHOR REI DOS REIS",
+			"arquivo": "./letras_todas/santo,_santo,_senhor_rei_dos_reis.txt",
+			"autor": "Autor: Wayne Barton",
+			"copyright": "Copyright: © 1970 The Living Word"
+		},
+		{
+			"id": 351,
+			"numero": "360",
+			"titulo": "SANTO, TU ÉS SANTO",
+			"arquivo": "./letras_todas/santo,_tu_es_santo.txt",
+			"autor": "Autor: Michael W. Smith",
+			"copyright": "Copyright: © 2002 Michael W. Smith"
+		},
+		
+		{
+			"id": 356,
+			"numero": "365",
+			"titulo": "SENHOR, MEU PASTOR",
+			"arquivo": "./letras_todas/senhor,_meu_pastor.txt",
+			"autor": "Autor: Myra Gruenberg, Craig Gruenberg",
+			"copyright": "Copyright: © 1982 The Living Word"
+		},
+		
+		{
+			"id": 363,
+			"numero": "372",
+			"titulo": "SHEMA ISRAEL (DEUTERONÔMIO 6:4)",
+			"arquivo": "./letras_todas/shema_israel.txt",
+			"autor": "Autor: Autor Desconhecido",
+			"copyright": "Copyright: Domínio Público"
+		},
+		{
+			"id": 364,
+			"numero": "373",
+			"titulo": "SÓ O MEU SENHOR",
+			"arquivo": "./letras_todas/so_o_meu_senhor.txt",
+			"autor": "Autor: Autor desconhecido",
+			"copyright": "Copyright: Domínio Público"
+		},
+		
+		{
+			"id": 366,
+			"numero": "375",
+			"titulo": "SOMOS MUITOS POVOS",
+			"arquivo": "./letras_todas/somos_muitos_povos.txt",
+			"autor": "Autor: Diana Kniefel",
+			"copyright": "Copyright: © 1979 The Living Word"
+		}		
+	]
 }
