@@ -23,7 +23,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     /* font-family: 'Times New Roman', Times, serif; */
 
+    background-image: url(/img/pexels-pixelcop-claro.jpg);
+    background-image: url(/img/pexels-diva.jpg);
+    background-image: url(/img/pexels-diva-29802520.jpg);
+
     background-color: var(--bodyBackground);
+
     color:var(--textColor);
 }
 
@@ -31,11 +36,12 @@ body.darkTheme{
   --bodyBackground:rgb(20, 20, 20);
   --borderColor:rgb(88, 88, 88);
   --menuBackground:black;
-  --headerBackground: rgba(0, 47, 255, 0.384);
+  --headerBackground: rgb(3, 25, 124);
   /* --headerBackground: rgb(28, 134, 255); */
   --hyperlink: rgb(21, 130, 255) ;
   --textColor:rgb(199, 199, 199);
-  
+  background-image: url(/img/pexels-pixelcop-escuro.jpg);
+  background-image: url(/img/pexels-mahdibafande_blur.jpg);
 }
 
 body.darkTheme a:hover{
