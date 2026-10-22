@@ -15,11 +15,21 @@
     </style>
 </head>
 
+<style>
+span{
+  margin-top:0px;
+  padding-top: -40px;
+  margin-left:30px; color:blue;
+  /* background-color: cadetblue; */
+  display:flex;
+}
+
+</style>
 
 <body>
-    <main>
+    <div id="mainDiv">
         <br>
-        <a class="index-button" href="index.html">ÍNDICE</a>
+        <a id="top-index" class="index-button" href="index.html">ÍNDICE</a>
         
         <div class="hymnGroup">
             <p id="hymnHeader">TÍTULO</p>
@@ -31,15 +41,17 @@
         <p id="mensagem"></p>
         <div>
             <a class="index-button" href="index.html">ÍNDICE</a>
-            <a href=# class="index-button">SOBE</a>            
+            <a id="btnSobe" href=# class="index-button">SOBE</a>            
         </div>
 
-    </main> 
+    <!-- </main>  -->
 
     <script>
+        let finalHeight = 0;
         let hinosCarregados = [];
         const params = new URLSearchParams(document.location.search);
         const Id1 = params.get("Id");
+        const letraSection = document.getElementById('letra');
 
         const mensagem = document.getElementById('mensagem');
 
@@ -181,11 +193,76 @@
 
                 if (!resposta.ok) throw new Error('Não foi possível carregar o arquivo do hino (erro ' + resposta.status + ')');
 
-                document.getElementById('letra').textContent =  await resposta.text();
+                const result =  await resposta.text();
+
+                //Se houver "coro", formato o texto correspondente
+                MontaCoro(result);
+
+                //Exibe ou oculta o botão SOBE e o do índice superior
+                ToggleButtonVisiblity();
             
             } catch (erro) {
                 console.error('Não foi possível carregar a letra deste hino. ' +  erro.message);
                 mensagem.textContent = 'Não foi possível carregar o arquivo do hino. ' +  erro.message;
+            }
+        }
+
+        //Se houver a palavra "coro", formata o texto do coro
+        function MontaCoro(txt)
+        {
+            letraSection.textContent='';
+
+            let splitted = txt.split(/coro/i);
+
+            for (let i=0; i<=(splitted.length-1); i++)
+            {
+                if(i==0)
+                {
+                    const txt1 = document.createTextNode(splitted[i].trim());
+                    letraSection.appendChild(txt1);
+                }
+                else
+                {
+                    if(i%2 ==0) // Se for par, não é span
+                    {
+                        const txt2 = document.createTextNode(splitted[i].trim());
+                        letraSection.appendChild(txt2);
+                    }
+                    else //ímpar = span
+                    {
+                        const sp1 = document.createElement('span');          
+                        const txt2 = document.createTextNode(splitted[i].trimEnd());
+                        const space = document.createElement('br');
+
+                        sp1.appendChild(txt2);
+                        letraSection.appendChild(sp1);          
+                        letraSection.appendChild(space);
+                    }
+                } 
+            }
+        }
+
+          //Exibe ou esconde os botões SOBE E ÍNDICE superior se o documento sangrar
+        function ToggleButtonVisiblity()
+        {
+            const btn1 = document.getElementById('btnSobe');
+            const btn2 = document.getElementById('top-index');
+
+            finalHeight = mainDiv.offsetHeight;
+
+            if(finalHeight > screen.height)
+            {
+                btn1.classList.remove('hidden');
+                btn2.classList.remove('hidden');
+
+                //console.log("MAIOR");
+            }
+            else
+            {
+                btn1.classList.add('hidden');
+                btn2.classList.add('hidden');
+
+                //console.log("MENOR OU IGUAL")
             }
         }
 
@@ -217,6 +294,6 @@
             //console.log('Id: ' + Id1); // + ' - sortBy: ' + sortBy + ' - sortDirection: ' + sortDirection);
         };
     </script>
-    </main>
+    </div>
     </body>
 </html>
