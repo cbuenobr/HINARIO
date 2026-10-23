@@ -28,6 +28,15 @@ body {
     background-image: url(../img/pexels-pixelcop-claro.jpg);
     background-image: url(../img/pexels-diva.jpg);
     background-image: url(../img/pexels-diva-29802520.jpg);
+     
+   
+    background-image: url(../img/flavia01.jpeg);
+    background-image: url(../img/flavia03.jpeg);
+    background-size: cover;        
+    background-repeat: no-repeat;  
+    background-position: center;   
+    background-attachment: fixed;
+
 
     background-color: var(--bodyBackground);
 
@@ -43,8 +52,12 @@ body.darkTheme{
   /* --headerBackground: rgb(28, 134, 255); */
   --hyperlink: rgb(21, 130, 255) ;
   --textColor:rgb(199, 199, 199);
-  background-image: url(../img/pexels-pixelcop-escuro.jpg);
-  background-image: url(../img/pexels-mahdibafande_blur.jpg);
+/*    background-image: url(../img/pexels-pixelcop-escuro.jpg);
+  background-image: url(../img/pexels-mahdibafande_blur.jpg); */
+
+
+  background-image: url(../img/flavia04.jpeg);
+  /* background-image: url(../img/flavia06.jpeg); */
 }
 
 body.darkTheme a:hover{
