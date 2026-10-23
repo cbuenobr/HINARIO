@@ -15,30 +15,20 @@
     </style>
 </head>
 
-<style>
-span{
-  margin-top:0px;
-  padding-top: -40px;
-  margin-left:30px; color:blue;
-  /* background-color: cadetblue; */
-  display:flex;
-}
-
-</style>
 
 <body>
-    <div id="mainDiv">
+    <div id="songMainDiv">
         <br>
         <a id="top-index" class="index-button" href="index.html">ÍNDICE</a>
         
-        <div class="hymnGroup">
-            <p id="hymnHeader">TÍTULO</p>
+        <div class="songClass">
+            <p id="songHeader">TÍTULO</p>
             <p id="letra">Carregando...</p>
             <br/>
             <p id="copyright"></p>
         </div>
         
-        <p id="mensagem"></p>
+        <p id="mensagem" class="hidden"></p>
         <div>
             <a class="index-button" href="index.html">ÍNDICE</a>
             <a id="btnSobe" href=# class="index-button">SOBE</a>            
@@ -102,7 +92,7 @@ span{
 
             if(hino != null)
             {
-                document.getElementById('hymnHeader').textContent = hino.numero + ' - ' + hino.titulo;
+                document.getElementById('songHeader').textContent = hino.numero + ' - ' + hino.titulo.trim();
 
                 //document.getElementById('hymnNumber').textContent = "Num. " + hino.numero;
 
@@ -110,7 +100,7 @@ span{
                 //O NOME DE ARQUIVO TEM QUE SER IDÊNTIICO AO DO DISCO (CAIXA ALTA/BAIXA)
                 Song_GetFile(hino.arquivo);
 
-                if(hino.autor != undefined && hino.copyright != undefined)
+                if(hino.autor != undefined && hino.copyright != undefined && hino.autor.trim().length>0 && hino.copyright.trim().length>0)
                 {                    
                     document.getElementById('copyright').textContent = hino.autor + ' - ' + hino.copyright;
                 }
@@ -120,7 +110,10 @@ span{
                 }
             }
             else{
-                mensagem.textContent = 'Hino não encontrado: ' + Id1;
+                document.getElementById("songHeader").textContent = '';
+                letraSection.textContent= 'Hino não encontrado.';
+
+                ToggleButtonVisiblity();
             }
         }
 
@@ -248,7 +241,7 @@ span{
             const btn1 = document.getElementById('btnSobe');
             const btn2 = document.getElementById('top-index');
 
-            finalHeight = mainDiv.offsetHeight;
+            finalHeight = songMainDiv.offsetHeight;
 
             if(finalHeight > screen.height)
             {
