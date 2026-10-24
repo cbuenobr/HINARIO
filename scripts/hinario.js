@@ -1,4 +1,4 @@
-
+    const catalogPath = "./JSON/hinos.json";
     const rootStyles = window.getComputedStyle(document.documentElement);
 
     //Slider de tamanho de fonte
@@ -45,7 +45,7 @@
                 throw new Error('Este aplicativo deve ser aberto por um servidor local. Execute "python -m http.server" e abra http://localhost:8000');
             }
 
-             const resposta = await fetch('./json/hinos.json', { cache: 'no-store' });
+             const resposta = await fetch(catalogPath, { cache: 'no-store' });
              //const resposta = await fetch('./json/hinos_todos.json', { cache: 'no-store' });
 
             if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json (erro ' + resposta.status + ')');
