@@ -1,5 +1,5 @@
 const API_VERSION = "2022-11-28";
-const catalogPath = "./JSON/hinos.json";
+const catalogPath = "json/hinos.json";
 
 function jsonResponse(status, body) {
   return new Response(JSON.stringify(body), {

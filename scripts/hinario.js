@@ -1,4 +1,4 @@
-    const catalogPath = "./JSON/hinos.json";
+    const catalogPath = "./json/hinos.json";
     const rootStyles = window.getComputedStyle(document.documentElement);
 
     //Slider de tamanho de fonte
