@@ -1,5 +1,8 @@
   
-    
+    //const catalogPath = "./json/hinos_teste.json";
+    const catalogPath = "./json/hinos.json";
+
+    const authorField = document.getElementById("autor");
     const copyrightField = document.getElementById("copyright");
     const lyricsField = document.getElementById("letra");
     const messageField = document.getElementById("formMsg");
@@ -29,7 +32,7 @@
                 throw new Error('Este aplicativo deve ser aberto por um servidor local. Execute "python -m http.server" e abra http://localhost:8000');
             }
 
-            const resposta = await fetch('./json/hinos.json', { cache: 'no-store' });
+            const resposta = await fetch(catalogPath, { cache: 'no-store' });
 
             if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json (erro ' + resposta.status + ')');
 
@@ -43,13 +46,16 @@
             if(hinosCarregados.length>0)
             {
                 Indice_Popula();
+
+                //Exibe ou oculta botões
+                ToggleButtonVisiblity();
             }
             else{
                 throw new Error('O arquivo do índice está vazio.');
             }
 
         } catch (erro) {
-            mensagem.textContent = 'Não foi possível carregar o índice de hinos.' +  erro.message;
+            messageField.textContent = 'Não foi possível carregar o índice de hinos.' +  erro.message;
         }
     }
 
@@ -186,7 +192,7 @@
         console.log(document.getElementById("formArea").classList.remove('hidden'));
     }
 
-        //Valida campos (não incluí o copyright, porque pode não existir)
+        //Valida campos (não incluí autor e copyright porque podem não existir)
     function Field_Validate(field)
     {
         switch(field)
@@ -231,10 +237,11 @@
 
     function Form_Clear()
     {
+        authorField.value ='';
+        copyrightField.value='';
+        lyricsField.value = '';
         numberField.value = '';
         titleField.value = '';
-        lyricsField.value = '';
-        copyrightField.value='';
     }
 
 
@@ -273,6 +280,9 @@
         //Esvazia o índice
         tableIndex.textContent = '';
 
+        //Ordena os dados conforme tipo e direção de ordenação
+        SortData(sortBy, sortDirection);
+
         //Popula o índice, linha por linha
         for(let i=0;i<hinosCarregados.length;i++)
         {
@@ -282,6 +292,31 @@
         console.log('Índice montado com sucesso!');
     }
 
+    //== DADOS ARMAZENADOS NO NAVEGADOR (Web Storage) ==========================================================
+    function Parameters_Sort_Load()
+    {
+        if(typeof(Storage) == "undefined") {
+            console.error("Não é possível carregar parâmetros de ordenação. O navegador não suporta Web Storage.");
+            
+            return;       
+        }
+        
+        //Obtém o tipo de ordenação, se não existir, mantém o padrão (1)
+        let result = localStorage.getItem("sortBy");
+
+        if(result != null)
+        {
+            sortBy = parseInt(result);
+        }
+
+        //Obtém a direção da ordenação, se não existir, mantém o padrão (1)
+        result = localStorage.getItem("sortDirection");
+
+        if(result != null)
+        {
+            sortDirection = parseInt(result);
+        }
+    }
     
     function Song_GetData(selectedId)
     {
@@ -304,9 +339,14 @@
             
             Song_GetLyrics(hinoCarregado.arquivo);
 
-            if(hinoCarregado.autor != undefined && hinoCarregado.copyright != undefined)
+            if(hinoCarregado.autor != undefined)
             {                    
-                document.getElementById('copyright').value = hinoCarregado.autor + ' - ' + hinoCarregado.copyright;
+                authorField.value = hinoCarregado.autor;
+            }
+
+            if(hinoCarregado.copyright != undefined)
+            {                    
+                copyrightField.value = hinoCarregado.copyright;
             }
 
         }
@@ -394,22 +434,93 @@
         }
 
         //Checagem positiva
-        //Atualiza objeto
+        //Atualiza objeto        
+        hinoCarregado.autor = authorField.value.trim();
+        hinoCarregado.copyright = copyrightField.value.trim();
+        hinoCarregado.letra = lyricsField.value.trim();
         hinoCarregado.numero = numberField.value
         hinoCarregado.titulo = titleField.value.trim();
-        hinoCarregado.letra = lyricsField.value.trim();
-        hinoCarregado.copyright = copyrightField.value.trim();
 
         console.log(hinoCarregado.numero + ", " + hinoCarregado.titulo);
         console.log(hinoCarregado.letra);
+        console.log(hinoCarregado.autor);
         console.log(hinoCarregado.copyright);
 
         return;         
     }
 
 
+    //Ordena array pelo titulo do hino obedecendo a ordem passada (Caixa alta tem precedência sobre caixa baixa, por isso devemos igualá-las)
+    //Usei localecompare para obedecer a acentuaçao
+    function SortByTitle(sortOrder)
+    {
+        if(sortOrder == 1)
+        {       
+            hinosCarregados.sort(function(a, b) {
+                return a.titulo.toLowerCase().localeCompare(b.titulo.toLowerCase());
+            });
+
+        }
+        else{
+            hinosCarregados.sort(function(a, b) {
+                return b.titulo.toLowerCase().localeCompare(a.titulo.toLowerCase());
+            });
+        }
+    }
+
+    //Ordena array pelo número do hino obedecendo a ordem passada
+    function SortByNumber(sortOrder)
+    {
+        if(sortOrder == 1)
+        {
+            hinosCarregados = hinosCarregados.sort(function(a,b){return a.numero - b.numero});
+        }
+        else
+        {
+            hinosCarregados = hinosCarregados.sort(function(a,b){return b.numero - a.numero});
+        }
+        
+    }
+
+    //Parâmetros da ordenação
+    function SortData(sortBy, sortDirection)
+    {
+        if(sortBy == 1)
+        {
+            SortByTitle(sortDirection);
+        }
+        else{
+            SortByNumber(sortDirection);
+        }
+
+        //PRINT
+        //RelatorioIndice();
+    }
+
+    //Exibe ou esconde os botões superiores se o documento sangrar
+    function ToggleButtonVisiblity()
+    {
+        const footer = document.getElementById('button_row_bottom');
+
+        finalHeight = tableIndex.offsetHeight;
+
+        if(finalHeight > screen.height)
+        {
+            footer.classList.remove('hidden');
+        }
+        else
+        {
+            footer.classList.add('hidden');
+        }
+    }
+
+
+
     //INICIALIZACAO
     window.onload = function() {
+
+        //Obtém variáveis globais
+        Parameters_Sort_Load();
 
         Catalogo_Carrega();
 

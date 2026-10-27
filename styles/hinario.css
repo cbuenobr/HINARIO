@@ -170,10 +170,7 @@ a:hover {
   font-size: 100%;
 }
 
-/* .linkLetra :hover{
-  text-decoration: double;
-  background-color: red;
-} */
+
 
 .slidecontainer {        
     width: 100%; /* Width of the outside container */
@@ -247,9 +244,4 @@ a:hover {
     margin-left: 0px;    
     border-spacing: 0px 0.8em;  /*espaçamento entre linhas*/
 }
-
-/* #table-contents :hover {
-text-decoration: underline;
-
-} */
 
