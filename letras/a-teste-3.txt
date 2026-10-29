@@ -2,8 +2,8 @@ LINHA 1
 LINHA 2
 
 CORO
-linha1 do coro
-linha 2 do coro
+linha111111
+linha 2 111111
 Coro
 
 LINHA 3
