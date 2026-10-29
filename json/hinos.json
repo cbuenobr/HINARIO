@@ -1,5 +1,5 @@
 {
-  "ultimo_id": 397,
+  "ultimo_id": 398,
   "hinos": [
     {
       "id": 4,
@@ -918,6 +918,14 @@
       "numero": 2,
       "titulo": "A_TESTE_2",
       "arquivo": "letras/a-teste-1.txt",
+      "autor": {},
+      "copyright": {}
+    },
+    {
+      "id": 398,
+      "numero": 3,
+      "titulo": "A_Teste 3",
+      "arquivo": "letras/a-teste-3.txt",
       "autor": {},
       "copyright": {}
     }
