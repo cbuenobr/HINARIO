@@ -74,11 +74,11 @@
     },
     {
       "id": 44,
-      "numero": "52",
+      "numero": 52,
       "titulo": "AMÉM TRÍPLICE",
       "arquivo": "./letras_todas/amem_triplice.txt",
-      "autor": "Autor: Autor desconhecido",
-      "copyright": "Copyright: Domínio Público"
+      "autor": {},
+      "copyright": {}
     },
     {
       "id": 45,
