@@ -115,7 +115,6 @@ function normalizeCatalog(raw) {
 }
 
 async function readCatalog() {
-  //const file = await readFile("hinos.json");
   const file = await readFile(catalogPath);
   return {
     catalog: normalizeCatalog(file.text),
@@ -248,8 +247,6 @@ async function updateHymn(id, numero, titulo, letra, autor, copyright) {
   hymn.copyright = copyright;
 
   await putFile(
-    //"hinos.json",
-    //"./json/hinos.json",
     catalogPath,
     catalogText(catalog),
     `[skip netlify] Atualizar hino ${numero} - ${safeTitle}`,

@@ -412,6 +412,8 @@ async function salvar() {
   const numero = Number(document.getElementById('numero').value);
   const titulo = document.getElementById('titulo').value.trim();
   const letra = document.getElementById('letra').value.trim();
+  const autor = document.getElementById('autor').value.trim();
+  const copyright = document.getElementById('copyright').value.trim();
 
   if (!Number.isInteger(numero) || numero <= 0) {
     setMsg('formMsg', 'Informe um número de hino válido.', 'error');
