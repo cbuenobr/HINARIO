@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./styles/admin_CB.css">
+    <script src="./scripts/admin_CB.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+  <main>
+    <h1>ADMINISTRADOR</h1>
+
+    <section id="loginArea" class="login">
+      <div class="field">
+        <label for="senha">Senha do administrador</label>
+        <input id="senha" type="password" autocomplete="current-password">
+      </div>
+      <button class="primary" onclick="entrar()">Entrar</button>
+      <p id="loginMsg" class="message"></p>
+    </section>
+
+    <section id="adminArea" class="hidden">
+      <div id="listArea">
+        <div class="instructions-card">
+          <p><strong>Instruções:</strong></p>
+          <p>Use a tabela abaixo para incluir, alterar ou excluir hinos.</p>
+          <p>Quando terminar todas as suas alterações, use o botão <strong>Publicar alterações</strong> para que elas sejam publicadas no site.</p>
+          <p>Inclua ou altere vários hinos antes de publicar, em vez de publicar após cada alteração.</p>
+          <p>Recomendado: publicar no máximo <strong>2 ou 3 vezes por semana</strong>, pois o site utiliza hospedagem gratuita e há um limite mensal de publicações.</p>
+          <p style="color:rgb(182, 0, 121)"> Se a música tiver <strong>refrão</strong>, escreva <strong>"Coro"</strong> antes e logo depois. Exemplo:</p>
+          <p style="color:rgb(182, 0, 121)"><strong>Coro</strong><br>linha1 do refrão<br>linha2 do refrão<br>linha3...<br><strong>Coro</strong></p>
+        </div>
+
+        <div id="startOptions">
+          <hr>
+          <div class="publish-row">
+            <button id="publicarBtn" class="publish-btn" onclick="publicar()">PUBLICAR ALTERAÇÕES</button>      
+          </div>
+          <hr>
+          <br>
+
+          <table class="button_row">
+            <td>
+                <button class="alert">EDITAR</button> 
+            </td>
+            <td style="text-align:center;">
+                <button class="good"  onclick="Song_New()">NOVO</button>
+            </td>
+              <td style="text-align:right;">
+                <button onclick="Edicao_Sair()">SAIR</button>
+            </td>
+        </table>
+
+          <table id="edit-table"></table>
+        </div>
+
+        <table id="button_row_bottom" class="button_row">
+          <td>
+              <a id="btnSobe"  href=#>SOBE</a>
+          </td>
+          <td style="text-align: right;">
+              <button  onclick="Edicao_Sair()">SAIR</button>
+          </td>
+        </table>
+      </div>
+
+
+      <div id="formArea" class="hidden">
+        <div class="field">
+          <label for="numero">Número do hino</label>
+          <input id="numero" type="number" min="1" inputmode="numeric">
+        </div>
+
+        <div class="field">
+          <label for="titulo">Título</label>
+          <input id="titulo" type="text">
+        </div>
+
+        <div class="field">
+          <label for="letra">Letra</label>
+          <textarea id="letra" class="letra">CARREGANDO...</textarea>
+        </div>
+
+          <div class="field">
+          <label for="autor">Autor</label>
+          <textarea id="autor"></textarea>
+        </div>
+        <div class="field">
+          <label for="copyright">Copyright</label>
+          <textarea id="copyright"></textarea>
+        </div>
+
+
+        <table id="button_row_bottom02" class="button_row_bottom" >
+          <tr>
+            <td >
+                <button class="good" style="font-size: 0.75rem" onclick="salvar()">SALVAR</button>
+            </td>
+            <td>
+                <button class="alert" style="font-size: 0.75rem" onclick="Edicao_Cancelar()">CANCELAR</button>
+            </td>
+                <td>
+                <button class="danger" style="font-size: 0.75rem" onclick="excluirAtual()()">EXCLUIR</button>
+            </td>
+            <td>
+                <button style="font-size: 0.75rem" onclick="Edicao_Cancelar()">VOLTAR</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <p id="formMsg" class="message"></p>
+    </section>
+  </main>
+</body>

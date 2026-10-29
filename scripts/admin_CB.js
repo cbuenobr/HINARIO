@@ -1,6 +1,6 @@
   
-    //const catalogPath = "./json/hinos_teste.json";
-    const catalogPath = "./json/hinos.json";
+    const catalogPath = "./json/hinos_teste.json";
+    //const catalogPath = "./json/hinos.json";
 
     const authorField = document.getElementById("autor");
     const copyrightField = document.getElementById("copyright");
@@ -23,16 +23,18 @@
  //FUNÇÕES ---------------------------------------------------
     async function Catalogo_Carrega() {
 
-        const mensagem = document.getElementById('mensagem');
-
         try {
 			console.log("CarregarDados");
 
             if (window.location.protocol === 'file:') {
                 throw new Error('Este aplicativo deve ser aberto por um servidor local. Execute "python -m http.server" e abra http://localhost:8000');
-            }
+            }            
 
             const resposta = await fetch(catalogPath, { cache: 'no-store' });
+
+            //== PROVOCA ERRO ====================
+            //throw new Error('Não foi possível carregar hinos.json (erro ' + resposta.status + ')');
+            //========================================
 
             if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json (erro ' + resposta.status + ')');
 
@@ -55,10 +57,19 @@
             }
 
         } catch (erro) {
-            messageField.textContent = 'Não foi possível carregar o índice de hinos.' +  erro.message;
+            messageField.textContent = erro.message;
         }
     }
 
+    function entrar()
+    {
+        console.log( "entrar no admin");
+
+        Catalogo_Carrega();
+
+        document.getElementById('loginArea').classList.add('hidden');
+        document.getElementById('adminArea').classList.remove('hidden');
+    }
 
     //Verifica se o valor é um inteiro > 0
     function isInt(value) 
@@ -176,7 +187,7 @@
     
     function Edicao_Cancelar()
     {
-       console.log(document.getElementById("startOptions").classList.remove('hidden'));
+       console.log(document.getElementById("listArea").classList.remove('hidden'));
        console.log(document.getElementById("formArea").classList.add('hidden'));
     }
 
@@ -188,11 +199,12 @@
 
     function EditForm_Show()
     {
-        console.log(document.getElementById("startOptions").classList.add('hidden'));
+
+        console.log(document.getElementById("listArea").classList.add('hidden'));
         console.log(document.getElementById("formArea").classList.remove('hidden'));
     }
 
-        //Valida campos (não incluí autor e copyright porque podem não existir)
+    //Valida campos (não incluí autor e copyright porque podem não existir)
     function Field_Validate(field)
     {
         switch(field)
@@ -348,11 +360,10 @@
             {                    
                 copyrightField.value = hinoCarregado.copyright;
             }
-
         }
         else{
             console.error('Hino não encontrado: ' + Id1);
-            mensagem.textContent = 'Hino não encontrado: ' + Id1;
+            messageField.textContent = 'Hino não encontrado: ' + Id1;
         }
     }
 
@@ -381,13 +392,14 @@
         
         } catch (erro) {
             console.error('Não foi possível carregar a letra deste hino. ' +  erro.message);
-            mensagem.textContent = 'Não foi possível carregar o arquivo do hino. ' +  erro.message;
+            lyricsField.value =  'Não foi possível carregar a letra deste hino.';
+            messageField.textContent = erro.message;
         }
     }
 
 
     //GRAVA HINO
-    function Song_Save()
+/*     function Song_Save()
     {
         //Limpa mensagem de erro
         messageField.textContent ='';
@@ -447,8 +459,52 @@
         console.log(hinoCarregado.copyright);
 
         return;         
+    } */
+
+    async function salvar() {
+    const numero = Number(numberField.value);
+    const titulo = titleField.value.trim();
+    const letra = lyricsField.value.trim();
+    const autor = authorField.value.trim();
+    const copyright = copyrightField.value.trim();
+
+
+    if (!Number.isInteger(numero) || numero <= 0) {
+        setMsg('formMsg', 'Informe um número de hino válido.', 'error');
+        return;
+    }
+    if (!titulo) {
+        setMsg('formMsg', 'Informe o título.', 'error');
+        return;
+    }
+    if (!letra) {
+        setMsg('formMsg', 'Informe a letra.', 'error');
+        return;
     }
 
+    const btn = document.getElementById('salvarBtn');
+    btn.disabled = true;
+    setMsg('formMsg', 'Salvando no GitHub...');
+
+    try {
+        const action = editandoId === null ? 'create' : 'update';
+        const payload = { action, numero, titulo, letra, autor, copyright };
+        if (editandoId !== null) payload.id = editandoId;
+
+        const data = await api('POST', payload);
+        setMsg('formMsg', data.message || 'Salvo.', 'success');
+
+        await carregarLista(true);
+        setTimeout(() => {
+        cancelarEdicao();
+        setMsg('listaMsg', 'Alteração salva no GitHub. Ela ainda não foi publicada no site.', 'success');
+        }, 500);
+    } catch (e) {
+        setMsg('formMsg', e.message, 'error');
+    } finally {
+        btn.disabled = false;
+    }
+    }
 
     //Ordena array pelo titulo do hino obedecendo a ordem passada (Caixa alta tem precedência sobre caixa baixa, por isso devemos igualá-las)
     //Usei localecompare para obedecer a acentuaçao

@@ -12,21 +12,6 @@ main {
   padding: 26px 18px 60px;
 }
 
-button {
-  border: 1px solid #111;
-  border-radius: 7px;
-  background: #fff;
-  color: #000;
-  padding: 9px 13px;
-  cursor: pointer;
-}
-
-button.primary {
-  background: #000;
-  color: #fff;
-  font-weight: 700;
-}
-
 a {
     text-decoration: none;
 }
@@ -41,19 +26,48 @@ a:hover {
   flex-wrap: wrap;
 }
 
-.button_row{
+
+button {
+  background: black;
+  border-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  border-width: 3px;
+  padding: 6px 8px;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+button.alert {
+  background:#ffd900;
+  border-color: black;
+  color: #000000;
+}
+
+button.danger {
+  background:#9b1c1c;
+  color: #ffffff;
+}
+
+button.good {
+  background:#009249;
+  border-color: black;
+  color: #ffffff;
+}
+
+
+.button_row, .button_row_bottom{
   width:100%;
   background-color: rgb(214, 214, 214);
-  padding: 5px; 
-  font-weight: bold; 
-  justify-content: space-between;
+  padding: 0; 
+  /* justify-content: space-between; */
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;  
 }
 
 #edit-table{
   border-spacing: 0px 0.8em;  /*espaçamento entre linhas*/
-
 }
 
 .field {
@@ -62,6 +76,25 @@ a:hover {
 }
 
 .hidden { display: none !important; }
+
+input, textarea {
+  width: 100%;
+  border: 1px solid #999;
+  border-radius: 6px;
+  padding: 10px;
+  background: #fff;
+  color: #000;
+}
+
+textarea {
+  /* min-height: 350px; */
+  line-height: 1.5;
+  resize: vertical;
+}
+
+textarea.letra {
+  min-height: 350px;
+}
 
 .instructions-card {
   width: 100%;
@@ -81,46 +114,17 @@ a:hover {
   margin-bottom: 0;
 }
 
-.message {
-  margin: 14px 0;
-  min-height: 1.2em;
-}
-
-.menu-button {
-  border-radius: 8px;
-  padding: 8px 18px;
-  color: white;
-  font-size: 0.95rem;
-  font-weight: bold;
-  background: black;
-  text-decoration: none;
-}
-
-.menu-button02 {
-  border-style: solid;
-  border-radius: 8px;
-  border-color: black;
-  border-width: 3px;
-  text-decoration: none;
-  padding: 8px 20px;
-  color: rgb(0, 0, 0);
-  font-size: 0.95rem;
-  font-weight: bold;
-}
-
-input, textarea {
-  width: 90%;
-  border: 1px solid #999;
-  border-radius: 6px;
-  padding: 10px;
-  background: #fff;
-  color: #000;
-}
-
 label {
   display: block;
   font-weight: 700;
   margin: 0 0 6px;
+}
+
+.message {
+  color:red;
+  margin: 14px 0;
+  min-height: 1.2em;
+  font-style: bold;
 }
 
 .publish-row {
@@ -138,23 +142,17 @@ label {
   padding:15px;
 }
 
-
 .publish-btn:hover {
   filter: brightness(0.95);
 }
 
-.td-number{
-  text-align: right; 
-  vertical-align: top;
-  padding-right: 15px;
+
+th, td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 8px;
+  text-align: left;
 }
 
-
-textarea{
-  min-height: 50px;
-  line-height: 1.5;
-  resize: vertical;
-}
 
  @media (max-width: 600px) {
   .publish-row {

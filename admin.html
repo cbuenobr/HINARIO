@@ -1,54 +1,225 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Administrador — Louvores</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+main {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 26px 18px 60px;
+}
+h1 { margin: 0 0 22px; font-size: 2rem; }
+h2 { margin: 0 0 18px; }
+button, input, textarea { font: inherit; }
+button {
+  border: 1px solid #111;
+  border-radius: 7px;
+  background: #fff;
+  color: #000;
+  padding: 9px 13px;
+  cursor: pointer;
+}
+button.primary {
+  background: #000;
+  color: #fff;
+  font-weight: 700;
+}
+button.danger {
+  border-color: #9b1c1c;
+  color: #9b1c1c;
+}
+button:disabled { opacity: .5; cursor: wait; }
+input, textarea {
+  width: 100%;
+  border: 1px solid #999;
+  border-radius: 6px;
+  padding: 10px;
+  background: #fff;
+  color: #000;
+}
+textarea {
+  min-height: 350px;
+  line-height: 1.5;
+  resize: vertical;
+}
+label {
+  display: block;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.field { margin: 0 0 16px; }
 
-    <link rel="stylesheet" href="./styles/admin.css">
-    <script src="./scripts/admin.js" type="text/javascript" defer></script>
+.admin-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.publish-btn {
+  width: 100%;
+  border-color: #234a7d;
+  background: #234a7d;
+  color: #fff;
+  font-weight: 700;
+}
+
+.instructions-card {
+  width: 100%;
+  border: 1px solid #b8c4d6;
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  background: #f7f9fc;
+}
+.instructions-card p {
+  margin: 0 0 11px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #2f3741;
+}
+.instructions-card p:last-of-type {
+  margin-bottom: 0;
+}
+.publish-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+.publish-btn {
+  min-width: 240px;
+  border-color: #234a7d;
+  background: #234a7d;
+  color: #fff;
+  font-weight: 700;
+}
+.publish-btn:hover {
+  filter: brightness(0.95);
+}
+.admin-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.login {
+  max-width: 430px;
+  border: 1px solid #ccc;
+  padding: 18px;
+  border-radius: 9px;
+}
+.tablewrap { overflow-x: auto; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+th, td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 8px;
+  text-align: left;
+}
+th:first-child, td:first-child { width: 90px; text-align: right; }
+.actions { white-space: nowrap; text-align: right; }
+.message {
+  margin: 14px 0;
+  min-height: 1.2em;
+}
+.error { color: #9b1c1c; }
+.success { color: #166534; }
+.hidden { display: none !important; }
+.back {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #0000EE;
+}
+.note {
+  color: #555;
+  font-size: .9rem;
+  line-height: 1.4;
+}
+.form-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+  .publish-row {
+    justify-content: stretch;
+  }
+  .publish-btn {
+    width: 100%;
+    min-width: 0;
+  }
+  th, td { padding: 8px 5px; }
+  .actions button { padding: 7px 9px; }
+}
+</style>
 </head>
-
 <body>
-  <main>
-    <h1>ADMINISTRADOR</h1>
+<main>
+  <a class="back" href="index.html">← Voltar aos Louvores</a>
+  <h1>Administrador</h1>
 
-    <div class="instructions-card">
-      <p><strong>Instruções:</strong></p>
-      <p>Use a tabela abaixo para incluir, alterar ou excluir hinos.</p>
-      <p>Quando terminar todas as suas alterações, use o botão <strong>Publicar alterações</strong> para que elas sejam publicadas no site.</p>
-      <p>Inclua ou altere vários hinos antes de publicar, em vez de publicar após cada alteração.</p>
-      <p>Recomendado: publicar no máximo <strong>2 ou 3 vezes por semana</strong>, pois o site utiliza hospedagem gratuita e há um limite mensal de publicações.</p>
-      <p style="color:rgb(182, 0, 121)"> Se a música tiver <strong>refrão</strong>, escreva <strong>"Coro"</strong> antes e logo depois. Exemplo:</p>
-      <p style="color:rgb(182, 0, 121)"><strong>Coro</strong><br>linha1 do refrão<br>linha2 do refrão<br>linha3...<br><strong>Coro</strong></p>
+  <section id="loginArea" class="login">
+    <div class="field">
+      <label for="senha">Senha do administrador</label>
+      <input id="senha" type="password" autocomplete="current-password">
     </div>
+    <button class="primary" onclick="entrar()">Entrar</button>
+    <p id="loginMsg" class="message"></p>
+  </section>
 
-    <div id="startOptions">
-      <hr>
-      <div class="publish-row">
-        <button id="publicarBtn" class="publish-btn" onclick="publicar()">PUBLICAR ALTERAÇÕES</button>      
+  <section id="adminArea" class="hidden">
+    <div id="listaArea">
+      <div class="instructions-card">
+        <p><strong>Instruções:</strong></p>
+        <p>Use a tabela abaixo para incluir, alterar ou excluir hinos.</p>
+        <p>Quando terminar todas as suas alterações, use o botão <strong>Publicar alterações</strong> para que elas sejam publicadas no site.</p>
+        <p>Inclua ou altere vários hinos antes de publicar, em vez de publicar após cada alteração.</p>
+        <p>Recomendado: publicar no máximo <strong>2 ou 3 vezes por semana</strong>, pois o site utiliza hospedagem gratuita e há um limite mensal de publicações.</p>
+
+        <div class="publish-row">
+          <button id="publicarBtn" class="publish-btn" onclick="publicar()">Publicar alterações</button>
+        </div>
       </div>
-      <hr>
-      <br>
 
-      <table class="button_row">
-        <td>
-            <button class="menu-button02">EDITAR HINO</button> 
-        </td>
-        <td style="text-align:center;">
-            <button class="menu-button" onclick="Song_New()">NOVO HINO</button>
-        </td>
-          <td style="text-align:right;">
-            <button class="menu-button" onclick="Edicao_Sair()">SAIR</button>
-        </td>
-    </table>
-
-      <table id="edit-table"></table>
+      <div class="admin-actions">
+        <button class="primary" onclick="novoHino()">Novo hino</button>
+        <button onclick="sair()">Sair</button>
+      </div>
+<div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Número</th>
+              <th>Título</th>
+              <th class="actions">Ação</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyHinos"></tbody>
+        </table>
+      </div>
+      <p id="listaMsg" class="message"></p>
     </div>
-
-    <hr>
-    <br>
 
     <div id="formArea" class="hidden">
+      <h2 id="formTitulo">Novo hino</h2>
+
       <div class="field">
         <label for="numero">Número do hino</label>
         <input id="numero" type="number" min="1" inputmode="numeric">
@@ -61,40 +232,267 @@
 
       <div class="field">
         <label for="letra">Letra</label>
-        <textarea id="letra">CARREGANDO...</textarea>
+        <textarea id="letra"></textarea>
       </div>
 
-        <div class="field">
+      <div class="field">
         <label for="autor">Autor</label>
-         <textarea id="autor"></textarea>
+        <textarea id="autor"></textarea>
       </div>
+
       <div class="field">
         <label for="copyright">Copyright</label>
          <textarea id="copyright"></textarea>
       </div>
 
-      <div>
-        <button class="primary" id="salvarBtn" onclick="Song_Save()">Salvar</button>
-        <button onclick="Edicao_Cancelar()">Cancelar</button>
-        <button onclick="Edicao_Cancelar()">Voltar</button>
-
+      <div class="form-actions">
+        <button class="primary" id="salvarBtn" onclick="salvar()">Salvar</button>
+        <button onclick="cancelarEdicao()">Cancelar</button>
         <button class="danger hidden" id="excluirBtn" onclick="excluirAtual()">Excluir hino</button>
       </div>
 
-      <p id="formMsg" class="message">MENSAGEM DE ERRO XXXXXXXXXX</p>
+      <p id="formMsg" class="message"></p>
     </div>
+  </section>
+</main>
 
-    <!-- <p id="mensagem" style="color:red"> MENSAGEM DE ERRO</p> -->
+<script>
+const API = '/.netlify/functions/admin-hinos';
+
+let senhaAdmin = '';
+let hinos = [];
+let editandoId = null;
+
+function setMsg(id, texto, tipo='') {
+  const el = document.getElementById(id);
+  el.textContent = texto || '';
+  el.className = 'message' + (tipo ? ' ' + tipo : '');
+}
+
+async function api(method='GET', body=null) {
+  const options = {
+    method,
+    headers: {
+      'X-Admin-Password': senhaAdmin
+    }
+  };
+
+  if (body !== null) {
+    options.headers['Content-Type'] = 'application/json';
+    options.body = JSON.stringify(body);
+  }
+
+  const r = await fetch(API, options);
+  let data = {};
+  try { data = await r.json(); } catch (_) {}
+
+  if (!r.ok) {
+    throw new Error(data.error || `Erro ${r.status}`);
+  }
+  return data;
+}
+
+async function entrar() {
+  senhaAdmin = document.getElementById('senha').value;
+  if (!senhaAdmin) return;
+
+  setMsg('loginMsg', 'Verificando...');
+  try {
+    await carregarLista(true);
+    document.getElementById('loginArea').classList.add('hidden');
+    document.getElementById('adminArea').classList.remove('hidden');
+    document.getElementById('senha').value = '';
+    setMsg('loginMsg', '');
+  } catch (e) {
+    senhaAdmin = '';
+    setMsg('loginMsg', e.message, 'error');
+  }
+}
+
+function sair() {
+  senhaAdmin = '';
+  hinos = [];
+  editandoId = null;
+  document.getElementById('adminArea').classList.add('hidden');
+  document.getElementById('loginArea').classList.remove('hidden');
+}
+
+async function carregarLista(silencioso=false) {
+  if (!silencioso) setMsg('listaMsg', 'Carregando...');
+  const data = await api('GET');
+  hinos = (data.hinos || []).slice().sort((a,b) => Number(a.numero) - Number(b.numero));
+  renderLista();
+  if (!silencioso) setMsg('listaMsg', '');
+}
+
+function renderLista() {
+  const tbody = document.getElementById('tbodyHinos');
+  tbody.innerHTML = '';
+
+  hinos.forEach(hino => {
+    const tr = document.createElement('tr');
+
+    const tdNumero = document.createElement('td');
+    tdNumero.textContent = hino.numero;
+
+    const tdTitulo = document.createElement('td');
+    tdTitulo.textContent = hino.titulo;
+
+    const tdAcao = document.createElement('td');
+    tdAcao.className = 'actions';
+    const btn = document.createElement('button');
+    btn.textContent = 'Editar';
+    btn.onclick = () => editar(hino.id);
+    tdAcao.appendChild(btn);
+
+    tr.append(tdNumero, tdTitulo, tdAcao);
+    tbody.appendChild(tr);
+  });
+}
+
+function novoHino() {
+  editandoId = null;
+  document.getElementById('formTitulo').textContent = 'Novo hino';
+  document.getElementById('numero').value = '';
+  document.getElementById('titulo').value = '';
+  document.getElementById('letra').value = '';
+  document.getElementById('autor').value = '';
+  document.getElementById('copyright').value = '';
+  document.getElementById('excluirBtn').classList.add('hidden');
+  setMsg('formMsg', '');
+  mostrarFormulario();
+}
+
+async function editar(id) {
+  editandoId = id;
+  const hino = hinos.find(h => String(h.id) === String(id));
+  if (!hino) return;
+
+  document.getElementById('formTitulo').textContent = `Editar hino ${hino.numero}`;
+  document.getElementById('numero').value = hino.numero;
+  document.getElementById('titulo').value = hino.titulo;
+  document.getElementById('letra').value = 'Carregando letra...';
+
+  //Autor e copyright não são exigidos
+  if(hino.autor != undefined)
+  {                    
+    document.getElementById('autor').textContent = hino.autor;
+  }
+
+  if(hino.copyright != undefined)
+  {                    
+    document.getElementById('copyright').textContent = hino.copyright;
+  }
+
+  document.getElementById('excluirBtn').classList.remove('hidden');
+  setMsg('formMsg', '');
+  mostrarFormulario();
+
+  try {
+    const data = await api('POST', { action:'get', id:hino.id });
+    document.getElementById('letra').value = data.letra || '';
+  } catch (e) {
+    setMsg('formMsg', e.message, 'error');
+  }
+}
+
+function mostrarFormulario() {
+  document.getElementById('listaArea').classList.add('hidden');
+  document.getElementById('formArea').classList.remove('hidden');
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+
+function cancelarEdicao() {
+  document.getElementById('formArea').classList.add('hidden');
+  document.getElementById('listaArea').classList.remove('hidden');
+  editandoId = null;
+}
+
+async function salvar() {
+  const numero = Number(document.getElementById('numero').value);
+  const titulo = document.getElementById('titulo').value.trim();
+  const letra = document.getElementById('letra').value.trim();
+
+  if (!Number.isInteger(numero) || numero <= 0) {
+    setMsg('formMsg', 'Informe um número de hino válido.', 'error');
+    return;
+  }
+  if (!titulo) {
+    setMsg('formMsg', 'Informe o título.', 'error');
+    return;
+  }
+  if (!letra) {
+    setMsg('formMsg', 'Informe a letra.', 'error');
+    return;
+  }
+
+  const btn = document.getElementById('salvarBtn');
+  btn.disabled = true;
+  setMsg('formMsg', 'Salvando no GitHub...');
+
+  try {
+    const action = editandoId === null ? 'create' : 'update';
+    const payload = { action, numero, titulo, letra, autor, copyright };
+    if (editandoId !== null) payload.id = editandoId;
+
+    const data = await api('POST', payload);
+    setMsg('formMsg', data.message || 'Salvo.', 'success');
+
+    await carregarLista(true);
+    setTimeout(() => {
+      cancelarEdicao();
+      setMsg('listaMsg', 'Alteração salva no GitHub. Ela ainda não foi publicada no site.', 'success');
+    }, 500);
+  } catch (e) {
+    setMsg('formMsg', e.message, 'error');
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+async function excluirAtual() {
+  if (editandoId === null) return;
+  const hino = hinos.find(h => String(h.id) === String(editandoId));
+  if (!hino) return;
+
+  if (!confirm(`Excluir o hino ${hino.numero} — ${hino.titulo}?`)) return;
+
+  setMsg('formMsg', 'Excluindo...');
+  try {
+    const data = await api('POST', { action:'delete', id:editandoId });
+    await carregarLista(true);
+    cancelarEdicao();
+    setMsg('listaMsg', data.message || 'Hino excluído.', 'success');
+  } catch (e) {
+    setMsg('formMsg', e.message, 'error');
+  }
+}
 
 
-    <table id="button_row_bottom" class="button_row">
-        <td>
-            <a id="btnSobe" class="menu-button" href=#>SOBE</a>
-        </td>
-        <td style="text-align: right;">
-            <button class="menu-button" onclick="Edicao_Sair()">SAIR</button>
-        </td>
-    </table>
+async function publicar() {
+  const btn = document.getElementById('publicarBtn');
+  if (!confirm('Publicar agora todas as alterações salvas no GitHub?')) return;
 
-  </main>
+  btn.disabled = true;
+  setMsg('listaMsg', 'Solicitando publicação...');
+
+  try {
+    const data = await api('POST', { action:'publish' });
+    setMsg(
+      'listaMsg',
+      data.message || 'Publicação solicitada. Aguarde o deploy do Netlify.',
+      'success'
+    );
+  } catch (e) {
+    setMsg('listaMsg', e.message, 'error');
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+document.getElementById('senha').addEventListener('keydown', e => {
+  if (e.key === 'Enter') entrar();
+});
+</script>
 </body>
+</html>

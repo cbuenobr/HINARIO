@@ -1,5 +1,5 @@
 const API_VERSION = "2022-11-28";
-const catalogPath = "json/hinos.json";
+const catalogPath = "./json/hinos.json";
 
 function jsonResponse(status, body) {
   return new Response(JSON.stringify(body), {
@@ -160,7 +160,7 @@ async function getHymn(id) {
   return { hymn, letra: letter.text };
 }
 
-async function createHymn(numero, titulo, letra, copyright) {
+async function createHymn(numero, titulo, letra, autor, copyright) {
   const { catalog, sha: catalogSha } = await readCatalog();
 
   validateNumber(catalog, numero);
@@ -196,13 +196,14 @@ async function createHymn(numero, titulo, letra, copyright) {
     numero,
     titulo: safeTitle,
     arquivo: path,
+    autor,
     copyright
   });
 
   try {
     await putFile(
       //"hinos.json",
-      //"./JSON/hinos.json",
+      //"./json/hinos.json",
       catalogPath,
       catalogText(catalog),
       `[skip netlify] Adicionar hino ${numero} - ${safeTitle}`,
@@ -217,10 +218,10 @@ async function createHymn(numero, titulo, letra, copyright) {
     throw e;
   }
 
-  return { id, numero, titulo: safeTitle, arquivo: path, copyright };
+  return { id, numero, titulo: safeTitle, arquivo: path, autor, copyright };
 }
 
-async function updateHymn(id, numero, titulo, letra, copyright) {
+async function updateHymn(id, numero, titulo, letra, autor, copyright) {
   const { catalog, sha: catalogSha } = await readCatalog();
   const hymn = catalog.hinos.find(h => String(h.id) === String(id));
   if (!hymn) throw new Error("Hino não encontrado.");
@@ -243,11 +244,12 @@ async function updateHymn(id, numero, titulo, letra, copyright) {
 
   hymn.numero = numero;
   hymn.titulo = safeTitle;
+  hymn.autor = autor;
   hymn.copyright = copyright;
 
   await putFile(
     //"hinos.json",
-    //"./JSON/hinos.json",
+    //"./json/hinos.json",
     catalogPath,
     catalogText(catalog),
     `[skip netlify] Atualizar hino ${numero} - ${safeTitle}`,
@@ -268,7 +270,7 @@ async function deleteHymn(id) {
   catalog.hinos.splice(index, 1);
   await putFile(
     //"hinos.json",
-    //"./JSON/hinos.json",
+    //"./json/hinos.json",
     catalogPath,
     catalogText(catalog),
     `[skip netlify] Excluir hino ${hymn.numero} - ${hymn.titulo}`,
@@ -345,7 +347,7 @@ export default async (req) => {
     }
 
     if (action === "create") {
-      const hymn = await createHymn(Number(body.numero), body.titulo, body.letra, body.copyright);
+      const hymn = await createHymn(Number(body.numero), body.titulo, body.letra, body.autor, body.copyright);
       return jsonResponse(200, {
         message: `Hino ${hymn.numero} criado e salvo no GitHub. Ainda não publicado.`,
         hino: hymn
@@ -353,7 +355,7 @@ export default async (req) => {
     }
 
     if (action === "update") {
-      const hymn = await updateHymn(body.id, Number(body.numero), body.titulo, body.letra, body.copyright);
+      const hymn = await updateHymn(body.id, Number(body.numero), body.titulo, body.letra, body.autor, body.copyright);
       return jsonResponse(200, {
         message: `Hino ${hymn.numero} atualizado e salvo no GitHub. Ainda não publicado.`,
         hino: hymn
