@@ -27,11 +27,11 @@
     },
     {
       "id": 8,
-      "numero": "16",
+      "numero": 16,
       "titulo": "A LEI DO SENHOR É PERFEITA",
       "arquivo": "./letras_todas/a_lei_do_senhor_e_perfeita.txt",
-      "autor": "Autor: Rogério Luis",
-      "copyright": "Copyright: Domínio Público"
+      "autor": {},
+      "copyright": {}
     },
     {
       "id": 11,
