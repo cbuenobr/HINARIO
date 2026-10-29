@@ -3,11 +3,11 @@
   "hinos": [
     {
       "id": 4,
-      "numero": "12",
-      "titulo": "A DEUS SUPREMO BENFEITOR",
+      "numero": 12,
+      "titulo": "A DEUS SUPREMO BENFEITOR 22222",
       "arquivo": "./letras_todas/a_deus_supremo_benfeitor.txt",
-      "autor": "",
-      "copyright": ""
+      "autor": {},
+      "copyright": {}
     },
     {
       "id": 5,
