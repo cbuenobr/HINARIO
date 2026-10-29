@@ -19,11 +19,11 @@
     },
     {
       "id": 6,
-      "numero": "14",
-      "titulo": "A ELE DAI A GRANDE HONRA",
+      "numero": 14,
+      "titulo": "A ELE DAI A GRANDE HONRA 444",
       "arquivo": "./letras_todas/a_ele_dai_a_grande_honra.txt",
-      "autor": "",
-      "copyright": ""
+      "autor": {},
+      "copyright": {}
     },
     {
       "id": 8,
