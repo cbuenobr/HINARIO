@@ -917,7 +917,9 @@
       "id": 397,
       "numero": 2,
       "titulo": "A_TESTE_2",
-      "arquivo": "letras/a-teste-1.txt"
+      "arquivo": "letras/a-teste-1.txt",
+      "autor": "CBV",
+      "copyright": "pode usar"
     }
   ]
 }
