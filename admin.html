@@ -201,8 +201,9 @@ th:first-child, td:first-child { width: 90px; text-align: right; }
       <div class="admin-actions">
         <button class="primary" onclick="novoHino()">Novo hino</button>
         <button onclick="sair()">Sair</button>
-      </div>
-<div class="tablewrap">
+    </div>
+
+    <div class="tablewrap">
         <table>
           <thead>
             <tr>
@@ -323,8 +324,17 @@ async function carregarLista(silencioso=false) {
   hinos = (data.hinos || []).slice().sort((a,b) => Number(a.numero) - Number(b.numero));
   renderLista();
   if (!silencioso) setMsg('listaMsg', '');
+
+  //XXXXXXXX
+  console.log("carregarLista recebeu estes dez:");
+  for(let i=0;i<10;i++)
+  {
+    console.log(hinos[i].numero + ": " + hinos[i].titulo + " autor: " + hinos[i].autor + " copy: " + hinos[i].copyright);
+  }
+  //xxxxxxxxxxxxxx
 }
 
+//Monta lista para edição
 function renderLista() {
   const tbody = document.getElementById('tbodyHinos');
   tbody.innerHTML = '';
@@ -368,6 +378,8 @@ async function editar(id) {
   const hino = hinos.find(h => String(h.id) === String(id));
   if (!hino) return;
 
+  console.log("hino editar: " + hino.titulo + ", autor: " + hino.autor + ", copyright: " + hino.copyright);
+
   document.getElementById('formTitulo').textContent = `Editar hino ${hino.numero}`;
   document.getElementById('numero').value = hino.numero;
   document.getElementById('titulo').value = hino.titulo;
@@ -376,18 +388,19 @@ async function editar(id) {
   //Autor e copyright não são exigidos
   if(hino.autor != undefined)
   {                    
-    document.getElementById('autor').textContent = hino.autor;
+    document.getElementById('autor').value = hino.autor;
   }
 
   if(hino.copyright != undefined)
   {                    
-    document.getElementById('copyright').textContent = hino.copyright;
+    document.getElementById('copyright').value = hino.copyright;
   }
 
   document.getElementById('excluirBtn').classList.remove('hidden');
   setMsg('formMsg', '');
   mostrarFormulario();
 
+  //Obtém a letra
   try {
     const data = await api('POST', { action:'get', id:hino.id });
     document.getElementById('letra').value = data.letra || '';
@@ -414,6 +427,8 @@ async function salvar() {
   const letra = document.getElementById('letra').value.trim();
   const autor = document.getElementById('autor').value.trim();
   const copyright = document.getElementById('copyright').value.trim();
+
+  console.log("salvar() numero: " + numero + " titulo:" + titulo + " autor: " + autor + "  copy: " + copyright);
 
   if (!Number.isInteger(numero) || numero <= 0) {
     setMsg('formMsg', 'Informe um número de hino válido.', 'error');
