@@ -1,0 +1,10 @@
+LINHA 1
+LINHA 2
+
+CORO
+linha1 do coro
+linha 2 do coro
+Coro
+
+LINHA 3
+LINHA 4
