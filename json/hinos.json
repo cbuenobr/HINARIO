@@ -12,9 +12,10 @@
     {
       "id": 5,
       "numero": 13,
-      "titulo": "A ELE A GLÓRIA",
+      "titulo": "A ELE A GLÓRIA 333",
       "arquivo": "./letras_todas/a_ele_a_gloria.txt",
-      "autor": ""
+      "autor": {},
+      "copyright": {}
     },
     {
       "id": 6,
