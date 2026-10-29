@@ -6,32 +6,32 @@
       "numero": 12,
       "titulo": "A DEUS SUPREMO BENFEITOR 22222",
       "arquivo": "./letras_todas/a_deus_supremo_benfeitor.txt",
-      "autor": {},
-      "copyright": {}
+      "autor": "",
+      "copyright": ""
     },
     {
       "id": 5,
       "numero": 13,
       "titulo": "A ELE A GLÓRIA 333",
       "arquivo": "./letras_todas/a_ele_a_gloria.txt",
-      "autor": {},
-      "copyright": {}
+      "autor": "",
+      "copyright": ""
     },
     {
       "id": 6,
       "numero": 14,
       "titulo": "A ELE DAI A GRANDE HONRA 444",
       "arquivo": "./letras_todas/a_ele_dai_a_grande_honra.txt",
-      "autor": {},
-      "copyright": {}
+      "autor": "",
+      "copyright": ""
     },
     {
       "id": 8,
       "numero": 16,
       "titulo": "A LEI DO SENHOR É PERFEITA",
       "arquivo": "./letras_todas/a_lei_do_senhor_e_perfeita.txt",
-      "autor": {},
-      "copyright": {}
+      "autor": "",
+      "copyright": ""
     },
     {
       "id": 11,
@@ -78,8 +78,8 @@
       "numero": 52,
       "titulo": "AMÉM TRÍPLICE",
       "arquivo": "./letras_todas/amem_triplice.txt",
-      "autor": {},
-      "copyright": {}
+      "autor": "",
+      "copyright": ""
     },
     {
       "id": 45,
@@ -917,9 +917,7 @@
       "id": 397,
       "numero": 2,
       "titulo": "A_TESTE_2",
-      "arquivo": "letras/a-teste-1.txt",
-      "autor": {},
-      "copyright": {}
+      "arquivo": "letras/a-teste-1.txt"
     }
   ]
 }

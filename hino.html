@@ -91,6 +91,7 @@
         function Hino_Monta()
         {
             let hino = hinosCarregados.find(h => String(h.id) === String(Id1));
+            let info=[];
 
             if(hino != null)
             {
@@ -102,9 +103,19 @@
                 //O NOME DE ARQUIVO TEM QUE SER IDÊNTIICO AO DO DISCO (CAIXA ALTA/BAIXA)
                 Song_GetFile(hino.arquivo);
 
-                if(hino.autor != undefined && hino.copyright != undefined && hino.autor.trim().length>0 && hino.copyright.trim().length>0)
-                {                    
-                    document.getElementById('copyright').textContent = hino.autor + ' - ' + hino.copyright;
+                if(hino.autor != undefined && hino.autor.trim().length>0)
+                {        
+                    info.push(hino.autor);
+                }
+
+                if(hino.copyright != undefined && hino.copyright.trim().length>0)
+                {         
+                   info.push(hino.copyright);
+                }
+
+                if(info.length >0)
+                {
+                    document.getElementById('copyright').textContent = info.join('\n');
                 }
                 else
                 {                    

@@ -201,8 +201,6 @@ async function createHymn(numero, titulo, letra, autor, copyright) {
 
   try {
     await putFile(
-      //"hinos.json",
-      //"./json/hinos.json",
       catalogPath,
       catalogText(catalog),
       `[skip netlify] Adicionar hino ${numero} - ${safeTitle}`,
