@@ -1,5 +1,5 @@
 {
-  "ultimo_id": 396,
+  "ultimo_id": 397,
   "hinos": [
     {
       "id": 4,
@@ -74,11 +74,11 @@
     },
     {
       "id": 44,
-      "numero": "52",
+      "numero": 52,
       "titulo": "AMÉM TRÍPLICE",
       "arquivo": "./letras_todas/amem_triplice.txt",
-      "autor": "Autor: Autor desconhecido",
-      "copyright": "Copyright: Domínio Público"
+      "autor": {},
+      "copyright": {}
     },
     {
       "id": 45,
@@ -911,6 +911,14 @@
       "arquivo": "./letras_todas/venham_santos_do_altissimo.txt",
       "autor": "Autor: Franny Girlando",
       "copyright": "Copyright: © 1994 The Living Word"
+    },
+    {
+      "id": 397,
+      "numero": 1,
+      "titulo": "A_TESTE_1",
+      "arquivo": "letras/a-teste-1.txt",
+      "autor": {},
+      "copyright": {}
     }
   ]
 }
