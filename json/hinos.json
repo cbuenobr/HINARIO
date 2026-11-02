@@ -83,11 +83,11 @@
     },
     {
       "id": 45,
-      "numero": "53",
+      "numero": 240,
       "titulo": "ANDAREI  COM O MEU SENHOR",
       "arquivo": "./letras_todas/andarei_com_o_meu_senhor.txt",
-      "autor": "Autor: Irvin Hussman, Phyllis Meinel",
-      "copyright": "Copyright: © 1974 The Living Word"
+      "autor": "Irvin Hussman, Phyllis Meinel",
+      "copyright": "1974 The Living Word"
     },
     {
       "id": 48,
