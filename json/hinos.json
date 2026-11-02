@@ -211,11 +211,11 @@
     },
     {
       "id": 104,
-      "numero": "112",
+      "numero": 174,
       "titulo": "DEUS DEU UMA PALAVRA",
       "arquivo": "./letras_todas/deus_deu_uma_palavra.txt",
-      "autor": "Autor: Maxine Anderson",
-      "copyright": "Copyright: © 1976 The Living Word"
+      "autor": "Maxine Anderson",
+      "copyright": "1976 The Living Word"
     },
     {
       "id": 110,
