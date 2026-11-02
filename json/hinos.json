@@ -912,14 +912,6 @@
       "arquivo": "./letras_todas/venham_santos_do_altissimo.txt",
       "autor": "Autor: Franny Girlando",
       "copyright": "Copyright: © 1994 The Living Word"
-    },
-    {
-      "id": 398,
-      "numero": 3,
-      "titulo": "A_TESTE_3",
-      "arquivo": "letras/a-teste-3.txt",
-      "autor": "NAO TEM",
-      "copyright": "NAO TEM"
     }
   ]
 }
