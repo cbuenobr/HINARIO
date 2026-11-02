@@ -163,11 +163,11 @@
     },
     {
       "id": 86,
-      "numero": "94",
+      "numero": 99,
       "titulo": "CRISTO JÁ RESSUSCITOU",
       "arquivo": "./letras_todas/cristo_ja_ressuscitou.txt",
-      "autor": "Autor: Charles Wesley, Lyra Davidica",
-      "copyright": "Copyright: Domínio Público"
+      "autor": "Charles Wesley, Lyra Davidica",
+      "copyright": "Domínio Público"
     },
     {
       "id": 87,
