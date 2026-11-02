@@ -43,11 +43,11 @@
     },
     {
       "id": 14,
-      "numero": "22",
+      "numero": 2,
       "titulo": "A TI Ó MESTRE",
       "arquivo": "./letras_todas/a_ti_o_mestre.txt",
       "autor": "Autor: Brian Cobert, Emerson Eads",
-      "copyright": "Copyright: ©1978 The Living Word"
+      "copyright": "Copyright: 1978 The Living Word"
     },
     {
       "id": 30,
