@@ -147,11 +147,11 @@
     },
     {
       "id": 72,
-      "numero": "80",
+      "numero": 228,
       "titulo": "CASTELO FORTE",
       "arquivo": "./letras_todas/castelo_forte.txt",
-      "autor": "Autor: Martin Luther",
-      "copyright": "Copyright: Domínio Público"
+      "autor": "Martinho Lutero",
+      "copyright": "Domínio Público"
     },
     {
       "id": 78,
