@@ -131,11 +131,11 @@
     },
     {
       "id": 69,
-      "numero": "77",
+      "numero": 501,
       "titulo": "CANTAREI ALELUIA",
       "arquivo": "./letras_todas/cantarei_aleluia.txt",
-      "autor": "Autor: Autor desconhecido",
-      "copyright": "Copyright: Domínio Público"
+      "autor": "Autor desconhecido",
+      "copyright": "Domínio Público"
     },
     {
       "id": 70,
