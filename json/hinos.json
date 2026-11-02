@@ -251,11 +251,11 @@
     },
     {
       "id": 120,
-      "numero": "128",
+      "numero": 128,
       "titulo": "EIS-ME AQUI",
       "arquivo": "./letras_todas/eis-me_aqui.txt",
-      "autor": "Autor: Vivian Kuala",
-      "copyright": "Copyright: ©1991 The Living Word"
+      "autor": "Vivian Kuala",
+      "copyright": "1991 The Living Word"
     },
     {
       "id": 123,
