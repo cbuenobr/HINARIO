@@ -355,11 +355,11 @@
     },
     {
       "id": 150,
-      "numero": "158",
+      "numero": 500,
       "titulo": "ESTAMOS SENDO TOMADOS",
       "arquivo": "./letras_todas/estamos_sendo_tomados.txt",
-      "autor": "Autor: Marcelo Pereira",
-      "copyright": "Copyright: © A Palavra Viva"
+      "autor": "Marcelo Pereira",
+      "copyright": "A Palavra Viva"
     },
     {
       "id": 152,
