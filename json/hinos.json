@@ -99,11 +99,11 @@
     },
     {
       "id": 52,
-      "numero": "60",
+      "numero": 60,
       "titulo": "AQUELE QUE HABITA (SALMO 91)",
       "arquivo": "./letras_todas/aquele_que_habita_(salmo_91).txt",
-      "autor": "Autor: Autor desconhecido",
-      "copyright": "Copyright: Domínio Público"
+      "autor": "Desconhecido",
+      "copyright": ""
     },
     {
       "id": 58,
