@@ -51,11 +51,11 @@
     },
     {
       "id": 30,
-      "numero": "38",
+      "numero": 38,
       "titulo": "AGORA VEMOS",
       "arquivo": "./letras_todas/agora_vemos.txt",
-      "autor": "Autor: Mike Suderman",
-      "copyright": "Copyright: ©1978 The Living Word"
+      "autor": "Mike Suderman",
+      "copyright": "1978 The Living Word"
     },
     {
       "id": 32,
