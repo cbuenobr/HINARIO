@@ -107,11 +107,11 @@
     },
     {
       "id": 58,
-      "numero": "66",
+      "numero": 2,
       "titulo": "BENDIREI AO SENHOR",
       "arquivo": "./letras_todas/bendirei_ao_senhor.txt",
-      "autor": "Autor: Craig Gruenberg",
-      "copyright": "Copyright: © 1990 The Living Word"
+      "autor": "Craig Gruenberg",
+      "copyright": "1990 The Living Word"
     },
     {
       "id": 65,
