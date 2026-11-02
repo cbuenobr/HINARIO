@@ -203,11 +203,11 @@
     },
     {
       "id": 109,
-      "numero": "117",
+      "numero": 117,
       "titulo": "DIGNO É O CORDEIRO",
       "arquivo": "./letras_todas/digno_e_o_cordeiro.txt",
-      "autor": "Autor: Autor desconhecido",
-      "copyright": "Copyright: Domínio Público"
+      "autor": "desconhecido",
+      "copyright": "domínio Público"
     },
     {
       "id": 104,
