@@ -115,11 +115,11 @@
     },
     {
       "id": 65,
-      "numero": "73",
+      "numero": 73,
       "titulo": "BUSCO TUA PRESENÇA",
       "arquivo": "./letras_todas/busco_tua_presenca.txt",
-      "autor": "Autor: Diane Kniefel",
-      "copyright": "Copyright: © 1987 The Living Word"
+      "autor": "Diane Kniefel",
+      "copyright": "1987 The Living Word"
     },
     {
       "id": 68,
