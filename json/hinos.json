@@ -62,8 +62,8 @@
       "numero": "40",
       "titulo": "AINDA QUE A FIGUEIRA NÃO FLORESÇA",
       "arquivo": "./letras_todas/ainda_que_a_figueira_nao_floresca.txt",
-      "autor": "Autor: Autor desconhecido",
-      "copyright": "Copyright: Domínio Público"
+      "autor":"",
+      "copyright": "Domínio Público"
     },
     {
       "id": 34,
@@ -245,9 +245,9 @@
       "id": 119,
       "numero": "127",
       "titulo": "EIS QUE EU ESTOU A FAZER",
-      "arquivo": "./letras_todas/_eis_que_eu_estou_a_fazer.txt",
-      "autor": "Autor: Judy Price",
-      "copyright": "Copyright: ©1973 The Living Word"
+      "arquivo": "./letras_todas/eis_que_eu_estou_a_fazer.txt",
+      "autor": "Judy Price",
+      "copyright": "1973 The Living Word"
     },
     {
       "id": 120,

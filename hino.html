@@ -28,7 +28,7 @@
             <p id="copyright"></p>
         </div>
         
-        <p id="mensagem" class="hidden"></p>
+        <p id="mensagem"></p>
         <div>
             <a class="index-button" href="index.html">ÍNDICE</a>
             <a id="btnSobe" href=# class="index-button">SOBE</a>            
@@ -41,6 +41,10 @@
         let hinosCarregados = [];
 
         const catalogPath = "./json/hinos.json";
+       //const catalogPath = "./json/hinos_teste.json";
+
+        const btn1 = document.getElementById('btnSobe');
+        const btn2 = document.getElementById('top-index');
         const params = new URLSearchParams(document.location.search);
         const Id1 = params.get("Id");
         const letraSection = document.getElementById('letra');
@@ -60,6 +64,11 @@
                 //const resposta = await fetch('hinos.json', { cache: 'no-store' });
                 const resposta = await fetch(catalogPath, { cache: 'no-store' });
 
+                //== PROVOCA ERRO =====
+                //const resposta = await fetch('xxxxx.json', { cache: 'no-store' });
+                //====================
+
+
                 if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json (erro ' + resposta.status + ')');
 
                 const catalogo = await resposta.json();
@@ -78,7 +87,11 @@
                 }
 
             } catch (erro) {
-                mensagem.textContent = 'Não foi possível carregar o índice de hinos.' +  erro.message;
+                mensagem.textContent = erro.message;
+
+                //Oculta botões SOBE e ÍNDICE superior, pois não há hinos para exibir
+                btn1.classList.add('hidden');
+                btn2.classList.add('hidden');
             }
         }
 
@@ -93,6 +106,10 @@
             let hino = hinosCarregados.find(h => String(h.id) === String(Id1));
             let info=[];
 
+            //== PROVOCA ERRO =====
+            //hino = null;
+            //====================
+
             if(hino != null)
             {
                 document.getElementById('songHeader').textContent = hino.numero + ' - ' + hino.titulo.trim();
@@ -105,12 +122,12 @@
 
                 if(hino.autor != undefined && hino.autor.trim().length>0)
                 {        
-                    info.push(hino.autor);
+                    info.push("Autor: " + hino.autor);
                 }
 
                 if(hino.copyright != undefined && hino.copyright.trim().length>0)
                 {         
-                   info.push(hino.copyright);
+                   info.push("Copyright: " + hino.copyright);
                 }
 
                 if(info.length >0)
@@ -126,7 +143,9 @@
                 document.getElementById("songHeader").textContent = '';
                 letraSection.textContent= 'Hino não encontrado.';
 
-                ToggleButtonVisiblity();
+                //Oculta botões SOBE e ÍNDICE superior, pois não há hinos para exibir
+                btn1.classList.add('hidden');
+                btn2.classList.add('hidden');
             }
         }
 
@@ -195,9 +214,13 @@
                     throw new Error('Este aplicativo deve ser aberto por um servidor local. Execute "python -m http.server" e abra http://localhost:8000');
                 }
 
+                //== PROVOCA ERRO =====
+                //arquivoHino = "xxxxx.txt";
+                //====================
+
                 const resposta = await fetch(arquivoHino, { cache: 'no-store' });
 
-                if (!resposta.ok) throw new Error('Não foi possível carregar o arquivo do hino (erro ' + resposta.status + ')');
+                if (!resposta.ok) throw new Error('Não foi possível carregar a letra deste hino (erro ' + resposta.status + ')');
 
                 const result =  await resposta.text();
 
@@ -209,7 +232,11 @@
             
             } catch (erro) {
                 console.error('Não foi possível carregar a letra deste hino. ' +  erro.message);
-                mensagem.textContent = 'Não foi possível carregar o arquivo do hino. ' +  erro.message;
+                letraSection.textContent = erro.message;
+
+                //Oculta botões SOBE e ÍNDICE superior, pois não há hinos para exibir
+                btn1.classList.add('hidden');
+                btn2.classList.add('hidden');
             }
         }
 
@@ -218,7 +245,10 @@
         {
             letraSection.textContent='';
 
-            let splitted = txt.split(/coro/i);
+            //Este regex procura por uma linha que contenha apenas a palavra "coro" (case insensitive), possivelmente com espaços antes ou depois, e quebra de linha antes e depois. Ele divide o texto em partes, onde as partes ímpares são consideradas como coro e serão envolvidas em um <span> para formatação especial.
+            const exp = new RegExp('\\r?\\n[ \t]*CoRO[ \t]*\\r?\\n', 'i'); //este come a última linha do coro, se houver quebra de linha no final. Considera multiplos espacos no inicio da linha e é case insensitive
+           // const exp = new RegExp('\\r?\\n[ \t]*CoRO[ \t]*', 'i'); //considera multiplos espacos no inicio da linha e é case insensitive
+            let splitted = txt.split(exp);
 
             for (let i=0; i<=(splitted.length-1); i++)
             {
@@ -236,13 +266,17 @@
                     }
                     else //ímpar = span
                     {
+                        const space1 = document.createElement('p');
                         const sp1 = document.createElement('span');          
                         const txt2 = document.createTextNode(splitted[i].trimEnd());
-                        const space = document.createElement('br');
+                        const space2 = document.createElement('p');
 
+                        letraSection.appendChild(space1);
                         sp1.appendChild(txt2);
                         letraSection.appendChild(sp1);          
-                        letraSection.appendChild(space);
+                        letraSection.appendChild(space2);
+
+                        console.log(letraSection.innerHTML);
                     }
                 } 
             }
@@ -251,8 +285,8 @@
           //Exibe ou esconde os botões SOBE E ÍNDICE superior se o documento sangrar
         function ToggleButtonVisiblity()
         {
-            const btn1 = document.getElementById('btnSobe');
-            const btn2 = document.getElementById('top-index');
+            //const btn1 = document.getElementById('btnSobe');
+            //const btn2 = document.getElementById('top-index');
 
             finalHeight = songMainDiv.offsetHeight;
 
