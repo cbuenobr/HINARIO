@@ -219,11 +219,11 @@
     },
     {
       "id": 110,
-      "numero": "118",
+      "numero": 118,
       "titulo": "DOCE AMOR",
       "arquivo": "./letras_todas/doce_amor.txt",
-      "autor": "Autor: Myra Skelley, Craig Gruenberg",
-      "copyright": "Copyright: ©1981 The Living Word"
+      "autor": "Myra Skelley, Craig Gruenberg",
+      "copyright": "1981 The Living Word"
     },
     {
       "id": 115,
