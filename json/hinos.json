@@ -259,11 +259,11 @@
     },
     {
       "id": 123,
-      "numero": "131",
+      "numero": 139,
       "titulo": "ELE É O GRANDE EU SOU",
       "arquivo": "./letras_todas/ele_e_o_grande_eu_sou.txt",
-      "autor": "Autor: Tom Miller",
-      "copyright": "Copyright: ©1979 The Living Word"
+      "autor": "Tom Miller",
+      "copyright": "Copyright: 1979 The Living Word"
     },
     {
       "id": 124,
