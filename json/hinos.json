@@ -91,11 +91,11 @@
     },
     {
       "id": 48,
-      "numero": "56",
+      "numero": 2,
       "titulo": "AO SENHOR SEJA A GLÓRIA",
       "arquivo": "./letras_todas/ao_senhor_seja_a_gloria.txt",
-      "autor": "Autor: Kathy Krum, Vere Thomas",
-      "copyright": "Copyright: © 1974 The Living Word"
+      "autor": "Kathy Krum, Vere Thomas",
+      "copyright": "1974 The Living Word"
     },
     {
       "id": 52,
