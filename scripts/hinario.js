@@ -47,9 +47,12 @@
             }
 
              const resposta = await fetch(catalogPath, { cache: 'no-store' });
-             //const resposta = await fetch('./json/hinos_todos.json', { cache: 'no-store' });
 
-            if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json (erro ' + resposta.status + ')');
+            //== PROVOCA ERRO =====
+            //const resposta = await fetch('xxxxx.json', { cache: 'no-store' });
+            //====================
+
+            if (!resposta.ok) throw new Error('Não foi possível acessar o cadastro de hinos.');
 
             const catalogo = await resposta.json();
 
@@ -67,7 +70,8 @@
             }
 
         } catch (erro) {
-            mensagem.textContent = 'Não foi possível carregar o índice de hinos.' +  erro.message;
+            mensagem.style.color = 'red';
+            mensagem.textContent = erro.message;
         }
     }
 
@@ -85,11 +89,11 @@
         Parameters_FontSize_Save();
 
         //xxxxxxxxxxxx
-/*         console.log("BODY FONT SIZE");
+/*          console.log("BODY FONT SIZE");
         console.log(window.getComputedStyle(document.body).getPropertyValue('font-size'));
 
         console.log("INDEX HEADER");
-        var computedFontSize = window.getComputedStyle(document.getElementById("indexHeader")).fontSize;
+        var computedFontSize = window.getComputedStyle(document.getElementById("headerTitle")).fontSize;
         console.log(computedFontSize); */
         //XXXXXXXXXX
 
@@ -129,7 +133,6 @@
             Indice_Popula();
         }
     }
-
 
 
     //Cria linha do Índice
@@ -372,6 +375,8 @@
 
         //Atualiza o localStorage com o modo de tema selecionado
         Parameters_Theme_Save(e.target.value);
+
+        CloseAllMenus();
     }
 
 

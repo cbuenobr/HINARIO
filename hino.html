@@ -16,9 +16,9 @@
 </head>
 
 
-<body>
+<body style="background-image: none;">
     <div id="songMainDiv">
-        <br>
+
         <a id="top-index" class="index-button" href="index.html">ÍNDICE</a>
         
         <div class="songClass">
@@ -28,13 +28,12 @@
             <p id="copyright"></p>
         </div>
         
-        <p id="mensagem"></p>
         <div>
             <a class="index-button" href="index.html">ÍNDICE</a>
             <a id="btnSobe" href=# class="index-button">SOBE</a>            
         </div>
 
-    <!-- </main>  -->
+
 
     <script>
         let finalHeight = 0;
@@ -49,9 +48,6 @@
         const Id1 = params.get("Id");
         const letraSection = document.getElementById('letra');
 
-        const mensagem = document.getElementById('mensagem');
-
-
         async function CarregaJsonDosHinos() {       
 
         try {
@@ -61,7 +57,6 @@
                     throw new Error('Este aplicativo deve ser aberto por um servidor local. Execute "python -m http.server" e abra http://localhost:8000');
                 }
 
-                //const resposta = await fetch('hinos.json', { cache: 'no-store' });
                 const resposta = await fetch(catalogPath, { cache: 'no-store' });
 
                 //== PROVOCA ERRO =====
@@ -69,8 +64,7 @@
                 //====================
 
 
-                if (!resposta.ok) throw new Error('Não foi possível carregar hinos.json (erro ' + resposta.status + ')');
-
+                if (!resposta.ok) throw new Error('Não foi possível acessar o cadastro de letras.');
                 const catalogo = await resposta.json();
 
                 //Se o json for um array usa "catalogo". Se houver um membro que não é array, procura "catalogo.hinos". Se este não existir devolve []
@@ -87,7 +81,8 @@
                 }
 
             } catch (erro) {
-                mensagem.textContent = erro.message;
+                letraSection.style.color = "red";
+                letraSection.textContent= erro.message;
 
                 //Oculta botões SOBE e ÍNDICE superior, pois não há hinos para exibir
                 btn1.classList.add('hidden');
@@ -107,6 +102,11 @@
             let info=[];
 
             //== PROVOCA ERRO =====
+/*             if(hino.numero == 166)
+            {
+                throw new Error('PROVOQUEI');
+            } */
+
             //hino = null;
             //====================
 
@@ -141,6 +141,7 @@
             }
             else{
                 document.getElementById("songHeader").textContent = '';
+                letraSection.style.color = "red";
                 letraSection.textContent= 'Hino não encontrado.';
 
                 //Oculta botões SOBE e ÍNDICE superior, pois não há hinos para exibir
@@ -215,12 +216,16 @@
                 }
 
                 //== PROVOCA ERRO =====
-                //arquivoHino = "xxxxx.txt";
+/*                 if(arquivoHino.includes("honra"))
+                {
+                    //throw new Error('PROVOQUEI');
+                    arquivoHino = "xxxxx.txt";
+                } */
                 //====================
 
                 const resposta = await fetch(arquivoHino, { cache: 'no-store' });
 
-                if (!resposta.ok) throw new Error('Não foi possível carregar a letra deste hino (erro ' + resposta.status + ')');
+                if (!resposta.ok) throw new Error('Não foi possível carregar a letra deste hino.');
 
                 const result =  await resposta.text();
 
@@ -232,7 +237,8 @@
             
             } catch (erro) {
                 console.error('Não foi possível carregar a letra deste hino. ' +  erro.message);
-                letraSection.textContent = erro.message;
+                letraSection.style.color = "red";
+                letraSection.textContent= 'Não foi possível carregar a letra deste hino.';
 
                 //Oculta botões SOBE e ÍNDICE superior, pois não há hinos para exibir
                 btn1.classList.add('hidden');
@@ -246,8 +252,11 @@
             letraSection.textContent='';
 
             //Este regex procura por uma linha que contenha apenas a palavra "coro" (case insensitive), possivelmente com espaços antes ou depois, e quebra de linha antes e depois. Ele divide o texto em partes, onde as partes ímpares são consideradas como coro e serão envolvidas em um <span> para formatação especial.
-            const exp = new RegExp('\\r?\\n[ \t]*CoRO[ \t]*\\r?\\n', 'i'); //este come a última linha do coro, se houver quebra de linha no final. Considera multiplos espacos no inicio da linha e é case insensitive
-           // const exp = new RegExp('\\r?\\n[ \t]*CoRO[ \t]*', 'i'); //considera multiplos espacos no inicio da linha e é case insensitive
+            //const exp = new RegExp('\\r?\\n[ \t]*CoRO[ \t]*\\r?\\n', 'i'); //este come a última linha do coro, se houver quebra de linha no final. Considera multiplos espacos no inicio da linha e é case insensitive
+            
+            //O Regex acima não eliminava "Coro" no final do texto, se não houvesse quebra de linha depois. Este abaixo resolve o problema.
+            const exp= new RegExp ('\\nCORO\\r?\\n?', 'i');
+
             let splitted = txt.split(exp);
 
             for (let i=0; i<=(splitted.length-1); i++)
@@ -281,6 +290,7 @@
                 } 
             }
         }
+
 
           //Exibe ou esconde os botões SOBE E ÍNDICE superior se o documento sangrar
         function ToggleButtonVisiblity()

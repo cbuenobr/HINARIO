@@ -4,12 +4,15 @@
     --baseFontSize: 1em;
     --borderColor: rgb(190, 190, 190);
     --bodyBackground: rgb(245, 245, 245);
-    --chorusColor:rgb(0, 33, 219);
+    /* --chorusColor:rgb(0, 33, 219); */
+    --chorusColor:#0065ca;
     --fontSizeSliderStep: 0.1;
     --headerBackground: #1395ec;
+    /* --headerBackground: #ffffff; */
     --hoverColor: #1395ec;
     --hyperlink: #0246c5;
     --menuBackground:white;
+    --tarjaVertical: #0073e6;
     --textColor: #000000;
   }
 
@@ -18,20 +21,25 @@ body {
    /*fonte base para o documento inteiro. Ajusto com % quando necessário */
      font-size: calc(var(--baseFontSize) + 1vw);
 
-/*   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Times New Roman', Times, serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Times New Roman', Times, serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
      font-family: Georgia, 'Times New Roman', Times, serif; 
-     font-family: 'Times New Roman', Times, serif; */
-    font-family: Arial, Helvetica, sans-serif;
+     /* font-family: 'Times New Roman', Times, serif; */ 
+    /* font-family: Arial, Helvetica, sans-serif; */
     /* font-family: 'Times New Roman', Times, serif; */
 
     /* Precisei usar ../ se não não era exibido no gitHub */
-    background-image: url(../img/pexels-pixelcop-claro.jpg);
+/*     background-image: url(../img/pexels-pixelcop-claro.jpg);
     background-image: url(../img/pexels-diva.jpg);
     background-image: url(../img/pexels-diva-29802520.jpg);
      
    
-    background-image: url(../img/flavia01.jpeg);
+
     background-image: url(../img/flavia03.jpeg);
+    background-image: url(../img/flavia06.jpeg);
+        background-image: url(../img/flavia06.jpeg); */
+      background-image: url(../img/bg_claro.jpg);
+
     background-size: cover;        
     background-repeat: no-repeat;  
     background-position: center;   
@@ -44,20 +52,25 @@ body {
 }
 
 body.darkTheme{
-  --bodyBackground:rgb(20, 20, 20);
+  --bodyBackground:rgb(0, 0, 0);
   --borderColor:rgb(88, 88, 88);
-  --chorusColor:rgba(248, 206, 68, 0.945);
+  --chorusColor:rgb(84, 161, 255);
+  /* --chorusColor: rgb(48, 196, 255) ; */
   --menuBackground:black;
-  --headerBackground: rgb(3, 25, 124);
-  /* --headerBackground: rgb(28, 134, 255); */
-  --hyperlink: rgb(21, 130, 255) ;
+  /* --headerBackground: rgb(3, 25, 124); */
+  --headerBackground: rgba(0, 110, 255, 0.589);
+  --hyperlink: #4597fb ;
+  --hoverColor: rgb(21, 130, 255);
+  --tarjaVertical: rgb(84, 161, 255);
   --textColor:rgb(199, 199, 199);
 /*    background-image: url(../img/pexels-pixelcop-escuro.jpg);
   background-image: url(../img/pexels-mahdibafande_blur.jpg); */
 
 
-  background-image: url(../img/flavia04.jpeg);
+  /* background-image: url(../img/flavia04.jpeg); */
   /* background-image: url(../img/flavia06.jpeg); */
+  background-image: none;
+
 }
 
 body.darkTheme a:hover{
@@ -99,12 +112,23 @@ a:hover {
 
 .hidden { display: none !important; }
 
+/* img {
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+  height: auto;
+  opacity: 0.5;
+}
+ */
+
 /*Classe de um hino em hino.html */
 .songClass {
     margin-bottom: 10px;
     padding: 5px 20px 25px;
     background-color: var(--bodyBackground);
-    border-left: 5px solid #0073e6;
+    border-left: 5px solid var(--tarjaVertical);
 }
 
 .songClass span{
@@ -115,10 +139,17 @@ a:hover {
   margin-left:30px; 
 }
 
+#songHeader{
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-top:10px;
+}
+
 .index-button {
   display: inline-block;
-  margin: 0 0 28px;
-  padding: 12px 18px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 10px 10px;
   border: 2px solid #000;
   border-radius: 8px;
   color: var(--menuBackground);
@@ -128,6 +159,14 @@ a:hover {
   line-height: 1;
   background: var(--textColor)
 }
+
+#indexHeader{
+  font-weight: bold;
+  text-align:center;
+  font-size: 100%;
+  /* margin-top: -60px; */
+}
+
 
 .td-number{
   text-align: right; 
@@ -147,12 +186,12 @@ a:hover {
   background-color: var(--menuBackground);
   overflow-x: hidden;
   transition: 0.5s;
-  padding: 0px;
+  /* padding: 30px; */
   transform: translateX(100%);
 }
 
 .sidenav a {
-  padding:5px 5px 0px 10px;
+  /* padding:5px 5px 0px 10px; */
   text-decoration: none;
   color: var(--textColor);
   display: block;
@@ -169,8 +208,6 @@ a:hover {
 .fontSizeMenu label{
   font-size: 100%;
 }
-
-
 
 .slidecontainer {        
     width: 100%; /* Width of the outside container */
@@ -199,28 +236,40 @@ a:hover {
 
 /*== ID ========================*/
 #copyright{
-  font-size: 70%;
-  white-space: pre-wrap
+  font-size: 80%;
+  white-space: pre-wrap;
+  margin-bottom:0px;
 }
 
 
 #headerGroup{
   text-align: center; 
-  background-color: var(--headerBackground);
-  padding: 7px; 
+  /* background-color: var(--headerBackground); */
+  padding: 0px; 
   font-weight: bold; 
   table-layout: auto;
+  margin:0px;
+  width: 100%;
+}
+
+
+/*Linhas do header */
+#headerGroup hr{
+  height:2px;
+  border-width:0;
+  background-color:cornflowerblue;
+  margin-top:6px;
+  margin-bottom:6px;
 }
 
 #headerTitle{
-  font-size: 120%;
+  /* font-size: 100%; */
+  font-size:23px;
+  padding:0;
+  margin:0;
+  width:110px;
 }
 
-#indexHeader{
-  font-weight: bold;
-  text-align:center;
-  font-size: 100%;
-}
 
 #hymnHeader{
   font-size: 110%;
@@ -234,6 +283,7 @@ a:hover {
   line-height: 1.9;
 }
 
+
 #menuIcon{
   text-align:center;
   font-size: 130%;
@@ -241,7 +291,17 @@ a:hover {
 
 #table-contents{
     display: block;
-    margin-left: 0px;    
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: 5px;    
     border-spacing: 0px 0.8em;  /*espaçamento entre linhas*/
+}
+
+.thickLine{
+  height:4px;
+  border-width:0;
+  background-color:cornflowerblue;
+  margin-top:0px;
+  margin-bottom:0px;
 }
 

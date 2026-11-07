@@ -11,16 +11,9 @@
     <title>NOSSO HINARIO</title>
 </head>
 <body>
-    <table id="headerGroup" style="width:100%">
-<!--         <colgroup>
-            <col style="background-color:red">
-            <col style="background-color:rgb(17, 0, 255)">
-            <col style="background-color:rgb(190, 178, 0)">
-        </colgroup> -->
-
+<!--     <table id="headerGroup" style="width:100%">
         <tr>
-            <!-- Não estou usando ainda este menu principal-->
-            <td id="hamburgerIcon" style="visibility: hidden;">
+            <td id="hamburgerIcon" style="visibility: show;  background-color:red;">
                 &#9776;
             </td>
 
@@ -32,7 +25,44 @@
                 &#8942;
             </td>
         </tr>
+    </table> -->
+
+        <hr class="thickLine">
+
+        <table id="headerGroup">
+        <tr>
+            <!-- Não estou usando ainda este menu principal-->
+            <td id="hamburgerIcon" style="width:50px; padding:0;visibility: hidden; background-color:bisque;">
+                &#9776;
+            </td>
+
+            <td>
+              <hr>
+              <hr style="width: 90%;">
+              <hr style="width: 80%;">
+              <hr style="width: 90%;">
+              <hr>
+            </td>
+
+            <td id="headerTitle">
+                NOSSO HINÁRIO
+            </td>
+
+            <td>
+              <hr>
+              <hr style="width: 90%;">
+              <hr style="width: 80%;">
+              <hr style="width: 90%;">
+              <hr>
+            </td>
+                  
+            <td id="menuIcon"  style="width:50px; height:50px; border-radius: 25px; text-align:center; background-color:rgb(214, 228, 255);" onclick="openNav()">
+                &#8942;
+            </td>
+        </tr>        
     </table>
+    <hr class="thickLine">
+    
 
     <div id="sideMenu">
         <div id="mySidenav" class="sidenav">
@@ -93,7 +123,7 @@
         </div>
     </div>
 
-    <p id="indexHeader">ÍNDICE</p>
+    <!-- <p id="indexHeader">ÍNDICE</p> -->
     
     <table id="table-contents"></table>
     
