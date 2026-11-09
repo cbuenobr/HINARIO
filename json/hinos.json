@@ -291,11 +291,11 @@
     },
     {
       "id": 129,
-      "numero": "137",
+      "numero": 24,
       "titulo": "ELE NOS CHAMOU",
       "arquivo": "./letras_todas/ele_nos_chamou.txt",
-      "autor": "Autor: Tom Miller",
-      "copyright": "Copyright: ©1978 The Living Word"
+      "autor": "Tom Miller",
+      "copyright": "©1978 The Living Word"
     },
     {
       "id": 130,
