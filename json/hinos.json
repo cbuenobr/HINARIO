@@ -451,11 +451,11 @@
     },
     {
       "id": 198,
-      "numero": "206",
+      "numero": 79,
       "titulo": "GRAÇA EXCELSA",
       "arquivo": "./letras_todas/graca_excelsa.txt",
-      "autor": "Autor: John Newton",
-      "copyright": "Copyright: Domínio Público"
+      "autor": "John Newton",
+      "copyright": "Domínio Público"
     },
     {
       "id": 200,
