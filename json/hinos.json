@@ -523,11 +523,11 @@
     },
     {
       "id": 250,
-      "numero": "259",
+      "numero": 216,
       "titulo": "NÃO DIZEMOS MAIS AMANHÃ",
       "arquivo": "./letras_todas/nao_dizemos_mais_amanha.txt",
-      "autor": "Autor: Diana Kniefel",
-      "copyright": "Copyright: © 1976 The Living Word"
+      "autor": "Diana Kniefel",
+      "copyright": "© 1976 The Living Word"
     },
     {
       "id": 256,
