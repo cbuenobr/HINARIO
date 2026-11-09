@@ -475,11 +475,11 @@
     },
     {
       "id": 205,
-      "numero": "213",
+      "numero": 507,
       "titulo": "GRATO EU SOU",
       "arquivo": "./letras_todas/grato_eu_sou.txt",
-      "autor": "Autor: Autor Desconhecido",
-      "copyright": "Copyright: Domínio Público"
+      "autor": "Autor Desconhecido",
+      "copyright": "Domínio Público"
     },
     {
       "id": 217,
