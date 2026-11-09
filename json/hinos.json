@@ -243,11 +243,11 @@
     },
     {
       "id": 119,
-      "numero": "127",
+      "numero": 127,
       "titulo": "EIS QUE EU ESTOU A FAZER",
       "arquivo": "./letras_todas/eis_que_eu_estou_a_fazer.txt",
       "autor": "Judy Price",
-      "copyright": "1973 The Living Word"
+      "copyright": "©1973 The Living Word"
     },
     {
       "id": 120,
