@@ -851,11 +851,11 @@
     },
     {
       "id": 380,
-      "numero": "389",
+      "numero": 529,
       "titulo": "TODOS OS QUE SÃO GUIADOS",
       "arquivo": "./letras_todas/todos_os_que_sao_guiados.txt",
-      "autor": "Autor: Autor desconhecido",
-      "copyright": "Copyright: © The Living Word"
+      "autor": "Autor desconhecido",
+      "copyright": "© The Living Word"
     },
     {
       "id": 381,
