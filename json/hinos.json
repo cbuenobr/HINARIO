@@ -331,11 +331,11 @@
     },
     {
       "id": 145,
-      "numero": "153",
+      "numero": 199,
       "titulo": "ESTA É A ERA DO SEU REINO",
       "arquivo": "./letras_todas/esta_e_a_era_do_seu_reino.txt",
-      "autor": "Autor: Rhonda Bailey",
-      "copyright": "Copyright: ©1974 The Living Word"
+      "autor": "Rhonda Bailey",
+      "copyright": "©1974 The Living Word"
     },
     {
       "id": 148,
