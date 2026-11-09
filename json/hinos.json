@@ -547,11 +547,11 @@
     },
     {
       "id": 265,
-      "numero": "274",
+      "numero": 510,
       "titulo": "NUM NOVO NÍVEL",
       "arquivo": "./letras_todas/num_novo_nivel.txt",
-      "autor": "Autor: Diane Kniefel",
-      "copyright": "Copyright: © 1980 The Living Word"
+      "autor": "Diane Kniefel",
+      "copyright": "© 1980 The Living Word"
     },
     {
       "id": 266,
