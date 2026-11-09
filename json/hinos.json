@@ -443,11 +443,11 @@
     },
     {
       "id": 197,
-      "numero": "205",
+      "numero": 149,
       "titulo": "GLÓRIAS PRA SEMPRE",
       "arquivo": "./letras_todas/glorias_pra_sempre.txt",
-      "autor": "Autor: Vencedores Por Cristo",
-      "copyright": "Copyright: ©1975 Vencedores Por Cristo"
+      "autor": "Vencedores Por Cristo",
+      "copyright": "©1975 Vencedores Por Cristo"
     },
     {
       "id": 198,
