@@ -555,11 +555,11 @@
     },
     {
       "id": 266,
-      "numero": "275",
+      "numero": 512,
       "titulo": "O AMOR DO SENHOR ESTÁ SOBRE NÓS",
       "arquivo": "./letras_todas/o_amor_do_senhor_esta_sobre_nos.txt",
-      "autor": "Autor: Tom Miller",
-      "copyright": "Copyright: © 1981 The Living Word"
+      "autor": "Tom Miller",
+      "copyright": "© 1981 The Living Word"
     },
     {
       "id": 268,
