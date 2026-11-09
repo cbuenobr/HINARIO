@@ -347,11 +347,11 @@
     },
     {
       "id": 149,
-      "numero": "157",
+      "numero": 31,
       "titulo": "ESTAMOS ROMPENDO ESTE VÉU",
       "arquivo": "./letras_todas/estamos_rompendo_este_veu.txt",
-      "autor": "Autor: Tom Miller",
-      "copyright": "Copyright: ©The Living Word"
+      "autor": "Tom Miller",
+      "copyright": "©The Living Word"
     },
     {
       "id": 150,
