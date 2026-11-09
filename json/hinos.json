@@ -411,11 +411,11 @@
     },
     {
       "id": 184,
-      "numero": "192",
+      "numero": 242,
       "titulo": "FINDOU A NOITE",
       "arquivo": "./letras_todas/findou_a_noite.txt",
-      "autor": "Autor: Ellen Hedman",
-      "copyright": "Copyright: ©1974 The Living Word"
+      "autor": "Ellen Hedman",
+      "copyright": "©1974 The Living Word"
     },
     {
       "id": 185,
