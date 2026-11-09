@@ -323,11 +323,11 @@
     },
     {
       "id": 141,
-      "numero": "149",
+      "numero": 149,
       "titulo": "ÉS O MEU REI",
       "arquivo": "./letras_todas/es_o_meu_rei.txt",
-      "autor": "Autor: Valerie Wolverton",
-      "copyright": "Copyright: ©2000 The Living Word"
+      "autor": "Valerie Wolverton",
+      "copyright": "©2000 The Living Word"
     },
     {
       "id": 145,
