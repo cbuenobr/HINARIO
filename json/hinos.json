@@ -531,11 +531,11 @@
     },
     {
       "id": 256,
-      "numero": "265",
+      "numero": 219,
       "titulo": "NASCEU UMA NOVA ERA PARA VÓS",
       "arquivo": "./letras_todas/nasceu_uma_nova_era_para_vos.txt",
-      "autor": "Autor: Maxine Anderson",
-      "copyright": "Copyright: © 1974 The Living Word"
+      "autor": "Maxine Anderson",
+      "copyright": "© 1974 The Living Word"
     },
     {
       "id": 261,
