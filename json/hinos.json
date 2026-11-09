@@ -867,11 +867,11 @@
     },
     {
       "id": 391,
-      "numero": "400",
+      "numero": 22,
       "titulo": "UM SUSSURRO SE ELEVA",
       "arquivo": "./letras_todas/um_sussurro_se_eleva.txt",
-      "autor": "Autor: Vivian Kuala",
-      "copyright": "Copyright: © 1982 The Living Word"
+      "autor": "Vivian Kuala",
+      "copyright": "© 1982 The Living Word"
     },
     {
       "id": 382,
