@@ -315,11 +315,11 @@
     },
     {
       "id": 138,
-      "numero": "146",
+      "numero": 1020,
       "titulo": "ÉS MARAVILHOSO AQUI!",
       "arquivo": "./letras_todas/es_maravilhoso_aqui!.txt",
-      "autor": "Autor: Autor Desconhecido",
-      "copyright": "Copyright: ©2000 The Living Word"
+      "autor": "Autor Desconhecido",
+      "copyright": "©2000 The Living Word"
     },
     {
       "id": 141,
