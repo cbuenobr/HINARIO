@@ -515,11 +515,11 @@
     },
     {
       "id": 245,
-      "numero": "253",
+      "numero": 341,
       "titulo": "MISERICÓRDIA",
       "arquivo": "./letras_todas/misericordia.txt",
-      "autor": "Autor: Diana Kniefel, John Robert Stevens",
-      "copyright": "Copyright: ©1998 The Living Word"
+      "autor": "Diana Kniefel, John Robert Stevens",
+      "copyright": "©1998 The Living Word"
     },
     {
       "id": 250,
