@@ -595,11 +595,11 @@
     },
     {
       "id": 275,
-      "numero": "284",
+      "numero": 76,
       "titulo": "O MISTÉRIO DAS ERAS",
       "arquivo": "./letras_todas/o_misterio_das_eras.txt",
-      "autor": "Autor: Tom Miller",
-      "copyright": "Copyright: © 1980 The Living Word"
+      "autor": "Tom Miller",
+      "copyright": "© 1980 The Living Word"
     },
     {
       "id": 279,
