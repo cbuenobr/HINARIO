@@ -1,5 +1,5 @@
 {
-  "ultimo_id": 398,
+  "ultimo_id": 403,
   "hinos": [
     {
       "id": 4,
@@ -896,6 +896,46 @@
       "arquivo": "./letras_todas/venham_santos_do_altissimo.txt",
       "autor": "Autor: Franny Girlando",
       "copyright": "Copyright: © 1994 The Living Word"
+    },
+    {
+      "id": 399,
+      "numero": 531,
+      "titulo": "REI DE TODA A TERRA",
+      "arquivo": "letras/rei-de-toda-a-terra.txt",
+      "autor": "desconhecido",
+      "copyright": ""
+    },
+    {
+      "id": 400,
+      "numero": 533,
+      "titulo": "ADONAI ROI",
+      "arquivo": "letras/adonai-roi.txt",
+      "autor": "desconhecido",
+      "copyright": ""
+    },
+    {
+      "id": 401,
+      "numero": 534,
+      "titulo": "E FACE A FACE",
+      "arquivo": "letras/e-face-a-face.txt",
+      "autor": "",
+      "copyright": ""
+    },
+    {
+      "id": 402,
+      "numero": 535,
+      "titulo": "EL SHADAI",
+      "arquivo": "letras/el-shadai.txt",
+      "autor": "",
+      "copyright": ""
+    },
+    {
+      "id": 403,
+      "numero": 536,
+      "titulo": "PARA OS MONTES OLHAREI",
+      "arquivo": "letras/para-os-montes-olharei.txt",
+      "autor": "Salmo 121",
+      "copyright": ""
     }
   ]
 }
