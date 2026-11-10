@@ -1,5 +1,5 @@
 {
-  "ultimo_id": 401,
+  "ultimo_id": 402,
   "hinos": [
     {
       "id": 4,
@@ -918,6 +918,14 @@
       "numero": 534,
       "titulo": "E FACE A FACE",
       "arquivo": "letras/e-face-a-face.txt",
+      "autor": "",
+      "copyright": ""
+    },
+    {
+      "id": 402,
+      "numero": 535,
+      "titulo": "EL SHADAI",
+      "arquivo": "letras/el-shadai.txt",
       "autor": "",
       "copyright": ""
     }
