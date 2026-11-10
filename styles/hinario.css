@@ -68,8 +68,11 @@ body.darkTheme{
 
 
   /* background-image: url(../img/flavia04.jpeg); */
-  /* background-image: url(../img/flavia06.jpeg); */
+  
   background-image: none;
+
+  background-image: url(../img/bg_escuro.jpg);
+  
 
 }
 
