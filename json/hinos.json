@@ -1,5 +1,5 @@
 {
-  "ultimo_id": 399,
+  "ultimo_id": 400,
   "hinos": [
     {
       "id": 4,
@@ -902,6 +902,14 @@
       "numero": 531,
       "titulo": "REI DE TODA A TERRA",
       "arquivo": "letras/rei-de-toda-a-terra.txt",
+      "autor": "desconhecido",
+      "copyright": ""
+    },
+    {
+      "id": 400,
+      "numero": 533,
+      "titulo": "ADONAI ROI",
+      "arquivo": "letras/adonai-roi.txt",
       "autor": "desconhecido",
       "copyright": ""
     }
