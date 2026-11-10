@@ -1,5 +1,5 @@
 {
-  "ultimo_id": 398,
+  "ultimo_id": 399,
   "hinos": [
     {
       "id": 4,
@@ -896,6 +896,14 @@
       "arquivo": "./letras_todas/venham_santos_do_altissimo.txt",
       "autor": "Autor: Franny Girlando",
       "copyright": "Copyright: © 1994 The Living Word"
+    },
+    {
+      "id": 399,
+      "numero": 531,
+      "titulo": "REI DE TODA A TERRA",
+      "arquivo": "letras/rei-de-toda-a-terra.txt",
+      "autor": "desconhecido",
+      "copyright": ""
     }
   ]
 }
