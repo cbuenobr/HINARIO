@@ -1,5 +1,5 @@
 {
-  "ultimo_id": 402,
+  "ultimo_id": 403,
   "hinos": [
     {
       "id": 4,
@@ -927,6 +927,14 @@
       "titulo": "EL SHADAI",
       "arquivo": "letras/el-shadai.txt",
       "autor": "",
+      "copyright": ""
+    },
+    {
+      "id": 403,
+      "numero": 536,
+      "titulo": "PARA OS MONTES OLHAREI",
+      "arquivo": "letras/para-os-montes-olharei.txt",
+      "autor": "Salmo 121",
       "copyright": ""
     }
   ]
