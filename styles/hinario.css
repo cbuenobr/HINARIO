@@ -7,11 +7,10 @@
     /* --chorusColor:rgb(0, 33, 219); */
     --chorusColor:#0065ca;
     --fontSizeSliderStep: 0.1;
-    --headerBackground: #1395ec;
-    /* --headerBackground: #ffffff; */
     --hoverColor: #1395ec;
     --hyperlink: #0246c5;
     --menuBackground:white;
+    --menuIconBackground: rgb(193, 212, 249);
     --tarjaVertical: #0073e6;
     --textColor: #000000;
   }
@@ -21,7 +20,7 @@ body {
    /*fonte base para o documento inteiro. Ajusto com % quando necessário */
      font-size: calc(var(--baseFontSize) + 1vw);
 
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Times New Roman', Times, serif;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Times New Roman', Times, serif; */
     /* font-family: Arial, Helvetica, sans-serif; */
      font-family: Georgia, 'Times New Roman', Times, serif; 
      /* font-family: 'Times New Roman', Times, serif; */ 
@@ -29,16 +28,7 @@ body {
     /* font-family: 'Times New Roman', Times, serif; */
 
     /* Precisei usar ../ se não não era exibido no gitHub */
-/*     background-image: url(../img/pexels-pixelcop-claro.jpg);
-    background-image: url(../img/pexels-diva.jpg);
-    background-image: url(../img/pexels-diva-29802520.jpg);
-     
-   
-
-    background-image: url(../img/flavia03.jpeg);
-    background-image: url(../img/flavia06.jpeg);
-        background-image: url(../img/flavia06.jpeg); */
-      background-image: url(../img/bg_claro.jpg);
+    background-image: url(../img/bg_claro.jpg);
 
     background-size: cover;        
     background-repeat: no-repeat;  
@@ -55,22 +45,14 @@ body.darkTheme{
   --bodyBackground:rgb(0, 0, 0);
   --borderColor:rgb(88, 88, 88);
   --chorusColor:rgb(84, 161, 255);
-  /* --chorusColor: rgb(48, 196, 255) ; */
   --menuBackground:black;
-  /* --headerBackground: rgb(3, 25, 124); */
-  --headerBackground: rgba(0, 110, 255, 0.589);
+  --menuIconBackground: rgba(3, 104, 255, 0.4);
   --hyperlink: #4597fb ;
   --hoverColor: rgb(21, 130, 255);
   --tarjaVertical: rgb(84, 161, 255);
   --textColor:rgb(199, 199, 199);
-/*    background-image: url(../img/pexels-pixelcop-escuro.jpg);
-  background-image: url(../img/pexels-mahdibafande_blur.jpg); */
-
-
-  /* background-image: url(../img/flavia04.jpeg); */
   
   background-image: none;
-
   background-image: url(../img/bg_escuro.jpg);
   
 
@@ -96,7 +78,13 @@ a:hover {
 }
 
 
-/* == CLASSES =========================*/
+.aboutMenu, .sortMenu, .themeMenu{
+  padding-bottom: 10px;
+  padding-top: 0px;
+  padding-left: 10px;
+  padding-right: 30px;
+}
+ 
 
 .admin-link{
   margin-right:10px;
@@ -108,12 +96,65 @@ a:hover {
   color:lightgray; 
 }
 
+#copyright{
+  font-size: 80%;
+  white-space: pre-wrap;
+  margin-bottom:0px;
+}
+
 
 .disable{
   pointer-events: none;
 }
 
+
+.fontSizeMenu{
+  padding:15px 30px;
+  width:50%;
+  max-width: 500px;
+}
+
+/* .fontSizeMenu label{
+  font-size: 100%;
+} */
+
+#headerGroup{
+  text-align: center; 
+  padding: 0px; 
+  font-weight: bold; 
+  table-layout: auto;
+  margin-top:2px;
+  margin-bottom:2px;
+  width: 100%;
+}
+
+
+/*Linhas do header */
+/* #headerGroup hr{
+  height:2px;
+  border-width:0;
+  background-color:cornflowerblue;
+  margin-top:6px;
+  margin-bottom:6px;
+} */
+
+/* usado em testes */
+/* #headerTitle{
+  font-size:23px;
+  padding:0;
+  margin:0;
+  width:110px;
+} */
+
+
 .hidden { display: none !important; }
+
+
+/* #hymnHeader{
+  font-size: 110%;
+  font-weight: bold;
+} */
+
 
 /* img {
   display: block;
@@ -126,55 +167,91 @@ a:hover {
 }
  */
 
-/*Classe de um hino em hino.html */
-.songClass {
-    margin-bottom: 10px;
-    padding: 5px 20px 25px;
-    background-color: var(--bodyBackground);
-    border-left: 5px solid var(--tarjaVertical);
+ 
+.image-cell {
+background-image: url(../img/partitura_70_porcento.png);
+/* background-image: url(../img/partitura.png); */
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
 }
 
-.songClass span{
-  color:var(--chorusColor);
-  display:flex;
-  margin-top:0px;
-  padding-top: -40px;
-  margin-left:30px; 
-}
-
-#songHeader{
-  font-weight: bold;
-  margin-bottom: 0px;
-  margin-top:10px;
-}
-
+/* Usada em hino.html */
 .index-button {
   display: inline-block;
   margin-bottom: 20px;
   margin-top: 20px;
-  padding: 10px 10px;
+  padding: 9px 9px;
   border: 2px solid #000;
   border-radius: 8px;
   color: var(--menuBackground);
   text-decoration: none;
-  font-size: 70%;
+  font-size: 0.6em;
   font-weight: 700;
   line-height: 1;
   background: var(--textColor)
 }
 
-#indexHeader{
+/*Usado em versão anterior*/
+/* #indexHeader{
   font-weight: bold;
   text-align:center;
   font-size: 100%;
-  /* margin-top: -60px; */
+  margin-top: -50px;
+} */
+
+
+/* Usada em hino.html */
+#letra{
+  white-space: pre-wrap;
+  line-height: 1.9;
 }
 
 
-.td-number{
-  text-align: right; 
-  vertical-align: top;
-  padding-right: 15px;
+/* .menuIcon{
+  background-color: var(--menuIconBackground);
+  border-color:cornflowerblue;
+
+  border-width: 3px;
+  font-size: 32px;
+  font-weight: bold;
+  height:50px; 
+  padding:0;
+  text-align:center;
+  width:50px;    
+}
+ */
+
+/* .menuIcon{
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+    border-radius: 50%;
+    padding:30;
+    line-height: 50px;
+    cursor: pointer; 
+} */
+
+.menu-circulo-texto {
+    width: 40px;
+    height: 40px;
+    background-color: var(--menuIconBackground);
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    padding:0;
+
+    /*Mantém o tamanho fixo */
+    font-size:1em;
+    line-height: 1;
+
+    /* Centraliza o texto perfeitamente no meio do círculo */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu-circulo-texto:hover {
+    transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
 }
 
 
@@ -189,108 +266,57 @@ a:hover {
   background-color: var(--menuBackground);
   overflow-x: hidden;
   transition: 0.5s;
-  /* padding: 30px; */
+  padding: 15px;
   transform: translateX(100%);
 }
 
 .sidenav a {
-  /* padding:5px 5px 0px 10px; */
   text-decoration: none;
   color: var(--textColor);
   display: block;
   transition: 0.3s;
-  font-size: 90%;
+  font-size: 1em;
 }
 
-
-.fontSizeMenu{
-  padding:15px 30px;
-  width:50%;
-}
-
-.fontSizeMenu label{
-  font-size: 100%;
-}
 
 .slidecontainer {        
-    width: 100%; /* Width of the outside container */
-}
-
-.aboutMenu, .sortMenu, .themeMenu{
-  padding:20px;
-}
- 
-.sortMenu p {
-  font-size: 70%;
-}
-
-.sortMenu label {
-  font-size: 100%;
-}
-
-.themeMenu label {
-  font-size: 100%;
-}
-
-.themeMenu p {
-  font-size: 70%;
+    width: 90%; /* Width of the outside container */
 }
 
 
-/*== ID ========================*/
-#copyright{
-  font-size: 80%;
-  white-space: pre-wrap;
-  margin-bottom:0px;
+/*Usada em hino.html */
+.songClass {
+    margin-bottom: 10px;
+    padding: 5px 20px 25px;
+    background-color: var(--bodyBackground);
+    border-left: 5px solid var(--tarjaVertical);
 }
 
-
-#headerGroup{
-  text-align: center; 
-  /* background-color: var(--headerBackground); */
-  padding: 0px; 
-  font-weight: bold; 
-  table-layout: auto;
-  margin:0px;
-  width: 100%;
+/*Usada em hino.html */
+.songClass span{
+  color:var(--chorusColor);
+  display:flex;
+  margin-top:0px;
+  padding-top: -40px;
+  margin-left:30px; 
 }
 
-
-/*Linhas do header */
-#headerGroup hr{
-  height:2px;
-  border-width:0;
-  background-color:cornflowerblue;
-  margin-top:6px;
-  margin-bottom:6px;
-}
-
-#headerTitle{
-  /* font-size: 100%; */
-  font-size:23px;
-  padding:0;
-  margin:0;
-  width:110px;
-}
-
-
-#hymnHeader{
-  font-size: 110%;
+/*Usada em hino.html */
+#songHeader{
   font-weight: bold;
-}
-
-/* Usada em hino.html */
-#letra{
-  font-size: 100%;
-  white-space: pre-wrap;
-  line-height: 1.9;
+  margin-bottom: 0px;
+  margin-top:10px;
 }
 
 
-#menuIcon{
-  text-align:center;
-  font-size: 130%;
+.sortMenu p {
+  font-size: 0.7em;
 }
+
+/* .sortMenu label {
+  font-size: 1em;
+}
+ */
 
 #table-contents{
     display: block;
@@ -300,11 +326,26 @@ a:hover {
     border-spacing: 0px 0.8em;  /*espaçamento entre linhas*/
 }
 
+.td-number{
+  text-align: right; 
+  vertical-align: top;
+  padding-right: 15px;
+}
+
+/* .themeMenu label {
+  font-size: 100%;
+} */
+
+.themeMenu p {
+  font-size: 0.7em;
+}
+
 .thickLine{
-  height:4px;
+  height:3px;
   border-width:0;
-  background-color:cornflowerblue;
+  background-color: var(--hyperlink);
   margin-top:0px;
   margin-bottom:0px;
+  opacity:0.7;
 }
 

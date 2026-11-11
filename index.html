@@ -11,11 +11,11 @@
     <title>NOSSO HINARIO</title>
 </head>
 <body>
-<!--     <table id="headerGroup" style="width:100%">
+<!--    <table id="headerGroup" style="width:100%">
         <tr>
             <td id="hamburgerIcon" style="visibility: show;  background-color:red;">
                 &#9776;
-            </td>
+            </td>            
 
             <td id="headerTitle" >
                 NOSSO HINÁRIO
@@ -27,12 +27,11 @@
         </tr>
     </table> -->
 
-        <hr class="thickLine">
-
-        <table id="headerGroup">
+    <!-- HEADER COM LINHAS -->
+<!--      <hr class="thickLine">
+    <table id="headerGroup">
         <tr>
-            <!-- Não estou usando ainda este menu principal-->
-            <td id="hamburgerIcon" style="width:50px; padding:0;visibility: hidden; background-color:bisque;">
+            <td class="menuIcon" style="visibility: hidden;">
                 &#9776;
             </td>
 
@@ -44,7 +43,7 @@
               <hr>
             </td>
 
-            <td id="headerTitle">
+           <td id="headerTitle">
                 NOSSO HINÁRIO
             </td>
 
@@ -56,9 +55,40 @@
               <hr>
             </td>
                   
-            <td id="menuIcon"  style="width:50px; height:50px; border-radius: 25px; text-align:center; background-color:rgb(214, 228, 255);" onclick="openNav()">
+            <td id="menuIcon" class="menuIcon" onclick="openNav()">
                 &#8942;
             </td>
+        </tr>        
+    </table>
+    <hr class="thickLine">  -->
+
+     <hr class="thickLine">
+     <table id="headerGroup">
+        <tr>
+            <!-- <td class="menuIcon" style="visibility: hidden;"> -->
+            <td style="text-align: left;">
+                <div  class="menu-circulo-texto">&#9776;</div>               
+            </td>
+
+            <td class="image-cell">NOSSO<br>HINÁRIO</td>
+                 
+<!--             <td id="menuIcon" class="circulo-texto" onclick="openNav()">
+                &#8942;
+            </td> -->
+
+<!--       <td id="menuIcon">
+                <div class="menuIcon" onclick="openNav()"> &#8942;</div>
+            </td> -->
+
+        <td style="text-align:right;">
+            <!-- Círculo com Texto e evento onclick -->
+            <div id="menuIcon" class="menu-circulo-texto" onclick="openNav()">&#8942;</div>
+        </td>
+<!-- 
+        <td id="menuIcon222"  class="circulo-texto">
+            <div style="background-color: #3498db;" onclick="openNav()">B2</div>
+        </td> -->
+
         </tr>        
     </table>
     <hr class="thickLine">
@@ -123,7 +153,7 @@
         </div>
     </div>
 
-    <!-- <p id="indexHeader">ÍNDICE</p> -->
+    <!-- <p id="indexHeader">NOSSO<br>HINÁRIO</p> -->
     
     <table id="table-contents"></table>
     

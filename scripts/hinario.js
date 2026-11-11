@@ -111,7 +111,17 @@
             //console.log("clicou fora");
 
             CloseAllMenus();
-        }
+        } 
+
+/*                     let menuIcon = document.querySelector("#menuIcon222");
+        let divMenu = document.querySelector("#sideMenu");
+
+       if(!divMenu.contains(e.target) && divMenu != e.target && menuIcon222 != e.target)
+        {
+            //console.log("clicou fora");
+
+            CloseAllMenus();
+        } */
     }
 
 
@@ -403,6 +413,8 @@
 
         document.getElementById("mySidenav").style = "transform: translateX(0)"; 
 
+        console.log(document.getElementById("mySidenav").style);
+
         //Atualiza variável
         menuIsOpen = true;
 
@@ -469,6 +481,13 @@
     function CloseAboutMenu()
     {
         document.getElementById("aboutMenu").style = "";
+    }
+
+    function lixo()
+    {
+        console.log("lixoxxxxxx");
+
+        openNav();
     }
 
 
