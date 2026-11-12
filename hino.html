@@ -40,7 +40,7 @@
         let hinosCarregados = [];
 
         const catalogPath = "./json/hinos.json";
-       //const catalogPath = "./json/hinos_teste.json";
+        //const catalogPath = "./json/hinos_CX_ALTA.json";
 
         const btn1 = document.getElementById('btnSobe');
         const btn2 = document.getElementById('top-index');
@@ -112,7 +112,7 @@
 
             if(hino != null)
             {
-                document.getElementById('songHeader').textContent = hino.numero + ' - ' + hino.titulo.trim();
+                document.getElementById('songHeader').textContent = hino.numero + ' - ' + hino.titulo.trim().toUpperCase();
 
                 //document.getElementById('hymnNumber').textContent = "Num. " + hino.numero;
 

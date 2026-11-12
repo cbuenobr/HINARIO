@@ -1,13 +1,10 @@
     const catalogPath = "./json/hinos.json";
-    //const catalogPath = "./json/hinos_teste.json";
+    //const catalogPath = "./json/hinos_CX_ALTA.json";
     const rootStyles = window.getComputedStyle(document.documentElement);
 
     //Slider de tamanho de fonte
     const fontSizeSlider = document.getElementById("fontSizeRange");
-    fontSizeSlider.oninput = function()
-    {
-        ChangeFontSize(this.value);  
-    }
+    fontSizeSlider.addEventListener('input', ()=> ChangeFontSize(fontSizeSlider.value));
 
     //Controles de ordenação ----------------------------------------------
     const radioSortBy = document.getElementsByName("sortBy");
@@ -17,6 +14,7 @@
     radioSortByTitle.addEventListener('change', () => GetSortBy(1));
     radioSortByNumber.addEventListener('change', () => GetSortBy(2));
 
+    const radioSortDirection= document.getElementsByName("sortDirection");
     const radioSortDir_1 = document.getElementById("sortDir_1");
     const radioSortDir_2 = document.getElementById("sortDir_2");
     radioSortDir_1.addEventListener('change', () => GetSortDirection(1));
@@ -112,16 +110,6 @@
 
             CloseAllMenus();
         } 
-
-/*                     let menuIcon = document.querySelector("#menuIcon222");
-        let divMenu = document.querySelector("#sideMenu");
-
-       if(!divMenu.contains(e.target) && divMenu != e.target && menuIcon222 != e.target)
-        {
-            //console.log("clicou fora");
-
-            CloseAllMenus();
-        } */
     }
 
 
@@ -163,7 +151,6 @@
         const td2 = document.createElement('td');
         const link1 = document.createElement('a');
         link1.setAttribute('href',('hino.html?Id=' + id));
-        //link1.classList.add('linkLetra');
         const linktxt= document.createTextNode(titulo);
 
         link1.appendChild(linktxt);
@@ -201,9 +188,14 @@
        
     function InitFontSlider()
     {
+        //--baseFontSize foi definido no css ou será o que estiver gravado no storage
        const startValue = parseFloat(rootStyles.getPropertyValue('--baseFontSize').trim());
 
+       console.log("InitFontSlider startValue = " + startValue);
+
+       //Ajusta o valor do slider e dispara o evento (ChangeFontSize)
         fontSizeSlider.value = startValue;  
+        fontSizeSlider.dispatchEvent(new Event('input', { bubbles: true }));        
     }
 
     function PrintVersionAndDate()
@@ -257,6 +249,9 @@
         if(result != null)
         {
             sortDirection = parseInt(result);
+
+            //Atualiza interface
+            radioSortDirection[sortDirection-1].checked = true;
         }
     }
 
@@ -277,7 +272,10 @@
             let storedFontSize = localStorage.getItem("baseFontSize");
 
             if(storedFontSize != null) {
-                ChangeFontSize(parseFloat(storedFontSize));
+
+                //Atualiza variável global
+                //Será usada para definir o valor do slider
+                document.documentElement.style.setProperty('--baseFontSize', (storedFontSize + 'em'));
 
                 console.log("Tamanho da fonte carregado: " + storedFontSize);
             }
@@ -481,13 +479,6 @@
     function CloseAboutMenu()
     {
         document.getElementById("aboutMenu").style = "";
-    }
-
-    function lixo()
-    {
-        console.log("lixoxxxxxx");
-
-        openNav();
     }
 
 

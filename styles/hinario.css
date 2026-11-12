@@ -1,12 +1,12 @@
 
 :root{
     /* variaveis globais: */
-    --baseFontSize: 1em;
+    --baseFontSize: 0.8em;
     --borderColor: rgb(190, 190, 190);
     --bodyBackground: rgb(245, 245, 245);
     /* --chorusColor:rgb(0, 33, 219); */
     --chorusColor:#0065ca;
-    --fontSizeSliderStep: 0.1;
+    /* --fontSizeSliderStep: 0.1; */
     --hoverColor: #1395ec;
     --hyperlink: #0246c5;
     --menuBackground:white;
@@ -42,7 +42,7 @@ body {
 }
 
 body.darkTheme{
-  --bodyBackground:rgb(0, 0, 0);
+  --bodyBackground:rgb(1, 7, 41);
   --borderColor:rgb(88, 88, 88);
   --chorusColor:rgb(84, 161, 255);
   --menuBackground:black;
@@ -53,7 +53,7 @@ body.darkTheme{
   --textColor:rgb(199, 199, 199);
   
   background-image: none;
-  background-image: url(../img/bg_escuro.jpg);
+  /* background-image: url(../img/bg_escuro.jpg); */
   
 
 }
@@ -77,12 +77,19 @@ a:hover {
     background-color: var(--hoverColor);
 }
 
-
 .aboutMenu, .sortMenu, .themeMenu{
   padding-bottom: 10px;
   padding-top: 0px;
   padding-left: 10px;
   padding-right: 30px;
+}
+
+.aboutMenu label, .sortMenu label , .themeMenu label{
+font-size:1.2rem;
+}
+
+.aboutMenu p, .sortMenu p , .themeMenu p{
+font-size:1.1rem;
 }
  
 
@@ -114,9 +121,9 @@ a:hover {
   max-width: 500px;
 }
 
-/* .fontSizeMenu label{
-  font-size: 100%;
-} */
+.fontSizeMenu label{
+  font-size: 1.5rem;
+}
 
 #headerGroup{
   text-align: center; 
@@ -170,10 +177,10 @@ a:hover {
  
 .image-cell {
 background-image: url(../img/partitura_70_porcento.png);
-/* background-image: url(../img/partitura.png); */
 background-position: center;
 background-repeat: no-repeat;
 background-size: contain;
+font-size: 1.2rem;
 }
 
 /* Usada em hino.html */
@@ -242,16 +249,13 @@ background-size: contain;
     padding:0;
 
     /*Mantém o tamanho fixo */
-    font-size:1em;
+    font-size:1.5rem;
     line-height: 1;
 
     /* Centraliza o texto perfeitamente no meio do círculo */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-}
-.menu-circulo-texto:hover {
-    transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
 }
 
 
@@ -275,9 +279,15 @@ background-size: contain;
   color: var(--textColor);
   display: block;
   transition: 0.3s;
-  font-size: 1em;
+  /* font-size: 1em; */
+  font-size: 1.3rem; /*relativo à root*/
 }
 
+.sidenav hr{
+  height:2px;
+  margin-top:7px;
+  margin-bottom:7px;
+}
 
 .slidecontainer {        
     width: 90%; /* Width of the outside container */
@@ -309,19 +319,11 @@ background-size: contain;
 }
 
 
-.sortMenu p {
-  font-size: 0.7em;
-}
-
-/* .sortMenu label {
-  font-size: 1em;
-}
- */
-
 #table-contents{
     display: block;
     margin-top: 20px;
-    margin-right: auto;
+    /* margin-right: auto; */
+    margin-right: 20px;
     margin-left: 5px;    
     border-spacing: 0px 0.8em;  /*espaçamento entre linhas*/
 }
@@ -329,16 +331,13 @@ background-size: contain;
 .td-number{
   text-align: right; 
   vertical-align: top;
-  padding-right: 15px;
+  padding-right: 25px;
 }
 
-/* .themeMenu label {
-  font-size: 100%;
-} */
 
-.themeMenu p {
+/* .themeMenu p {
   font-size: 0.7em;
-}
+} */
 
 .thickLine{
   height:3px;
