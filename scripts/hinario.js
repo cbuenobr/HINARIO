@@ -6,6 +6,8 @@
     const fontSizeSlider = document.getElementById("fontSizeRange");
     fontSizeSlider.addEventListener('input', ()=> ChangeFontSize(fontSizeSlider.value));
 
+    const sliderValueLabel = document.getElementById("sliderValueLabel");
+
     //Controles de ordenação ----------------------------------------------
     const radioSortBy = document.getElementsByName("sortBy");
 
@@ -85,17 +87,9 @@
 
         //Salva o tamanho da fonte no localStorage
         Parameters_FontSize_Save();
-
-        //xxxxxxxxxxxx
-/*          console.log("BODY FONT SIZE");
-        console.log(window.getComputedStyle(document.body).getPropertyValue('font-size'));
-
-        console.log("INDEX HEADER");
-        var computedFontSize = window.getComputedStyle(document.getElementById("headerTitle")).fontSize;
-        console.log(computedFontSize); */
-        //XXXXXXXXXX
-
-
+            
+        //Atualiza
+        sliderValueLabel.innerText = fontSizeSlider.value;
     }
 
     //Fecha os menus clicando fora deles
@@ -195,7 +189,10 @@
 
        //Ajusta o valor do slider e dispara o evento (ChangeFontSize)
         fontSizeSlider.value = startValue;  
-        fontSizeSlider.dispatchEvent(new Event('input', { bubbles: true }));        
+        fontSizeSlider.dispatchEvent(new Event('input', { bubbles: true }));  
+        
+        //Atualiza
+        sliderValueLabel.innerText = fontSizeSlider.value;
     }
 
     function PrintVersionAndDate()
