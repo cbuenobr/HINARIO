@@ -643,8 +643,8 @@
 		{
 			"id": 288,
 			"numero": 75,
-			"titulo": "Oh! Como O Amo",
-			"arquivo": "./letras_todas/oh!_como_o_amo.txt",
+			"titulo": "Oh, Como O Amo",
+			"arquivo": "./letras_todas/oh_como_o_amo.txt",
 			"autor": "William Clibborn, Eduardo di Capua",
 			"copyright": "Domínio Público"
 		},
@@ -659,8 +659,8 @@
 		{
 			"id": 290,
 			"numero": 169,
-			"titulo": "Oh! Quão Pura É A Palavra",
-			"arquivo": "./letras_todas/oh!_quao_pura_e_a_palavra.txt",
+			"titulo": "Oh, Quão Pura É A Palavra",
+			"arquivo": "./letras_todas/oh_quao_pura_e_a_palavra.txt",
 			"autor": "Gary Clark, Craig Grumberg",
 			"copyright": "©1975 The Living Word"
 		},
