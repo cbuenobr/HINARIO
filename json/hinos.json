@@ -34,7 +34,7 @@
 		},
 		{
 			"id": 11,
-			"numero": 19,
+			"numero": 317,
 			"titulo": "A Palavra É Viva Em Nós",
 			"arquivo": "./letras_todas/a_palavra_e_viva_em_nos.txt",
 			"autor": "Vivian Kuala",
@@ -50,7 +50,7 @@
 		},
 		{
 			"id": 30,
-			"numero": 38,
+			"numero": 168,
 			"titulo": "Agora Vemos",
 			"arquivo": "./letras_todas/agora_vemos.txt",
 			"autor": "Mike Suderman",
@@ -101,8 +101,8 @@
 			"numero": 60,
 			"titulo": "Aquele Que Habita (salmo 91)",
 			"arquivo": "./letras_todas/aquele_que_habita_(salmo_91).txt",
-			"autor": "",
-			"copyright": ""
+			"autor": "desconhecido",
+			"copyright": "domínio público"
 		},
 		{
 			"id": 58,
@@ -114,7 +114,7 @@
 		},
 		{
 			"id": 65,
-			"numero": 73,
+			"numero": 288,
 			"titulo": "Busco Tua Presença",
 			"arquivo": "./letras_todas/busco_tua_presenca.txt",
 			"autor": "Diane Kniefel",
@@ -218,7 +218,7 @@
 		},
 		{
 			"id": 110,
-			"numero": 521,
+			"numero": 313,
 			"titulo": "Doce Amor",
 			"arquivo": "./letras_todas/doce_amor.txt",
 			"autor": "Myra Skelley, Craig Gruenberg",
@@ -298,7 +298,7 @@
 		},
 		{
 			"id": 130,
-			"numero": 506,
+			"numero": 305,
 			"titulo": "Ele Se Derramou",
 			"arquivo": "./letras_todas/ele_se_derramou.txt",
 			"autor": "Diane Kniefel",
@@ -650,7 +650,7 @@
 		},
 		{
 			"id": 289,
-			"numero": 517,
+			"numero": 297,
 			"titulo": "Oh Pai, Nós Te Honramos",
 			"arquivo": "./letras_todas/oh_pai,_nos_te_honramos.txt",
 			"autor": "Frank Longest, Vivian Kuala",
@@ -813,7 +813,7 @@
 			"numero": 525,
 			"titulo": "Shema Israel (deuteronômio 6:4)",
 			"arquivo": "./letras_todas/shema_israel.txt",
-			"autor": "Autor Desconhecido",
+			"autor": "música judaica",
 			"copyright": "Domínio Público"
 		},
 		{
@@ -890,11 +890,11 @@
 		},
 		{
 			"id": 396,
-			"numero": "405",
+			"numero": "338",
 			"titulo": "Venham Santos Do Altíssimo",
 			"arquivo": "./letras_todas/venham_santos_do_altissimo.txt",
-			"autor": "Autor: Franny Girlando",
-			"copyright": "Copyright: © 1994 The Living Word"
+			"autor": "Franny Girlando",
+			"copyright": "©1994 The Living Word"
 		},
 		{
 			"id": 399,
@@ -909,8 +909,8 @@
 			"numero": 533,
 			"titulo": "Adonai Roi",
 			"arquivo": "letras/adonai-roi.txt",
-			"autor": "desconhecido",
-			"copyright": ""
+			"autor": "música judaica",
+			"copyright": "domínio público"
 		},
 		{
 			"id": 401,
@@ -925,8 +925,8 @@
 			"numero": 535,
 			"titulo": "El Shadai",
 			"arquivo": "letras/el-shadai.txt",
-			"autor": "",
-			"copyright": ""
+			"autor": "música judaica",
+			"copyright": "domínio público"
 		},
 		{
 			"id": 403,
