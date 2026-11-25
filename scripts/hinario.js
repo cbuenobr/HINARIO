@@ -439,6 +439,11 @@
         document.getElementById("sortMenu").style = "";
     }
 
+    function OpenContactForm()
+    {
+        window.location.href = 'contact.html';
+    }
+
     function OpenFontSizeMenu()
     {
         document.getElementById("fontSizeMenu").style = "transform: translateX(0)"; 

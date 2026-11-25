@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+button{
+    margin-top:20px;
+    background-color: #c0f0ff;
+}
+form{
+    width:300px;
+    margin: 0 auto;
+    background-color: rgb(212, 212, 212);
+    padding:20px;
+}
+
+#header{
+    font-size:24px;
+    font-weight: bold;
+}
+
+input,textarea,select, button{
+    width:90%;
+    padding:8px;
+    margin-top:5px;
+    margin-bottom: 20opx;
+    border:1px solid #cccccc;
+    border-radius: 4px;
+        resize:vertical;
+}
+
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+</style>
+</head>
+
+<body>
+<title>Nosso Hinário - Contato</title>
+
+<div class="container">
+
+
+    <form id="contact" name="contact" action="contact_callback.html" method="POST" netlify>
+    <p id="header">Contato</p>
+
+    <p>
+        <label>Nome: <input type="text" name="name" /></label>
+    </p>
+
+    <p>
+        <label>Email: <input type="email" name="email" /></label>
+    </p>
+
+    <p>
+        <label>Mensagem: </label>
+        <textarea id="contact" name="user-message" placeholder="Escreva sua mensagem.." style="height:200px"></textarea>
+    </p>
+    <p>
+        <button type="submit">ENVIAR</button>
+    </p>
+    </form>
+</div>
+
+</body>
+</html>
