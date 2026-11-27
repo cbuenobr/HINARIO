@@ -5,38 +5,97 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-image: url(../img/bg_claro.jpg);
+    background-size:cover;        
+    background-repeat: no-repeat;  
+    background-position: center;   
+    background-attachment:fixed;
+}
+
 * {box-sizing: border-box;}
 
 button{
     margin-top:20px;
-    background-color: #c0f0ff;
+    margin-bottom:0px;
+    background-color: #91caff;
+    font-weight:bold;
 }
+
+#contact-options{
+  border: 2px solid rgb(0, 23, 128);
+  padding: 10px;
+}
+
 form{
+    border: 2px solid rgb(0, 23, 128);
     width:300px;
     margin: 0 auto;
-    background-color: rgb(212, 212, 212);
-    padding:20px;
+    padding-top:20px;
+    padding-right:20px;
+    padding-left: 20px;
 }
 
 #header{
-    font-size:24px;
+    font-size: 1.5rem;
     font-weight: bold;
+    margin-top:0px;
 }
 
 input,textarea,select, button{
-    width:90%;
+    width:100%;
     padding:8px;
     margin-top:5px;
-    margin-bottom: 20opx;
-    border:1px solid #cccccc;
+    border:1px solid #0026ff;
     border-radius: 4px;
-        resize:vertical;
+    resize:vertical;
 }
 
 
-input[type=submit]:hover {
-  background-color: #45a049;
+p{
+    margin-bottom:20px;
+}
+
+/* POPUP */
+.popup-wrapper{
+background: rgba(0,0,0,0.5);
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height: 100%;
+display:none;
+}
+
+.popup{
+text-align: center;
+background-color: rgb(255, 255, 255);
+padding: 20px;
+position:relative;
+margin:10% auto;
+width:100%;
+max-width: 300px;
+}
+
+.popup-close{
+background-color: crimson;
+color:white;
+font-style: bold;
+position: absolute;
+top:5px;
+right:8px;
+cursor:pointer;
+padding:5px;
+height:25px;
+width:25px;
+}
+
+.popup-content{
+ border:2px solid crimson; 
+ color:crimson;
+ margin-top:20px;
 }
 
 </style>
@@ -47,27 +106,171 @@ input[type=submit]:hover {
 
 <div class="container">
 
-
-    <form id="contact" name="contact" action="contact_callback.html" method="POST" netlify>
+    <form id="contactForm" name="contactForm" action="contact_callback.html" method="POST" netlify>
     <p id="header">Contato</p>
 
     <p>
-        <label>Nome: <input type="text" name="name" /></label>
+        <label>Nome: <input type="text" id="username" name="username" /></label>
     </p>
 
     <p>
-        <label>Email: <input type="email" name="email" /></label>
+        <label>Cidade: <input id="city" type="text" name="city" required/></label>
     </p>
+
+    <p>
+        <label>Estado: <input id="state" type="text" name="state" required/></label>
+    </p>
+
+    <div id="contact-options">
+        <p>Como prefere ser contactado?</p>
+    
+        <p>
+            <label>Email: <input type="email" id="email" name="email" /></label>
+        </p>
+
+        <p>
+            <img src="img/whatsapp02.png" height="20px" width="20px" style="vertical-align: middle;" ></img>
+            <label style="vertical-align: middle;">Whatsapp: <input id="phone" type="tel" name="phone" placeholder="(xx)xxxxx-xxxx"/></label>
+        </p>
+    </div>
+
+    <p></p>
 
     <p>
         <label>Mensagem: </label>
-        <textarea id="contact" name="user-message" placeholder="Escreva sua mensagem.." style="height:200px"></textarea>
+        <textarea id="contactMsg" name="contactMessage" placeholder="Escreva sua mensagem.." style="height:200px"></textarea>
     </p>
     <p>
         <button type="submit">ENVIAR</button>
     </p>
+
+    <p>
+        <button id="cancelBtn" style="color:crimson" onclick="window.location.href = 'index.html'" >CANCELAR</button>
+    </p>
     </form>
 </div>
+
+
+<!-- POPUP -->
+<div class="popup-wrapper">
+    <div class="popup">
+        <div class="popup-close">X</div>
+        <div class="popup-content">
+            <h3>Informe um endereço de email ou seu número de Whatsapp</h3>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const contactForm = document.getElementById("contactForm");
+    const usernameEntry = document.getElementById("username");
+    // const cancelBtn= document.getElementById("cancelBtn");
+    const cityEntry = document.getElementById("city");
+    const stateEntry = document.getElementById("state");
+    const emailEntry = document.getElementById("email");
+    const phoneEntry = document.getElementById("phone");
+    const msgEntry = document.getElementById("contactMsg");
+
+    //POPUP
+    const popup = document.querySelector('.popup-wrapper');
+    const close = document.querySelector('.popup-close');
+
+
+    const regexPhone = /^(?:\+?55\s?)?(?:\(?[1-9][0-9]\)?\s*?)?9\d{4}-?\d{4}$/;
+
+    //Associa a regex
+    phoneEntry.setAttribute("pattern", regexPhone.source);
+
+
+    //Valida nome usuário (obrigatório)
+    usernameEntry.addEventListener('input', function () {
+        if (usernameEntry.value.length < 3) {
+            usernameEntry.setCustomValidity('Digite o seu nome');
+        } else {
+            usernameEntry.setCustomValidity('');
+        }
+    });
+
+
+    //Valida cidade (obrigatório)
+    cityEntry.addEventListener('input', function () {
+        if (cityEntry.value.length < 2) {
+            cityEntry.setCustomValidity('Digite sua cidade');
+        } else {
+            cityEntry.setCustomValidity('');
+        }
+    });
+
+    //Valida Estado (obrigatório)
+    stateEntry.addEventListener('input', function () {
+        if (stateEntry.value.length < 2) {
+           stateEntry.setCustomValidity('Digite o Estado');
+        } else {
+            stateEntry.setCustomValidity('');
+        }
+    });
+
+
+    
+    //Valida email (caso usuário digite)
+    emailEntry.addEventListener("input", (event) => {
+    if (emailEntry.validity.typeMismatch) {
+
+        emailEntry.setCustomValidity("Digite um endereço de email válido");
+    } 
+    else 
+    {
+        emailEntry.setCustomValidity("");
+    }
+    });
+
+    //Valida telefone (caso usuário digite)
+    phoneEntry.addEventListener("input", (event) => {
+        if (phoneEntry.validity.patternMismatch) {
+
+            phoneEntry.setCustomValidity("Digite o número de telefone com DDD");
+        } 
+        else 
+        {
+            phoneEntry.setCustomValidity("");
+        }
+    });
+
+    //Valida mensagem
+    msgEntry.addEventListener("input", function() {
+
+        if (/^\s*$/g.test(msgEntry.value)){
+
+            msgEntry.setCustomValidity("Escreva sua mensagem");
+        } 
+        else 
+        {
+            msgEntry.setCustomValidity("");
+        } 
+    });
+
+
+    //Evento SUBMIT
+    contactForm.addEventListener('submit', (event)=>{
+
+        //Nem email nem telefone foram informados
+        if(emailEntry.value.trim().length == 0 && phoneEntry.value.trim().length == 0) 
+        {
+            //Exibe o popup
+            popup.style.display = 'block';
+
+           event.preventDefault();
+        } 
+    });
+
+    //EVENTO CANCEL
+
+
+    //EVENTOS DO POPUP
+    close.addEventListener('click', ()=>{popup.style.display='none';});
+    popup.addEventListener('click', ()=>{popup.style.display='none';});
+</script>
 
 </body>
 </html>
