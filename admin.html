@@ -200,7 +200,10 @@ th:first-child, td:first-child { width: 90px; text-align: right; }
 
       <div class="admin-actions">
         <button class="primary" onclick="novoHino()">Novo hino</button>
-        <button onclick="sair()">Sair</button>
+        <!-- <button onclick="sair()">Sair</button> -->
+         <button onclick="window.location.href = 'index.html'">Sair</button>
+        
+  
     </div>
 
     <div class="tablewrap">
@@ -310,13 +313,13 @@ async function entrar() {
   }
 }
 
-function sair() {
+/* function sair() {
   senhaAdmin = '';
   hinos = [];
   editandoId = null;
   document.getElementById('adminArea').classList.add('hidden');
   document.getElementById('loginArea').classList.remove('hidden');
-}
+} */
 
 async function carregarLista(silencioso=false) {
   if (!silencioso) setMsg('listaMsg', 'Carregando...');
