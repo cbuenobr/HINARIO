@@ -110,7 +110,7 @@ width:25px;
     <p id="header">Contato</p>
 
     <p>
-        <label>Nome: <input type="text" id="username" name="username" /></label>
+        <label>Nome: <input type="text" id="username" name="username" required/></label>
     </p>
 
     <p>
@@ -138,7 +138,7 @@ width:25px;
 
     <p>
         <label>Mensagem: </label>
-        <textarea id="contactMsg" name="contactMessage" placeholder="Escreva sua mensagem.." style="height:200px"></textarea>
+        <textarea id="contactMsg" name="contactMessage" placeholder="Escreva sua mensagem.." style="height:200px" required></textarea>
     </p>
     <p>
         <button type="submit">ENVIAR</button>
@@ -165,7 +165,6 @@ width:25px;
 <script>
     const contactForm = document.getElementById("contactForm");
     const usernameEntry = document.getElementById("username");
-    // const cancelBtn= document.getElementById("cancelBtn");
     const cityEntry = document.getElementById("city");
     const stateEntry = document.getElementById("state");
     const emailEntry = document.getElementById("email");
