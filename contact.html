@@ -3,102 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-body {
-    font-family: Arial, Helvetica, sans-serif;
-
-    background-image: url(../img/bg_claro.jpg);
-    background-size:cover;        
-    background-repeat: no-repeat;  
-    background-position: center;   
-    background-attachment:fixed;
-}
-
-* {box-sizing: border-box;}
-
-button{
-    margin-top:20px;
-    margin-bottom:0px;
-    background-color: #91caff;
-    font-weight:bold;
-}
-
-#contact-options{
-  border: 2px solid rgb(0, 23, 128);
-  padding: 10px;
-}
-
-form{
-    border: 2px solid rgb(0, 23, 128);
-    width:300px;
-    margin: 0 auto;
-    padding-top:20px;
-    padding-right:20px;
-    padding-left: 20px;
-}
-
-#header{
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-top:0px;
-}
-
-input,textarea,select, button{
-    width:100%;
-    padding:8px;
-    margin-top:5px;
-    border:1px solid #0026ff;
-    border-radius: 4px;
-    resize:vertical;
-}
-
-
-p{
-    margin-bottom:20px;
-}
-
-/* POPUP */
-.popup-wrapper{
-background: rgba(0,0,0,0.5);
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height: 100%;
-display:none;
-}
-
-.popup{
-text-align: center;
-background-color: rgb(255, 255, 255);
-padding: 20px;
-position:relative;
-margin:10% auto;
-width:100%;
-max-width: 300px;
-}
-
-.popup-close{
-background-color: crimson;
-color:white;
-font-style: bold;
-position: absolute;
-top:5px;
-right:8px;
-cursor:pointer;
-padding:5px;
-height:25px;
-width:25px;
-}
-
-.popup-content{
- border:2px solid crimson; 
- color:crimson;
- margin-top:20px;
-}
-
-</style>
+<link rel="stylesheet" href="./styles/contact.css">
 </head>
 
 <body>
@@ -118,7 +23,37 @@ width:25px;
     </p>
 
     <p>
-        <label>Estado: <input id="state" type="text" name="state" required/></label>
+        <label for="state">Estado</label>
+        <select id="state" name="state" required>
+            <option selected disabled value="">-- Selecione --</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+        </select>
     </p>
 
     <div id="contact-options">
@@ -166,10 +101,10 @@ width:25px;
     const contactForm = document.getElementById("contactForm");
     const usernameEntry = document.getElementById("username");
     const cityEntry = document.getElementById("city");
-    const stateEntry = document.getElementById("state");
     const emailEntry = document.getElementById("email");
     const phoneEntry = document.getElementById("phone");
     const msgEntry = document.getElementById("contactMsg");
+
 
     //POPUP
     const popup = document.querySelector('.popup-wrapper');
@@ -201,7 +136,7 @@ width:25px;
         }
     });
 
-    //Valida Estado (obrigatório)
+/*     //Valida Estado (obrigatório)
     stateEntry.addEventListener('input', function () {
         if (stateEntry.value.length < 2) {
            stateEntry.setCustomValidity('Digite o Estado');
@@ -209,7 +144,7 @@ width:25px;
             stateEntry.setCustomValidity('');
         }
     });
-
+ */
 
     
     //Valida email (caso usuário digite)
@@ -237,7 +172,7 @@ width:25px;
     });
 
     //Valida mensagem
-    msgEntry.addEventListener("input", function() {
+    msgEntry.addEventListener("selectionchange", function() {
 
         if (/^\s*$/g.test(msgEntry.value)){
 
@@ -260,7 +195,9 @@ width:25px;
             popup.style.display = 'block';
 
            event.preventDefault();
-        } 
+        } ;
+
+
     });
 
     //EVENTO CANCEL
