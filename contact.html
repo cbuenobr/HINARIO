@@ -80,7 +80,8 @@
     </p>
 
     <p>
-        <button id="cancelBtn" style="color:crimson" onclick="window.location.href = 'index.html'" >CANCELAR</button>
+        <!-- Especificando o tipo como 'button', o formulário não é enviado-->
+        <button id="cancelBtn" type='button' style="color:crimson" onclick="window.location.href = 'index.html'" >CANCELAR</button>
     </p>
     </form>
 </div>
@@ -116,6 +117,8 @@
     //Associa a regex
     phoneEntry.setAttribute("pattern", regexPhone.source);
 
+
+    //EVENTOS ---------------------------------------------------------
 
     //Valida nome usuário (obrigatório)
     usernameEntry.addEventListener('input', function () {
